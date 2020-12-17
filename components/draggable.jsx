@@ -15,12 +15,21 @@ function DraggableMesh({
   const [position, setPosition] = useState([0, 0, 0]);
   const { size, viewport } = useThree();
   const aspect = size.width / viewport.width;
+
   const bind = useDrag(
-    ({ offset: [x, y], first, last }) => {
+    (props) => {
+      const {
+        offset: [x, y],
+        first,
+        last
+      } = props;
       const [, , z] = position;
-      if (first)
+      if (first) {
         setDraggingPiece({ index: pieceIndex, category: category.index });
-      if (last) setDraggingPiece(null);
+      }
+      if (last) {
+        setDraggingPiece(null);
+      }
       setPosition([x / aspect, -y / aspect, z]);
     },
     { pointerEvents: true }
