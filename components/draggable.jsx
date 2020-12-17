@@ -8,7 +8,9 @@ function DraggableMesh({
   rotation:groupRotation,
   index: pieceIndex,
   category,
+  positionedPieces
 }) {
+  const isPositioned = positionedPieces && positionedPieces[category.index] && positionedPieces[category.index][pieceIndex];
   const ref = useRef();
   const [position, setPosition] = useState([0, 0, 0]);
   const { size, viewport } = useThree();
@@ -23,20 +25,28 @@ function DraggableMesh({
     },
     { pointerEvents: true }
   );
-  const scale = [0.2, 0.2, 0.2];
+  const scale = [0.3, 0.3, 0.3];
+  // TODO: Not final. Just aprox.
+  const finalRotation = [
+    groupRotation[0] + Math.PI / 4,
+    groupRotation[1] + Math.PI / 4,
+    Math.PI / 8
+  ];
   return (
     <group position={groupPosition}>
-      <mesh
-        position={position}
-        {...bind()}
-        ref={ref}
-        scale={scale}
-        rotation={groupRotation}
-      >
-        <boxBufferGeometry attach="geometry" args={[1, 3, 1]} />
-        <meshLambertMaterial attach="material" color={category.color} />
-      </mesh>
-      <mesh scale={scale} rotation={groupRotation}>
+      {!isPositioned &&
+        <mesh
+          position={position}
+          {...bind()}
+          ref={ref}
+          scale={scale}
+          rotation={finalRotation}
+        >
+          <boxBufferGeometry attach="geometry" args={[1, 3, 1]} />
+          <meshLambertMaterial attach="material" color={category.color} />
+        </mesh>
+      }
+      <mesh scale={scale} rotation={finalRotation}>
         <boxBufferGeometry attach="geometry" args={[1, 3, 1]} />
         <meshLambertMaterial
           attach="material"

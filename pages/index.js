@@ -5,8 +5,7 @@ import { Canvas } from 'react-three-fiber';
 import Scene from '../components/scene';
 
 export default function Home() {
-  const [won, setWon] = useState(false);
-
+  const [positionedPieces, setPositionedPieces] = useState(null);
   return (
     <div className={styles.container}>
       <Head>
@@ -16,11 +15,18 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Annual report 2020
-          {won && 'You won!!!'}
         </h1>
+          {positionedPieces &&
+            <div>
+              {`Positioned pieces: ${JSON.stringify(positionedPieces)}`}
+            </div>
+          }
         <div className={styles.canvasContainer}>
           <Canvas orthographic camera={{ zoom: 100, position: [0, 0, 100] }}>
-            <Scene setWon={setWon} />
+            <Scene
+              setPositionedPieces={setPositionedPieces}
+              positionedPieces={positionedPieces}
+            />
           </Canvas>
         </div>
       </main>
