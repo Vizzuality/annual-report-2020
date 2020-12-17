@@ -19,7 +19,7 @@ export default function Home() {
           {won && 'You won!!!'}
         </h1>
         <div className={styles.canvasContainer}>
-          <Canvas>
+          <Canvas orthographic camera={{ zoom: 100, position: [0, 0, 100] }}>
             <Scene setWon={setWon} />
           </Canvas>
         </div>
