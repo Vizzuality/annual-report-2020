@@ -6,6 +6,7 @@ function Droppable({
   positionedPieces,
   position,
   index: dropIndex,
+  geometry,
   category
 }) {
   const { color } = category;
@@ -25,18 +26,19 @@ function Droppable({
         dropIndex === draggingPiece.index &&
         category.index === draggingPiece.category
       ) {
-        setColor('red');
-      } else {
         setColor(color);
+      } else {
+        setColor('black');
       }
     }
   }, [draggingPiece, category]);
 
+  if(!geometry) return null;
   return (
     <group position={position}>
       <mesh
-        position={[1, 1.5, 1]}
-        scale={[0.3, 0.3, 0.3]}
+        attach="mesh"
+        geometry={geometry}
         onPointerOver={() => {
           if (
             draggingPiece &&
@@ -44,7 +46,6 @@ function Droppable({
             dropIndex === draggingPiece.index &&
             category.index === draggingPiece.category
           ) {
-            setColor('black');
             setPositionedPieces({
               ...positionedPieces,
               [draggingPiece.category]: {
@@ -58,7 +59,6 @@ function Droppable({
           draggingPiece && setColor(color);
         }}
       >
-        <boxBufferGeometry attach="geometry" args={[1, 3, 1]} />
         <meshLambertMaterial attach="material" color={updatedColor} />
       </mesh>
     </group>

@@ -7,9 +7,10 @@ function Sphere({
   setPositionedPieces,
   positionedPieces,
   setSphereRotation,
-  droppables
+  droppables,
+  geometry
 }) {
-  const [rotation, setRotation] = useState([0, 0, Math.PI / 4]);
+  const [rotation, setRotation] = useState([0, 0, 0]);
   const bind = useDrag(
     ({ offset: [y] }) => {
       const [x, , z] = rotation;
@@ -20,27 +21,22 @@ function Sphere({
   );
   return (
     <group {...(!draggingPiece && bind())} rotation={rotation}>
-      <mesh
-        attach="mesh"
-      >
-        <icosahedronBufferGeometry attach="geometry" args={[2, 3, 2]} />
+      <mesh attach="mesh" geometry={geometry}>
         <meshStandardMaterial attach="material" wireframe />
       </mesh>
-      <mesh
-        attach="mesh"
-      >
-        <icosahedronBufferGeometry attach="geometry" args={[2, 3, 2]} />
+      <mesh attach="mesh" geometry={geometry}>
         <meshLambertMaterial attach="material" color="#272727" />
       </mesh>
       {droppables &&
         droppables.map((droppable) => {
-          const { category, index, position } = droppable;
+          const { category, index, position, geometry: pieceGeometry } = droppable;
           return (
             <Droppable
               key={`droppable-${category.index}-${index}`}
               index={index}
               position={position}
               category={category}
+              geometry={pieceGeometry}
               setPositionedPieces={setPositionedPieces}
               positionedPieces={positionedPieces}
               draggingPiece={draggingPiece}
