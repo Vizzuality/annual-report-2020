@@ -13,7 +13,6 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece }) => {
   const {
     nodes: { sphere, piece01, piece02, piece03, dpiece01, dpiece02, dpiece03 }
   } = gltf;
-
   return (
     <>
       <group rotation={[Math.PI / 4, 0, Math.PI / 6]}>

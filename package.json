@@ -8,11 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "next": "10.0.3",
+    "nvm": "^0.0.4",
+    "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-modal": "^3.12.1",
     "react-three-fiber": "^5.3.10",
     "react-use-gesture": "^8.0.1",
+    "sass": "^1.30.0",
     "three": "^0.123.0"
   }
 }

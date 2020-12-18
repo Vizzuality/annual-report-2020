@@ -1,0 +1,40 @@
+$color-1: #A087FF; // building knowledge
+$color-2: #2BA4A0;
+$color-3: #FFAA36;
+
+$font-family-1: Inter;
+$font-family-2: Libre Baskerville;
+
+
+// Breakpoints
+// https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints
+$xsm: 300px;
+$sm: 576px;
+$md: 768px;
+$lg: 1024px;
+$xlg: 1200px;
+
+$breakpoints: (
+  xsm: $xsm,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xlg: $xlg
+);
+
+$flexboxgrid-max-width: 1280px;
+$flexboxgrid-grid-columns: 12;
+$flexboxgrid-gutter-width: 1.5rem;
+$flexboxgrid-outer-margin: 3rem;
+$flexboxgrid-breakpoints: (
+    xsm: $xsm,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xlg: $xlg
+);
+
+
+$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * .5 * -1;
+$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 5;
+
