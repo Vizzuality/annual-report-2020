@@ -5,7 +5,7 @@ import { CATEGORIES } from '../constants';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
 
-const Scene = ({ setPositionedPieces, positionedPieces }) => {
+const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece }) => {
   const [draggingPiece, setDraggingPiece] = useState(false);
   const [sphereRotation, setSphereRotation] = useState([0, 0, 0]);
 
@@ -22,6 +22,7 @@ const Scene = ({ setPositionedPieces, positionedPieces }) => {
           setPositionedPieces={setPositionedPieces}
           positionedPieces={positionedPieces}
           setSphereRotation={setSphereRotation}
+          setSelectedPiece={setSelectedPiece}
           geometry={sphere.geometry}
           droppables={[
             {

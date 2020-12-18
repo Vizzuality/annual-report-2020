@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function Droppable({
   draggingPiece,
   setPositionedPieces,
+  setSelectedPiece,
   positionedPieces,
   position,
   index: dropIndex,
@@ -46,6 +47,7 @@ function Droppable({
             dropIndex === draggingPiece.index &&
             category.index === draggingPiece.category
           ) {
+            setSelectedPiece(`${draggingPiece.category}-${draggingPiece.index}`)
             setPositionedPieces({
               ...positionedPieces,
               [draggingPiece.category]: {

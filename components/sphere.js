@@ -5,6 +5,7 @@ import Droppable from './droppable';
 function Sphere({
   draggingPiece,
   setPositionedPieces,
+  setSelectedPiece,
   positionedPieces,
   setSphereRotation,
   droppables,
@@ -40,6 +41,7 @@ function Sphere({
               setPositionedPieces={setPositionedPieces}
               positionedPieces={positionedPieces}
               draggingPiece={draggingPiece}
+              setSelectedPiece={setSelectedPiece}
             />
           );
         })}

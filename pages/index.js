@@ -9,6 +9,7 @@ export default function Home() {
   useEffect(() => setHasMounted(true), []);
 
   const [positionedPieces, setPositionedPieces] = useState(null);
+  const [selectedPiece, setSelectedPiece] = useState(null);
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +19,10 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Annual report 2020</h1>
         {positionedPieces && (
-          <div>{`Positioned pieces: ${JSON.stringify(positionedPieces)}`}</div>
+          <div>
+            {`Positioned pieces: ${JSON.stringify(positionedPieces)}`}
+            {selectedPiece && `Selected piece: ${selectedPiece}`}
+          </div>
         )}
         <div className={styles.canvasContainer}>
           {hasMounted && (
@@ -26,6 +30,7 @@ export default function Home() {
               <Canvas
                 positionedPieces={positionedPieces}
                 setPositionedPieces={setPositionedPieces}
+                setSelectedPiece={setSelectedPiece}
               />
             </Suspense>
           )}
