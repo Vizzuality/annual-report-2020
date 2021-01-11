@@ -22,7 +22,7 @@ const Footer = ({ onClick }) => {
   );
 };
 
-Footer.PropTypes = {
+Footer.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 

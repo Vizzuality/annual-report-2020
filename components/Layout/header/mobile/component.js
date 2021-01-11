@@ -20,7 +20,7 @@ const HeaderMobile = ({ title, onClick }) => (
     </header>
 );
 
-HeaderMobile.PropTypes = {
+HeaderMobile.propTypes = {
     title: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired
 };
