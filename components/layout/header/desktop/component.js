@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Download from 'components/download';
 import Icon from 'components/icon';
 
 const HeaderDesktop = ({ title, onClick }) => (

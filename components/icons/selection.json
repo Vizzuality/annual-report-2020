@@ -30,6 +30,77 @@
       "setIdx": 0,
       "setId": 11,
       "iconIdx": 2
+    },
+    {
+      "icon": {
+        "paths": [
+          "M512.042 702.286v-380.826",
+          "M670.72 543.609l-158.678 158.678-158.678-158.678",
+          "M956.34 511.873c0 245.379-198.919 444.298-444.298 444.298s-444.298-198.919-444.298-444.298c0-245.379 198.919-444.298 444.298-444.298s444.298 198.919 444.298 444.298z"
+        ],
+        "attrs": [
+          {
+            "fill": "none",
+            "strokeLinejoin": "round",
+            "strokeLinecap": "round",
+            "strokeMiterlimit": "4",
+            "strokeWidth": 69.81818181818181
+          },
+          {
+            "fill": "none",
+            "strokeLinejoin": "round",
+            "strokeLinecap": "round",
+            "strokeMiterlimit": "4",
+            "strokeWidth": 69.81818181818181
+          },
+          {
+            "fill": "none",
+            "strokeLinejoin": "round",
+            "strokeLinecap": "round",
+            "strokeMiterlimit": "4",
+            "strokeWidth": 69.81818181818181
+          }
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "Group (1)"
+        ],
+        "colorPermutations": {}
+      },
+      "attrs": [
+        {
+          "fill": "none",
+          "strokeLinejoin": "round",
+          "strokeLinecap": "round",
+          "strokeMiterlimit": "4",
+          "strokeWidth": 69.81818181818181
+        },
+        {
+          "fill": "none",
+          "strokeLinejoin": "round",
+          "strokeLinecap": "round",
+          "strokeMiterlimit": "4",
+          "strokeWidth": 69.81818181818181
+        },
+        {
+          "fill": "none",
+          "strokeLinejoin": "round",
+          "strokeLinecap": "round",
+          "strokeMiterlimit": "4",
+          "strokeWidth": 69.81818181818181
+        }
+      ],
+      "properties": {
+        "order": 66,
+        "id": 0,
+        "name": "download",
+        "prevSize": 32
+      },
+      "setIdx": 0,
+      "setId": 12,
+      "iconIdx": 0
     }
   ],
   "height": 1024,

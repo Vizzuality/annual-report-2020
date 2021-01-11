@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 // import { Canvas } from 'react-three-fiber';
 import Layout from 'components/layout';
 import ModalComponent from 'components/modal';
+import Intro from 'components/intro';
 import Icons from 'components/icons';
 
 import { CATEGORIES } from 'components/layout/constants.js';
@@ -26,7 +27,7 @@ export default function Home() {
   }, [selectedPiece]);
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Annual report 2020</title>
         <link rel="icon" href="/favicon.ico" />
@@ -57,6 +58,7 @@ export default function Home() {
             </Suspense>
           )}
         </div>
+        <Intro />
         <Icons />
       </main>
     </div>
