@@ -33,11 +33,8 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece }) => {
       dpiece23
     }
   } = gltf;
-  const mainScale = 1.5;
   return (
-    <group scale = {
-      [mainScale, mainScale, mainScale]
-    }>
+    <>
       <group rotation = {
         [Math.PI / 4, 0, Math.PI / 6]
       }>
@@ -180,7 +177,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece }) => {
       />
       <ambientLight intensity={0.2} />
       <spotLight intensity={0.8} position={[300, 300, 400]} />
-    </group>
+    </>
   );
 };
 

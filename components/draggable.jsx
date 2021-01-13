@@ -12,6 +12,14 @@ function DraggableMesh({
   geometry
 }) {
   const isPositioned = positionedPieces && positionedPieces[category.index] && positionedPieces[category.index][pieceIndex];
+
+  const isEnabled =
+    ((!positionedPieces || !positionedPieces[category.index]) &&
+      pieceIndex === 0) ||
+    (positionedPieces &&
+      positionedPieces[category.index] &&
+      positionedPieces[category.index][pieceIndex -1]);
+
   const ref = useRef();
   const [position, setPosition] = useState([0, 0, 0]);
   const { size, viewport } = useThree();
@@ -47,20 +55,21 @@ function DraggableMesh({
       {!isPositioned && (
         <mesh
           position={position}
-          {...bind()}
+          {...(isEnabled && bind())}
           ref={ref}
           rotation={finalRotation}
           geometry={geometry}
         >
-          <meshLambertMaterial attach="material" color={category.color} />
+          <meshLambertMaterial
+            attach="material"
+            color={
+              isEnabled ? category.color : category.disabledColor
+            }
+          />
         </mesh>
       )}
       <mesh rotation={finalRotation} geometry={geometry}>
-        <meshLambertMaterial
-          attach="material"
-          color={category.color}
-          wireframe
-        />
+        <meshLambertMaterial attach="material" color={"black"} wireframe />
       </mesh>
     </group>
   );
