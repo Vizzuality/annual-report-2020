@@ -8,6 +8,7 @@ import ModalComponent from 'components/modal';
 import Icons from 'components/icons';
 
 import { CATEGORIES } from 'components/layout/constants.js';
+import ProgressBar from 'components/progress-bar';
 
 const Canvas = lazy(() => import('../components/canvas'));
 
@@ -22,7 +23,7 @@ export default function Home() {
     !!selectedPiece && setTimeout(() => {
       setTransition(true);
     }, 1000);
-  }, [selectedPiece]);  
+  }, [selectedPiece]);
 
   return (
     <div className={styles.container}>
@@ -31,25 +32,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {selectedPiece && !isOpen && (
-        <div 
-          className={styles.circle} 
+        <div
+          className={styles.circle}
           style={{ backgroundColor: CATEGORIES[selectedPiece.category].color}} />
       )}
-      <ModalComponent 
+      <ModalComponent
         title={"selectedPiece.category.index.title"}
-        isOpen={isOpen} 
+        isOpen={isOpen}
         onRequestClose={() => setSelectedPiece(null)}>
-          <Layout story={selectedPiece} onClose={setSelectedPiece}/>    
+          <Layout story={selectedPiece} onClose={setSelectedPiece}/>
       </ModalComponent>
- 
+
       <main className={styles.main}>
         <h1 className={styles.title}>Annual report 2020</h1>
-        {positionedPieces && (
-          <div>
-            {`Positioned pieces: ${JSON.stringify(positionedPieces)}`}
-            {selectedPiece && `Selected piece: ${selectedPiece}`}
-          </div>
-        )}
+        <ProgressBar positionedPieces={positionedPieces}/>
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={<div>LOADING</div>}>

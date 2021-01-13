@@ -10,7 +10,7 @@ export const CATEGORIES = {
       1: Page2,
       2: 'page3'
     },
-    color: 'blue',
+    color: '#A087FF',
   },
   1: {
     title: 'Future',
@@ -19,7 +19,7 @@ export const CATEGORIES = {
       1: 'page5',
       2: 'page6'
     },
-    color: 'orange',
+    color: '#2BA4A0',
   },
   2: {
     title: 'Whatever',
@@ -28,6 +28,6 @@ export const CATEGORIES = {
       1: 'page8',
       2: 'page9'
     },
-    color: 'orange',
+    color: '#FFAA36',
   }
 };

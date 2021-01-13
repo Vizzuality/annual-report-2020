@@ -38,11 +38,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: $z-index-base;
   background-color: red;
   animation-name: stretch;
-  animation-duration: 1.5s; 
-  animation-timing-function: ease-out; 
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;
   /* animation-iteration-count: infinite; */
