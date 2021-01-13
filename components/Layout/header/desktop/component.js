@@ -19,9 +19,9 @@ const HeaderDesktop = ({ title, onClick }) => (
     </header>
 );
 
-HeaderDesktop.propTypes = {
-    title: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired
+HeaderDesktop.PropTypes = {
+  title: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default HeaderDesktop;

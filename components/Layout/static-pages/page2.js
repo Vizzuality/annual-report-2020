@@ -1,5 +1,4 @@
 const Page2 = () => (
-    <div className="l-content">
         <div className="wrapper">
             <div className="row">
                 <div className="col-xs-4">
@@ -16,8 +15,6 @@ const Page2 = () => (
 
                 </div>
             </div>
-
-        </div>
 
     </div>
 );

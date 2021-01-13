@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Page1 = () => (
-    <div className="l-content">
         <div className="wrapper">
             <div className="row">
                 <div className="col-xs-4">
@@ -18,8 +17,6 @@ const Page1 = () => (
 
                 </div>
             </div>
-
-        </div>
 
     </div>
 );

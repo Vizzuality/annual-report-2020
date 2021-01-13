@@ -30,3 +30,36 @@
   max-width: 800px;
   margin-top: 3rem;
 }
+
+.circle {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: red;
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  /* animation-iteration-count: infinite; */
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+  @keyframes stretch {
+    0% {
+      background-color: red;
+      border-radius: 100%;
+      opacity: 1;
+    }
+    100% {
+      transform: scale3d(5, 5, 5);
+      background-color: red;
+      border-radius: 100%;
+      opacity: 0;
+    }
+  }
