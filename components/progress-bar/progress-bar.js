@@ -1,6 +1,3 @@
-import {
-  CATEGORIES
-} from '../../constants';
 import cx from 'classnames';
 import { useEffect, useState } from 'react';
 
