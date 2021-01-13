@@ -6,7 +6,10 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #272727;
+  background-color: $background-color;
+
+  /* touch-action: none is essential for mobile drag */
+  touch-action: none;
 }
 
 a {
