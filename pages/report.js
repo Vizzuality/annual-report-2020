@@ -5,6 +5,7 @@ import styles from '../styles/report.module.css';
 import Header from 'components/home/header';
 import Layout from 'components/layout';
 import ModalComponent from 'components/modal';
+import Icons from 'components/icons';
 
 const Canvas = lazy(() => import('../components/canvas'));
 
@@ -50,6 +51,7 @@ export default function Report() {
             </Suspense>
           )}
         </div>
+        <Icons />
       </main>
     </div>
   );

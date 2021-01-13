@@ -1,12 +1,11 @@
 import React, { useState, lazy, useEffect, Suspense } from 'react';
 import classnames from 'classnames';
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/report.module.css'
 // import { Canvas } from 'react-three-fiber';
 import Layout from 'components/layout';
 import ModalComponent from 'components/modal';
 import Intro from 'components/intro';
-import Icons from 'components/icons';
 
 import { CATEGORIES } from 'components/layout/constants.js';
 import ProgressBar from 'components/progress-bar';
@@ -23,8 +22,8 @@ export default function Home() {
     setHasMounted(true);
     !!selectedPiece && setTimeout(() => {
       setTransition(true);
-    }, 1000);
-  }, [selectedPiece]);
+    }, 2000);
+  }, [selectedPiece]);  
 
   return (
     <div>
@@ -45,8 +44,13 @@ export default function Home() {
       </ModalComponent>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Annual report 2020</h1>
         <ProgressBar positionedPieces={positionedPieces}/>
+        {positionedPieces && (
+          <div>
+            {`Positioned pieces: ${JSON.stringify(positionedPieces)}`}
+            {selectedPiece && `Selected piece: ${selectedPiece}`}
+          </div>
+        )}
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={<div>LOADING</div>}>
@@ -59,7 +63,6 @@ export default function Home() {
           )}
         </div>
         <Intro />
-        <Icons />
       </main>
     </div>
   );
