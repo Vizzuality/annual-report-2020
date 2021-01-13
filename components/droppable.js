@@ -19,7 +19,7 @@ function Droppable({
 
   useEffect(() => {
     if (isPositioned) {
-      setColor('white')
+      setColor('white');
     } else {
       if (
         draggingPiece &&
@@ -47,7 +47,7 @@ function Droppable({
             dropIndex === draggingPiece.index &&
             category.index === draggingPiece.category
           ) {
-            setSelectedPiece(`${draggingPiece.category}-${draggingPiece.index}`)
+            setSelectedPiece({ category: draggingPiece.category, index: draggingPiece.index })
             setPositionedPieces({
               ...positionedPieces,
               [draggingPiece.category]: {

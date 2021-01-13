@@ -20,6 +20,7 @@ function Sphere({
     },
     { pointerEvents: true }
   );
+
   return (
     <group {...(!draggingPiece && bind())} rotation={rotation}>
       <mesh attach="mesh" geometry={geometry}>

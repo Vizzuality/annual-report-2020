@@ -41,7 +41,7 @@ function DraggableMesh({
     groupRotation[1],
     Math.PI / 6
   ];
-  console.log('sss', geometry)
+
   return (
     <group position={groupPosition}>
       {!isPositioned && (
