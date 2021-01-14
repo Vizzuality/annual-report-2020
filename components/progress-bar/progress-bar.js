@@ -1,23 +1,19 @@
-import {
-  CATEGORIES
-} from '../../constants';
 import cx from 'classnames';
 import { useEffect, useState } from 'react';
 
 const ProggresBar = ({ positionedPieces }) => {
   const categories = [0, 1, 2];
   const pages = [0, 1 ,2];
-  const getSteps = () => (categories.flatMap(c => pages.map(p => ({
+  const getSteps = () => categories.map(c => pages.map(p => ({
     category: c,
     page: p,
     active: positionedPieces && positionedPieces[c] && positionedPieces[c][p]
-  }))));
+  }))).flat();
   const [steps, setSteps] = useState(getSteps());
   useEffect(() => {
     setSteps(getSteps());
   }, [positionedPieces]);
 
-  console.log(positionedPieces, steps)
   return (
     <div className="c-progress-bar">
       <div className="progress-container">
