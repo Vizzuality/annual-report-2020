@@ -13,7 +13,7 @@ const HeaderMobile = ({ title, onClick }) => (
                     className="l-header-close--btn"
                     onClick={(e) => e.stopPropagation() || onClick()}
                 >
-                    <Icon name="cross" />
+                    <Icon name="cancel" />
                 </button>
             </div>
         </div>

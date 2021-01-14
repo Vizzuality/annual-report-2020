@@ -9,7 +9,6 @@ const ModalComponent = ({
   children,
   isOpen,
   className,
-  title,
   onAfterOpen,
   onRequestClose,
 }) => {

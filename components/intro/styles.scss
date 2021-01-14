@@ -1,11 +1,8 @@
 @import 'styles/settings';
 
 .c-intro {
-  min-height: 100vh;
   font-family: $font-family-1;
-  background-color: black;
   color: white;
-  display: flex;
   align-items: center;
   text-align: center;
   
@@ -37,19 +34,12 @@
     margin: 110px;
   }
 
-  a {
-    background-color: white;
-    color: black;
-    padding: 20px 100px;
-    font-size: 18px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    max-width: 350px;
-    margin: auto;
+  button {
+    @include button;
+    margin: 20px auto;
+  }
 
-    @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
-      padding: 20px 50px;
-    }
+  @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+    padding: 20px 50px;
   }
 }
