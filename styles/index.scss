@@ -1,12 +1,18 @@
 @import 'settings';
+@import 'fonts';
 @import 'mixins';
 @import 'grid';
 @import 'base';
 @import 'layout';
 
 @import 'components/modal/styles.scss';
+@import 'components/intro/styles.scss';
+@import 'components/home/header/styles.scss';
+
 @import 'components/layout/header/styles.scss';
 @import 'components/layout/styles.scss';
 @import 'components/layout/footer/styles.scss';
+
 @import 'components/icon/styles.scss';
 @import 'components/progress-bar/styles.scss';
+@import 'components/download/styles.scss';

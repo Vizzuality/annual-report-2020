@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Download from 'components/download';
 import Icon from 'components/icon';
 
 const HeaderDesktop = ({ title, onClick }) => (
@@ -11,7 +12,7 @@ const HeaderDesktop = ({ title, onClick }) => (
                     className="l-header-close--btn"
                     onClick={(e) => e.stopPropagation() || onClick()}
                 >
-                    <Icon name="cross" />
+                    <Icon name="cancel" />
                 </button>
             </div>
         </div>

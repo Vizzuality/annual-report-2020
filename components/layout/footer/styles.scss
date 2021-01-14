@@ -1,5 +1,6 @@
 @import 'styles/settings';
 
+
 .l-footer {
   border-top: 2px solid black;
   position: relative;
@@ -29,11 +30,8 @@
   }
 
   .footer-button {
+    @include button;
     background-color: black;
     color: white;
-    padding: 20px 100px;
-    border: none;
-    font-size: 18px;
-    text-align: center;
   }
 }
