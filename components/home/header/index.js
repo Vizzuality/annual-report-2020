@@ -5,7 +5,7 @@ import SocialMedia from 'components/social-media';
 export default function Header() {
 
   return (
-    <div className="c-home-header">
+    <header className="c-home-header">
       <a
         href="https://www.vizzuality.com/"
         target="_blank"
@@ -15,7 +15,7 @@ export default function Header() {
       </a>
       <Download />
       <SocialMedia/>
-    </div>
+    </header>
   );
 };
 
