@@ -66,10 +66,12 @@ export default function Report() {
         <Layout story={selectedPiece} onClose={handleClose}/>
       </ModalComponent>
       <main className={styles.main}>
-      {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
-        <div className={styles.header}>
-          <Header />
-        </div>
+        {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
+        {isReportOpen && (
+          <div className={styles.header}>
+              <Header />
+          </div>
+        )}
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={null}>
