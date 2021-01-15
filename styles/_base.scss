@@ -8,7 +8,7 @@ body {
   background-color: $background-color;
   /* touch-action: none is essential for mobile drag */
   touch-action: none;
-  
+
   &.-no-scroll,
   &.no-scroll {
     width: 100%;
@@ -24,6 +24,7 @@ a {
 
 button {
   border: none;
+  cursor: pointer;
 
   &:focus {
     outline: none;

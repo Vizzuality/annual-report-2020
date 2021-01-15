@@ -4,7 +4,7 @@ import Icon from 'components/icon';
 const SocialMedia = () => (
   <div className="c-social-media">
     <span className="title">Follow us:</span>
-    <ul class="social-networks">
+    <ul className="social-networks">
       <li>
         <a href="https://twitter.com/vizzuality" target="_blank">
           <Icon name="twitter" className="social-media -medium" />
