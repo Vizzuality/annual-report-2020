@@ -49,15 +49,13 @@
   height: 250px;
   width: 250px;
   position: absolute;
-  top: 200px;
+  top: calc(50% + 200px);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: $color-1;
   animation-name: stretch;
   animation-duration: 2s;
   animation-delay: 0;
-  /* animation-direction: alternate; */
   border-radius: 100%;
   animation-fill-mode: forwards;
   animation-play-state: running;
@@ -66,15 +64,31 @@
   @keyframes stretch {
     0% {
       background-color: $color-1;
-      opacity: 0;
     }
     /* 50% {
       transform: scale3d(4, 4, 4);
       opacity: 0.9;
     } */
     100% {
-      transform: scale3d(10, 10, 10);
+      transform: translate(-50%, -50%) scale3d(10, 10, 10);
       background-color: $color-1;
-      opacity: 1;
+      opacity: 0.2;
     }
   }
+
+  .innerCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    height: 50%;
+    opacity: 1;
+    border-radius: 100%;
+  }
+
+

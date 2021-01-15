@@ -5,7 +5,13 @@ export default function Download() {
 
   return (
     <div className="c-download">
-      <p>Download report.</p>
+      <a
+        href={'href'}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download report.
+      </a>
       <Icon name="download" className="-medium"/>
     </div>
   );

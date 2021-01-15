@@ -1,12 +1,20 @@
 import React from 'react';
 import Download from 'components/download';
+import SocialMedia from 'components/social-media';
 
 export default function Header() {
 
   return (
     <div className="c-home-header">
-      <p>2020 impact review by <span>vizzuality</span></p>
+      <a
+        href="https://www.vizzuality.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        2020 impact review by <span>vizzuality</span>
+      </a>
       <Download />
+      <SocialMedia/>
     </div>
   );
 };
