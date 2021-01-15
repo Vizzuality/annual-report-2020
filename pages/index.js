@@ -27,7 +27,7 @@ export default function Report() {
     !!selectedPiece && setTimeout(() => {
       setModal(true);
     }, 1000);
-  }, [selectedPiece]);  
+  }, [selectedPiece]);
 
   useEffect(() => {
     Modal.setAppElement(`.${styles.container}`);
@@ -43,44 +43,36 @@ export default function Report() {
 
   return (
     <div className={styles.container}>
-      <Head className={styles.header}>
+      <Head>
         <title>Annual report 2020</title>
       </Head>
       {selectedPiece && (
         <div
           className={styles.circle}
           style={{ backgroundColor: CATEGORIES[selectedPiece.category].color }}>
-            <div 
+            <div
               className={styles.innerCircle}
               style={
                 { backgroundColor: CATEGORIES[selectedPiece.category].color,
                   opacity: 1
-                }} 
+                }}
             />
         </div>
       )}
       <ModalComponent
         title={"selectedPiece.category.index.title"}
-        isOpen={isModalOpen} 
-        onRequestClose={handleClose}>     
+        isOpen={isModalOpen}
+        onRequestClose={handleClose}>
         <Layout story={selectedPiece} onClose={handleClose}/>
       </ModalComponent>
- 
       <main className={styles.main}>
-      {/* <ProgressBar positionedPieces={positionedPieces}/> */}
+      {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
         <div className={styles.header}>
           <Header />
         </div>
-        {positionedPieces && (
-          <div>
-            {`Positioned pieces: ${JSON.stringify(positionedPieces)}`}
-            {selectedPiece && `Selected piece: ${selectedPiece}`}
-          </div>
-        )}
-
         <div className={styles.canvasContainer}>
           {hasMounted && (
-            <Suspense fallback={<div>LOADING</div>}>
+            <Suspense fallback={null}>
               <Canvas
                 positionedPieces={positionedPieces}
                 setPositionedPieces={setPositionedPieces}

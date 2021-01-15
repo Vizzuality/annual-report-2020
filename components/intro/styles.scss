@@ -3,10 +3,18 @@
 .c-intro {
   font-family: $font-family-1;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: $z-index-2;
-  
+  z-index: $z-index-15;
+  height: 100vh;
+
+  .intro-container {
+    max-height: 80vh;
+  }
+
   .intro-title {
     display: flex;
     flex-direction: column;
@@ -19,7 +27,7 @@
     * {
       margin: 0;
     }
-  
+
     h2 {
       color: $color-2;
       font-size: 54px;
