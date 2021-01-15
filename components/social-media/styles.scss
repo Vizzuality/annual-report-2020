@@ -1,0 +1,28 @@
+@import 'styles/settings';
+
+  .c-social-media {
+    display: flex;
+    align-items: center;
+
+    .social-networks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      list-style: none;
+
+      li {
+        margin-left: 0;
+        margin-right: 15px;
+
+        a {
+          color: white;
+          text-decoration: none;
+          display: flex;
+        }
+      }
+    }
+  }
+
+
+

@@ -5,7 +5,7 @@ import { CATEGORIES } from '../constants';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
 
-const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece }) => {
+const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report }) => {
   const [draggingPiece, setDraggingPiece] = useState(false);
   const [sphereRotation, setSphereRotation] = useState([0, 0, 0]);
 
@@ -38,6 +38,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece }) => {
       <group rotation = {
         [Math.PI / 4, 0, Math.PI / 6]
       }>
+        {report && (
         <Sphere
           draggingPiece={draggingPiece}
           setPositionedPieces={setPositionedPieces}
@@ -92,7 +93,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece }) => {
               geometry: dpiece23.geometry
             }
           ]}
-        />
+        />)}
       </group>
       <DraggableMesh
         setDraggingPiece={setDraggingPiece}

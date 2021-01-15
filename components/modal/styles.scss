@@ -31,6 +31,7 @@
   bottom: 0;
   position: absolute;
   opacity: 0;
+  animation: fadeIn ease 20s;
 
   &.ReactModal__Content--after-open {
     opacity: 1;

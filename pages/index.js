@@ -32,7 +32,7 @@ export default function Report() {
   useEffect(() => {
     Modal.setAppElement(`.${styles.container}`);
   }, []);
-  const handleReport = () => {
+    const handleReport = () => {
     setReport(true);
   };
 
@@ -49,7 +49,15 @@ export default function Report() {
       {selectedPiece && (
         <div
           className={styles.circle}
-          style={{ backgroundColor: CATEGORIES[selectedPiece.category].color}} />
+          style={{ backgroundColor: CATEGORIES[selectedPiece.category].color }}>
+            <div 
+              className={styles.innerCircle}
+              style={
+                { backgroundColor: CATEGORIES[selectedPiece.category].color,
+                  opacity: 1
+                }} 
+            />
+        </div>
       )}
       <ModalComponent
         title={"selectedPiece.category.index.title"}
@@ -77,6 +85,7 @@ export default function Report() {
                 positionedPieces={positionedPieces}
                 setPositionedPieces={setPositionedPieces}
                 setSelectedPiece={setSelectedPiece}
+                report={isReportOpen}
               />
             </Suspense>
           )}
