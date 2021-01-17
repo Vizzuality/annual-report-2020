@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
-import { useThree } from 'react-three-fiber'
-import { useDrag } from 'react-use-gesture'
+import React, { useRef, useState } from 'react';
+import { useThree } from 'react-three-fiber';
+import { useDrag } from 'react-use-gesture';
+import Wireframe from './mesh-with-wireframe';
 
 function DraggableMesh({
   setDraggingPiece,
@@ -45,23 +46,27 @@ function DraggableMesh({
   return (
     <group position={groupPosition}>
       {!isPositioned && (
-        <mesh
-          position={position}
-          {...bind()}
-          ref={ref}
-          rotation={finalRotation}
+        <Wireframe
+          mesh={
+            <mesh
+              scale={[0.999, 0.999, 0.999]}
+              position={position}
+              {...bind()}
+              ref={ref}
+              rotation={finalRotation}
+              geometry={geometry}
+            >
+              <meshLambertMaterial attach="material" color={category.color} />
+            </mesh>
+          }
           geometry={geometry}
-        >
-          <meshLambertMaterial attach="material" color={category.color} />
-        </mesh>
-      )}
-      <mesh rotation={finalRotation} geometry={geometry}>
-        <meshLambertMaterial
-          attach="material"
-          color={category.color}
-          wireframe
         />
-      </mesh>
+      )}
+      <Wireframe
+        rotation={finalRotation}
+        color={category.color}
+        geometry={geometry}
+      />
     </group>
   );
 }

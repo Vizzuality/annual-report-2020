@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDrag } from 'react-use-gesture';
 import Droppable from './droppable';
+import MeshWithWireframe from './mesh-with-wireframe';
 
 function Sphere({
   draggingPiece,
@@ -20,18 +21,24 @@ function Sphere({
     },
     { pointerEvents: true }
   );
-
   return (
     <group {...(!draggingPiece && bind())} rotation={rotation}>
-      <mesh attach="mesh" geometry={geometry}>
-        <meshStandardMaterial attach="material" wireframe />
-      </mesh>
-      <mesh attach="mesh" geometry={geometry}>
-        <meshLambertMaterial attach="material" color="#272727" />
-      </mesh>
+      <MeshWithWireframe
+        mesh={
+          <mesh attach="mesh" geometry={geometry} scale={[0.999, 0.999, 0.999]}>
+            <meshLambertMaterial attach="material" color="#272727" />
+          </mesh>
+        }
+        geometry={geometry}
+      />
       {droppables &&
         droppables.map((droppable) => {
-          const { category, index, position, geometry: pieceGeometry } = droppable;
+          const {
+            category,
+            index,
+            position,
+            geometry: pieceGeometry
+          } = droppable;
           return (
             <Droppable
               key={`droppable-${category.index}-${index}`}
