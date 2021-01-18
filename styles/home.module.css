@@ -53,26 +53,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  animation-name: stretch;
-  animation-duration: 2s;
-  animation-delay: 0;
+  animation: stretch 750ms ease-out;
   border-radius: 100%;
-  animation-fill-mode: forwards;
-  animation-play-state: running;
 }
 
   @keyframes stretch {
     0% {
-      background-color: $color-1;
+      opacity: 0;
     }
-    /* 50% {
-      transform: scale3d(4, 4, 4);
-      opacity: 0.9;
-    } */
+    50% {
+      opacity: 0.95;
+    }
     100% {
-      transform: translate(-50%, -50%) scale3d(10, 10, 10);
-      background-color: $color-1;
-      opacity: 0.2;
+      transform: scale3d(20, 20, 20);
+      opacity: 1;
     }
   }
 

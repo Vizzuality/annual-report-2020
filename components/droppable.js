@@ -38,6 +38,12 @@ function Droppable({
       <mesh
         attach="mesh"
         geometry={geometry}
+        onClick = {
+          () => isPositioned && setSelectedPiece({
+            category: category.index,
+            index: dropIndex
+          })
+        }
         onPointerOver={() => {
           if (isPieceMatching) {
             setSelectedPiece({ category: draggingPiece.category, index: draggingPiece.index })

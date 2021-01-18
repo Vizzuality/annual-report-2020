@@ -9,9 +9,11 @@ import ModalComponent from 'components/modal';
 import Modal from 'react-modal';
 import Intro from 'components/intro';
 import Icons from 'components/icons';
+import debounce from 'lodash/debounce';
 
 import { CATEGORIES } from 'components/layout/constants.js';
-
+import useSound from 'use-sound';
+import openAudio from '../sounds/open.mp3'
 
 const Canvas = lazy(() => import('../components/canvas'));
 
@@ -21,12 +23,15 @@ export default function Report() {
   const [selectedPiece, setSelectedPiece] = useState(null);
   const [isModalOpen, setModal] = useState(false);
   const [isReportOpen, setReport] = useState(false);
-
+    const [play] = useSound(openAudio);
   useEffect(() => {
     setHasMounted(true);
-    !!selectedPiece && setTimeout(() => {
-      setModal(true);
-    }, 1000);
+    if (!!selectedPiece) {
+      debounce(() => play(), 100)();
+      setTimeout(() => {
+        setModal(true);
+      }, 500);
+    }
   }, [selectedPiece]);
 
   useEffect(() => {
@@ -40,7 +45,6 @@ export default function Report() {
     setSelectedPiece(null);
     setModal(false);
   };
-
   return (
     <div className={styles.container}>
       <Head>
