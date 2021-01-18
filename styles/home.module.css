@@ -59,20 +59,13 @@
   border-radius: 100%;
   animation-fill-mode: forwards;
   animation-play-state: running;
+  opacity: 0.5;
 }
 
   @keyframes stretch {
-    0% {
-      background-color: $color-1;
-    }
-    /* 50% {
-      transform: scale3d(4, 4, 4);
-      opacity: 0.9;
-    } */
     100% {
-      transform: translate(-50%, -50%) scale3d(10, 10, 10);
-      background-color: $color-1;
-      opacity: 0.2;
+      transform: translate(-50%, -50%) scale3d(20, 20, 20);
+      opacity: 1;
     }
   }
 

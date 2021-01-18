@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react'
+import React, { useState } from 'react'
 import DraggableMesh from './draggable'
 import Sphere from './sphere'
 import { CATEGORIES } from '../constants';

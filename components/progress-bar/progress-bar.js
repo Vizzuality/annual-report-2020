@@ -17,7 +17,7 @@ const ProggresBar = ({ positionedPieces }) => {
   return (
     <div className="c-progress-bar">
       <div className="progress-container">
-        {steps && steps.map(s => (<span className={cx('step', `step-${s.category}`, {'active': s.active})} />))}
+        {steps && steps.map(s => (<span key={`${s.category}${s.page}`} className={cx('step', `step-${s.category}`, {'active': s.active})} />))}
       </div>
     </div>
   );
