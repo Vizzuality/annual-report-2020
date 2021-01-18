@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Content = ({ children }) => {
   return (
       <div className="l-content">

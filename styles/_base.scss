@@ -2,19 +2,33 @@ html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: $background-color;
-
   /* touch-action: none is essential for mobile drag */
   touch-action: none;
+
+  &.-no-scroll,
+  &.no-scroll {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 * {

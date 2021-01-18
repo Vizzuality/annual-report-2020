@@ -1,26 +1,33 @@
 @import 'styles/settings';
 
+
 .l-footer {
   border-top: 2px solid black;
   position: relative;
   display: flex;
   justify-content: space-between;
-  
+
   .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    flex-direction: column;
+
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, sm)) {
+      flex-direction: row;
+    }
+
     .footer-info {
       display: flex;
-      align-items: center; 
+      align-items: center;
 
       img {
         max-width: 90px;
         max-height: 80px;
         padding-right: 20px;
       }
-  
+
       p {
         display: inline-flex;
         max-width: 300px;
@@ -29,11 +36,8 @@
   }
 
   .footer-button {
+    @include button;
     background-color: black;
     color: white;
-    padding: 20px 100px;
-    border: none;
-    font-size: 18px;
-    text-align: center;
   }
 }

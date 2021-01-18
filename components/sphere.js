@@ -13,11 +13,12 @@ function Sphere({
   geometry
 }) {
   const [rotation, setRotation] = useState([0, 0, 0]);
+  const rotationSpeed = 1 / 200;
   const bind = useDrag(
     ({ offset: [y] }) => {
       const [x, , z] = rotation;
-      setRotation([x, y / 10, z]);
-      setSphereRotation([x, y / 10, z]);
+      setRotation([x, y * rotationSpeed, z]);
+      setSphereRotation([x, y * rotationSpeed, z]);
     },
     { pointerEvents: true }
   );

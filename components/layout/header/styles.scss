@@ -12,7 +12,7 @@
       font-size: 16px;
       font-weight: normal;
       line-height: 30px;
-  
+
       span {
         font-size: 25px;
       }
@@ -27,7 +27,7 @@
       padding: 0;
       border: 0;
       cursor: pointer;
-      z-index: 2;
+      z-index: $z-index-100;
       background-color: transparent;
 
       svg {
@@ -42,9 +42,10 @@
       }
     }
   }
-    
+
   .l-header-title {
     font-size: 80px;
+    line-height: 1.2;
   }
 
   &.-mobile {

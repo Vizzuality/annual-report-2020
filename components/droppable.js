@@ -16,17 +16,15 @@ function Droppable({
     positionedPieces &&
     positionedPieces[category.index] &&
     positionedPieces[category.index][dropIndex];
-
+  const isPieceMatching = draggingPiece &&
+    category &&
+    dropIndex === draggingPiece.index &&
+    category.index === draggingPiece.category
   useEffect(() => {
     if (isPositioned) {
-      setColor('white');
+      setColor(category.color);
     } else {
-      if (
-        draggingPiece &&
-        category &&
-        dropIndex === draggingPiece.index &&
-        category.index === draggingPiece.category
-      ) {
+      if (isPieceMatching) {
         setColor(color);
       } else {
         setColor('black');
@@ -40,13 +38,14 @@ function Droppable({
       <mesh
         attach="mesh"
         geometry={geometry}
+        onClick = {
+          () => isPositioned && setSelectedPiece({
+            category: category.index,
+            index: dropIndex
+          })
+        }
         onPointerOver={() => {
-          if (
-            draggingPiece &&
-            category &&
-            dropIndex === draggingPiece.index &&
-            category.index === draggingPiece.category
-          ) {
+          if (isPieceMatching) {
             setSelectedPiece({ category: draggingPiece.category, index: draggingPiece.index })
             setPositionedPieces({
               ...positionedPieces,
@@ -56,9 +55,6 @@ function Droppable({
               }
             });
           }
-        }}
-        onPointerOut={() => {
-          draggingPiece && setColor(color);
         }}
       >
         <meshLambertMaterial attach="material" color={updatedColor} />

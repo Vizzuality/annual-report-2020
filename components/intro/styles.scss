@@ -1,0 +1,63 @@
+@import 'styles/settings';
+
+.c-intro {
+  font-family: $font-family-1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: $z-index-15;
+  height: 100vh;
+
+  .intro-container {
+    max-height: 80vh;
+  }
+
+  .intro-title {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family-2;
+    letter-spacing: 0;
+    align-items: center;
+
+    font-size: 50px;
+    line-height: 1.2;
+
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+      font-size: 80px;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    h2 {
+      color: $color-2;
+      font-size: 54px;
+      font-weight: 600;
+      line-height: 65px;
+    }
+  }
+
+  .intro-text {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 35px;
+    margin: 60px;
+
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+      margin: 110px
+    }
+  }
+
+  button {
+    @include button;
+    margin: 20px auto;
+  }
+
+  @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+    padding: 20px 50px;
+  }
+}

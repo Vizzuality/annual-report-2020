@@ -21,7 +21,7 @@ function MeshWithWireframe({
       <wireframeGeometry2 attach="geometry" ref={lines} />
       <lineMaterial
         attach="material"
-        color={color || "white"}}
+        color={color || "white"}
         linewidth={resolutionRatio / 5}
         resolution={[resolution, resolution]}
       />

@@ -1,0 +1,41 @@
+@import 'styles/settings';
+
+  .c-progress-bar {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    z-index: $z-index-20;
+    display: flex;
+    justify-content: center;
+
+    .progress-container {
+      display: flex;
+      width: 260px;
+      justify-content: space-evenly;
+    }
+
+    .step {
+      width: 8px;
+      height: 8px;
+      background-color: $gray-300;
+      transform: rotate(45deg);
+
+      &.active {
+        &.step-0 {
+          background-color: $color-1;
+        }
+
+        &.step-1 {
+          background-color: $color-2;
+        }
+
+        &.step-2 {
+          background-color: $color-3;
+        }
+      }
+
+    }
+  }
+
+
+

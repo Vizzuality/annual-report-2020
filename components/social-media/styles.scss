@@ -1,0 +1,41 @@
+@import 'styles/settings';
+
+  .c-social-media {
+    display: flex;
+    align-items: center;
+
+    .title {
+      // visually hidden. To avoid display: none
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+
+      @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+        position: relative;
+        top: initial;
+        left: initial;
+      }
+    }
+
+    .social-networks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      list-style: none;
+
+      li {
+        margin-left: 0;
+        margin-right: 15px;
+
+        a {
+          color: white;
+          text-decoration: none;
+          display: flex;
+        }
+      }
+    }
+  }
+
+
+

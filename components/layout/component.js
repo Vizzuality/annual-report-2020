@@ -22,11 +22,11 @@ const Layout = ({ story, onClose }) => {
 
   return (
     <div className={`l-layout theme${story.category}`}>
-      {isMobile && <HeaderMobile title={CATEGORIES[story.category].title} onClick={() => onClose(null)} />}
-      {!isMobile && <HeaderDesktop title={CATEGORIES[story.category].title} onClick={() => onClose(null)} />}
+      {isMobile && <HeaderMobile title={CATEGORIES[story.category].title} onClick={onClose} />}
+      {!isMobile && <HeaderDesktop title={CATEGORIES[story.category].title} onClick={onClose} />}
 
       <Content>{CATEGORIES[story.category].index[story.index]()}</Content>
-      <Footer onClick={() => onClose(null)} />
+      <Footer onClick={onClose} />
     </div>
   )
 };
