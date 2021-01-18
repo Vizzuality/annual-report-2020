@@ -30,7 +30,7 @@ export default function Report() {
       debounce(() => play(), 100)();
       setTimeout(() => {
         setModal(true);
-      }, 1000);
+      }, 500);
     }
   }, [selectedPiece]);
 

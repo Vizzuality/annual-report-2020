@@ -16,7 +16,7 @@ export const CATEGORIES = {
       1: Page2,
       2: Page3
     },
-    color: 'rgba(46, 138, 138, 0.5)',
+    color: '#A087FF'
   },
   1: {
     title: 'Future',
@@ -25,7 +25,7 @@ export const CATEGORIES = {
       1: Page5,
       2: Page6
     },
-    color: 'rgba(46, 138, 138, 0.5)',
+    color: '#2BA4A0'
   },
   2: {
     title: 'Whatever',
@@ -34,6 +34,6 @@ export const CATEGORIES = {
       1: Page8,
       2: Page9
     },
-    color: 'rgba(46, 138, 138, 0.5)',
+    color: '#FFAA36'
   }
 };
