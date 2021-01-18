@@ -70,11 +70,11 @@ export default function Report() {
       {selectedPiece && (
         <div
           className={styles.circle}
-          style={{ backgroundColor: CATEGORIES[selectedPiece.category].color }}>
+          style={{ backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color }}>
             <div
               className={styles.innerCircle}
               style={
-                { backgroundColor: CATEGORIES[selectedPiece.category].color,
+                { backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color,
                   opacity: 1
                 }}
             />

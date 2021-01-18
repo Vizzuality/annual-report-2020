@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Icon from 'components/icon';
 
 const HeaderDesktop = ({ title, onClick }) => (
-    <header className="l-header">
+    <header className="l-header -desktop">
         <div className="wrapper">
             <div className="l-header-content">
                 <p>2020 impact review by <span>vizzuality</span></p>

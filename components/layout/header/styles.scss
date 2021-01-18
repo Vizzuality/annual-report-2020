@@ -46,9 +46,22 @@
   .l-header-title {
     font-size: 80px;
     line-height: 1.2;
+    position: relative;
+  }
+
+  &.-desktop {
+    animation: scrollingTitle 10s 2;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes scrollingTitle {
+      0% { left: 100vw; right: -100vw; }
+      100% { left: -100vw;  right: 100vw; }
+    }
   }
 
   &.-mobile {
+    animation: none;
     border-bottom: 1px solid black;
 
     .l-header-content {
