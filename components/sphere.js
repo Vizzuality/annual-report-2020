@@ -27,7 +27,7 @@ function Sphere({
       <MeshWithWireframe
         mesh={
           <mesh attach="mesh" geometry={geometry} scale={[0.999, 0.999, 0.999]}>
-            <meshLambertMaterial attach="material" color="#272727" />
+            <meshLambertMaterial attach="material" color="#000" />
           </mesh>
         }
         geometry={geometry}
