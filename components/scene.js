@@ -33,6 +33,112 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       dpiece23
     }
   } = gltf;
+
+  const draggables = [
+    {
+      index: 0,
+      category: CATEGORIES.buildingKnowledge,
+      position: [3.5, 2],
+      geometry: piece01.geometry
+    },
+    {
+      index: 1,
+      category: CATEGORIES.buildingKnowledge,
+      position: [-3.5, 0],
+      geometry: piece02.geometry
+    },
+    {
+      index: 2,
+      category: CATEGORIES.buildingKnowledge,
+      position: [3.5, -0.5],
+      geometry: piece03.geometry
+    },
+    {
+      index: 0,
+      category: CATEGORIES.future,
+      position: [-3.5, 2],
+      geometry: piece11.geometry
+    },
+    {
+      index: 1,
+      category: CATEGORIES.future,
+      position: [-3.5, -2],
+      geometry: piece12.geometry
+    },
+    {
+      index: 2,
+      category: CATEGORIES.future,
+      position: [-4.5, -1],
+      geometry: piece13.geometry
+    },
+    {
+      index: 0,
+      category: CATEGORIES.whatever,
+      position: [4.5, 1],
+      geometry: piece21.geometry
+    },
+    {
+      index: 1,
+      category: CATEGORIES.whatever,
+      position: [-4.5, 1],
+      geometry: piece22.geometry
+    },
+    {
+      index: 2,
+      category: CATEGORIES.whatever,
+      position: [4, -2],
+      geometry: piece23.geometry
+    },
+  ];
+
+  const droppables = [{
+      index: 0,
+      category: CATEGORIES.buildingKnowledge,
+      geometry: dpiece01.geometry
+    },
+    {
+      index: 1,
+      category: CATEGORIES.buildingKnowledge,
+      geometry: dpiece02.geometry
+    },
+    {
+      index: 2,
+      category: CATEGORIES.buildingKnowledge,
+      geometry: dpiece03.geometry
+    },
+    {
+      index: 0,
+      category: CATEGORIES.future,
+      geometry: dpiece11.geometry
+    },
+    {
+      index: 1,
+      category: CATEGORIES.future,
+      geometry: dpiece12.geometry
+    },
+    {
+      index: 2,
+      category: CATEGORIES.future,
+      geometry: dpiece13.geometry
+    },
+    {
+      index: 0,
+      category: CATEGORIES.whatever,
+      geometry: dpiece21.geometry
+    },
+    {
+      index: 1,
+      category: CATEGORIES.whatever,
+      geometry: dpiece22.geometry
+    },
+    {
+      index: 2,
+      category: CATEGORIES.whatever,
+      geometry: dpiece23.geometry
+    }
+  ];
+
+
   return (
     <>
       <group rotation = {
@@ -46,136 +152,20 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
           setSphereRotation={setSphereRotation}
           setSelectedPiece={setSelectedPiece}
           geometry={sphere.geometry}
-          droppables={[
-            {
-              index: 0,
-              category: CATEGORIES.buildingKnowledge,
-              geometry: dpiece01.geometry
-            },
-            {
-              index: 1,
-              category: CATEGORIES.buildingKnowledge,
-              geometry: dpiece02.geometry
-            },
-            {
-              index: 2,
-              category: CATEGORIES.buildingKnowledge,
-              geometry: dpiece03.geometry
-            },
-            {
-              index: 0,
-              category: CATEGORIES.future,
-              geometry: dpiece11.geometry
-            },
-            {
-              index: 1,
-              category: CATEGORIES.future,
-              geometry: dpiece12.geometry
-            },
-            {
-              index: 2,
-              category: CATEGORIES.future,
-              geometry: dpiece13.geometry
-            },
-            {
-              index: 0,
-              category: CATEGORIES.whatever,
-              geometry: dpiece21.geometry
-            },
-            {
-              index: 1,
-              category: CATEGORIES.whatever,
-              geometry: dpiece22.geometry
-            },
-            {
-              index: 2,
-              category: CATEGORIES.whatever,
-              geometry: dpiece23.geometry
-            }
-          ]}
+          droppables={droppables}
         />)}
       </group>
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        position={[3.5, 2, 10]}
-        rotation={sphereRotation}
-        index={0}
-        category={CATEGORIES.buildingKnowledge}
-        positionedPieces={positionedPieces}
-        geometry={piece01.geometry}
-      />
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        position={[-3.5, 0, 10]}
-        rotation={sphereRotation}
-        index={1}
-        category={CATEGORIES.buildingKnowledge}
-        positionedPieces={positionedPieces}
-        geometry={piece02.geometry}
-      />
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        rotation={sphereRotation}
-        position={[3.5, -0.5, 10]}
-        index={2}
-        category={CATEGORIES.buildingKnowledge}
-        positionedPieces={positionedPieces}
-        geometry={piece03.geometry}
-      />
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        rotation={sphereRotation}
-        position={[-3.5, 2, 10]}
-        index={0}
-        category={CATEGORIES.future}
-        positionedPieces={positionedPieces}
-        geometry={piece11.geometry}
-      />
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        rotation={sphereRotation}
-        position={[-3.5, -2, 10]}
-        index={1}
-        category={CATEGORIES.future}
-        positionedPieces={positionedPieces}
-        geometry={piece12.geometry}
-      />
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        rotation={sphereRotation}
-        position={[-4.5, -1, 10]}
-        index={2}
-        category={CATEGORIES.future}
-        positionedPieces={positionedPieces}
-        geometry={piece13.geometry}
-      />
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        rotation={sphereRotation}
-        position={[4.5, 1, 10]}
-        index={0}
-        category={CATEGORIES.whatever}
-        positionedPieces={positionedPieces}
-        geometry={piece21.geometry}
-      />
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        rotation={sphereRotation}
-        position={[-4.5, 1, 10]}
-        index={1}
-        category={CATEGORIES.whatever}
-        positionedPieces={positionedPieces}
-        geometry={piece22.geometry}
-      />
-      <DraggableMesh
-        setDraggingPiece={setDraggingPiece}
-        rotation={sphereRotation}
-        position={[4, -2, 10]}
-        index={2}
-        category={CATEGORIES.whatever}
-        positionedPieces={positionedPieces}
-        geometry={piece23.geometry}
-      />
+      {draggables.map(d => (
+        <DraggableMesh
+          setDraggingPiece={setDraggingPiece}
+          rotation={sphereRotation}
+          position={[...d.position, 10]}
+          index={d.index}
+          category={d.category}
+          positionedPieces={positionedPieces}
+          geometry={d.geometry}
+        />
+      ))}
       <ambientLight intensity={0.2} />
       <spotLight intensity={0.8} position={[300, 300, 400]} />
     </>
