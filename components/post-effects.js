@@ -3,7 +3,7 @@ import { BlendFunction } from 'postprocessing'
 
 const Effects = () => (
   <EffectComposer>
-    <Noise opacity={0.5}/>
+    <Noise opacity={0.35}/>
   </EffectComposer>
 );
 
