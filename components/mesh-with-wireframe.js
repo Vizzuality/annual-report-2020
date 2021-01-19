@@ -9,16 +9,17 @@ import * as THREE from 'three';
 extend({ LineMaterial, WireframeGeometry2, Wireframe });
 
 function MeshWithWireframe({
-  mesh, geometry, rotation, color
+  mesh, geometry, position, rotation, color, renderOrder
 }) {
   const lines = useUpdate((geo) => geo.fromEdgesGeometry(new THREE.EdgesGeometry(geometry)), []);
   const resolutionRatio = 1;
   const resolution = 256 * resolutionRatio;
+  const otherProps = { position, rotation, renderOrder };
   return (
   <>
     {mesh}
-    <wireframe >
-      <wireframeGeometry2 attach="geometry" ref={lines} />
+    <wireframe {...otherProps}>
+      <wireframeGeometry2 attach="geometry" ref={lines}/>
       <lineMaterial
         attach="material"
         color={color || "white"}

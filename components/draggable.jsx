@@ -68,12 +68,17 @@ function DraggableMesh({
             </mesh>
           }
           geometry={geometry}
+          rotation={finalRotation}
+          position={position}
+          color="black"
+          renderOrder={1}
         />
       )}
       <Wireframe
         rotation={finalRotation}
         color={category.color}
         geometry={geometry}
+        renderOrder={0}
       />
     </group>
   );
