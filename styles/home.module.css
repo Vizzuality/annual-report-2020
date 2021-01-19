@@ -5,6 +5,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .canvasContainer {
@@ -16,6 +22,10 @@
 .main {
   color: white;
   flex: 1;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -29,4 +39,52 @@
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+}
+
+.circle {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  top: calc(50% + 200px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: stretch 750ms ease-out;
+  border-radius: 100%;
+}
+
+@keyframes stretch {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: scale3d(20, 20, 20);
+    opacity: 1;
+  }
+}
+
+.innerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
+  height: 50%;
+  opacity: 1;
+  border-radius: 100%;
 }
