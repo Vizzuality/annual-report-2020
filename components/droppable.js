@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Wireframe from './mesh-with-wireframe';
 
 function Droppable({
   draggingPiece,
@@ -12,14 +13,17 @@ function Droppable({
 }) {
   const { color } = category;
   const [updatedColor, setColor] = useState(color);
+
   const isPositioned =
     positionedPieces &&
     positionedPieces[category.index] &&
     positionedPieces[category.index][dropIndex];
+
   const isPieceMatching = draggingPiece &&
     category &&
     dropIndex === draggingPiece.index &&
-    category.index === draggingPiece.category
+    category.index === draggingPiece.category;
+
   useEffect(() => {
     if (isPositioned) {
       setColor(category.color);
@@ -32,34 +36,45 @@ function Droppable({
     }
   }, [draggingPiece, category]);
 
-  if(!geometry) return null;
+  if (!geometry) return null;
   return (
-    <group position={position}>
-      <mesh
-        attach="mesh"
-        geometry={geometry}
-        onClick = {
-          () => isPositioned && setSelectedPiece({
-            category: category.index,
-            index: dropIndex
-          })
-        }
-        onPointerOver={() => {
-          if (isPieceMatching) {
-            setSelectedPiece({ category: draggingPiece.category, index: draggingPiece.index })
-            setPositionedPieces({
-              ...positionedPieces,
-              [draggingPiece.category]: {
-                ...(positionedPieces || {})[draggingPiece.category],
-                [draggingPiece.index]: true
-              }
-            });
+    <Wireframe
+      geometry={geometry}
+      color={isPositioned ? 'white' : color}
+      renderOrder={1}
+      position={position}
+      outline
+      linewidth={3}
+      mesh={
+        <mesh
+          attach="mesh"
+          geometry={geometry}
+          position = {
+            position
           }
-        }}
-      >
-        <meshLambertMaterial attach="material" color={updatedColor} />
-      </mesh>
-    </group>
+          onClick = {
+            () => isPositioned && setSelectedPiece({
+              category: category.index,
+              index: dropIndex
+            })
+          }
+          onPointerOver={() => {
+            if (isPieceMatching) {
+              setSelectedPiece({ category: draggingPiece.category, index: draggingPiece.index })
+              setPositionedPieces({
+                ...positionedPieces,
+                [draggingPiece.category]: {
+                  ...(positionedPieces || {})[draggingPiece.category],
+                  [draggingPiece.index]: true
+                }
+              });
+            }
+          }}
+        >
+          <meshLambertMaterial attach="material" color={updatedColor} />
+        </mesh>
+      }
+    />
   );
 }
 

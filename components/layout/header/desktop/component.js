@@ -20,7 +20,7 @@ const HeaderDesktop = ({ title, onClick }) => (
     </header>
 );
 
-HeaderDesktop.PropTypes = {
+HeaderDesktop.propTypes = {
   title: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
 };
