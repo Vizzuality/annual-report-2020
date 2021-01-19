@@ -59,7 +59,11 @@ export default function Report() {
     setModal(false);
   };
   return (
-    <div className = {cx(styles.container, { '-intro': !isReportOpen })}>
+    < div className = {
+      cx(styles.container, {
+        'overflow-auto': !isReportOpen
+      })
+    } >
       <Head>
         <title>Annual report 2020</title>
       </Head>
