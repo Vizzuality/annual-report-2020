@@ -1,7 +1,6 @@
 import React, { useState, lazy, useEffect, Suspense } from 'react';
 import Head from 'next/head';
 import styles from '../styles/home.module.css';
-// import { Canvas } from 'react-three-fiber';
 import Header from 'components/home/header';
 import Layout from 'components/layout';
 import ProgressBar from 'components/progress-bar';
@@ -10,7 +9,7 @@ import Modal from 'react-modal';
 import Intro from 'components/intro';
 import Icons from 'components/icons';
 import debounce from 'lodash/debounce';
-
+import cx from 'classnames';
 import { CATEGORIES } from 'components/layout/constants.js';
 import useSound from 'use-sound';
 import openAudio from '../sounds/open.mp3'
@@ -46,7 +45,7 @@ export default function Report() {
     setModal(false);
   };
   return (
-    <div className={styles.container}>
+    <div className = {cx(styles.container, { '-intro': isReportOpen })}>
       <Head>
         <title>Annual report 2020</title>
       </Head>
