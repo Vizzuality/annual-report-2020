@@ -13,6 +13,7 @@ import cx from 'classnames';
 import { CATEGORIES } from 'components/layout/constants.js';
 import useSound from 'use-sound';
 import openAudio from '../sounds/open.mp3'
+import breakpoints from 'utils/breakpoints';
 
 const Canvas = lazy(() => import('../components/canvas'));
 
@@ -22,7 +23,20 @@ export default function Report() {
   const [selectedPiece, setSelectedPiece] = useState(null);
   const [isModalOpen, setModal] = useState(false);
   const [isReportOpen, setReport] = useState(false);
-    const [play] = useSound(openAudio);
+  const [play] = useSound(openAudio);
+
+  const [isMobile, setLayout] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
+    window.addEventListener("resize", handleResize);
+    setLayout(window.innerWidth < breakpoints.sm);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log('is', isMobile)
   useEffect(() => {
     setHasMounted(true);
     if (!!selectedPiece) {
@@ -66,7 +80,7 @@ export default function Report() {
         title={"selectedPiece.category.index.title"}
         isOpen={isModalOpen}
         onRequestClose={handleClose}>
-        <Layout story={selectedPiece} onClose={handleClose}/>
+        <Layout story={selectedPiece} onClose={handleClose} isMobile={isMobile}/>
       </ModalComponent>
       <main className={styles.main}>
         {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
@@ -83,6 +97,7 @@ export default function Report() {
                 setPositionedPieces={setPositionedPieces}
                 setSelectedPiece={setSelectedPiece}
                 report={isReportOpen}
+                isMobile={isMobile}
               />
             </Suspense>
           )}

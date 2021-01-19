@@ -5,7 +5,7 @@ import { CATEGORIES } from '../constants';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
 
-const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report }) => {
+const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report, isMobile }) => {
   const [draggingPiece, setDraggingPiece] = useState(false);
   const [sphereRotation, setSphereRotation] = useState([0, 0, 0]);
 
@@ -39,54 +39,63 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       index: 0,
       category: CATEGORIES.buildingKnowledge,
       position: [3.5, 2],
+      positionMobile: [2, 2.5],
       geometry: piece01.geometry
     },
     {
       index: 1,
       category: CATEGORIES.buildingKnowledge,
       position: [-3.5, 0],
+      positionMobile: [0, -2.75],
       geometry: piece02.geometry
     },
     {
       index: 2,
       category: CATEGORIES.buildingKnowledge,
       position: [3.5, -0.5],
+      positionMobile: [-2, 2.5],
       geometry: piece03.geometry
     },
     {
       index: 0,
       category: CATEGORIES.future,
       position: [-3.5, 2],
+      positionMobile: [-0.5, 2.5],
       geometry: piece11.geometry
     },
     {
       index: 1,
       category: CATEGORIES.future,
       position: [-3.5, -2],
+      positionMobile: [2, -2.5],
       geometry: piece12.geometry
     },
     {
       index: 2,
       category: CATEGORIES.future,
       position: [-4.5, -1],
+      positionMobile: [-2,-2.5],
       geometry: piece13.geometry
     },
     {
       index: 0,
       category: CATEGORIES.whatever,
       position: [4.5, 1],
+      positionMobile: [-1, -3.5],
       geometry: piece21.geometry
     },
     {
       index: 1,
       category: CATEGORIES.whatever,
       position: [-4.5, 1],
+      positionMobile: [1, -3.5],
       geometry: piece22.geometry
     },
     {
       index: 2,
       category: CATEGORIES.whatever,
       position: [4, -2],
+      positionMobile: [1, 2.5],
       geometry: piece23.geometry
     },
   ];
@@ -159,7 +168,9 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
         <DraggableMesh
           setDraggingPiece={setDraggingPiece}
           rotation={sphereRotation}
-          position={[...d.position, 10]}
+          position = {
+            [...d[isMobile ? 'positionMobile' : 'position'], 10]
+          }
           index={d.index}
           category={d.category}
           positionedPieces={positionedPieces}

@@ -3,13 +3,12 @@ import { Canvas } from 'react-three-fiber';
 import Scene from '../components/scene';
 import Effects from '../components/post-effects';
 
-const ThreeCanvas = ({ positionedPieces, setPositionedPieces, setSelectedPiece, report }) => {
+const ThreeCanvas = ({ positionedPieces, setPositionedPieces, setSelectedPiece, report, isMobile }) => {
   const [innerWidth, setInnerWidth] = useState(null);
   useEffect(() => {
     setInnerWidth(window.innerWidth);
   }, []);
-  const zoom = innerWidth / 11;
-
+  const zoom = innerWidth / (isMobile ? 6 : 11);
   return innerWidth && (
     <Canvas orthographic camera={{ zoom, position: [0, 0, zoom] }}>
       <Suspense fallback={null}>
@@ -18,6 +17,7 @@ const ThreeCanvas = ({ positionedPieces, setPositionedPieces, setSelectedPiece, 
           positionedPieces={positionedPieces}
           setSelectedPiece={setSelectedPiece}
           report={report}
+          isMobile={isMobile}
         />
       </Suspense>
       <Effects />
