@@ -3,30 +3,37 @@
   .c-social-media {
     display: flex;
     align-items: center;
+    flex-direction: column;
+
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+      flex-direction: row;
+    }
 
     .title {
-      // visually hidden. To avoid display: none
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
 
+      margin-bottom: 10px;
       @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
-        position: relative;
-        top: initial;
-        left: initial;
+        margin-bottom: 0;
       }
     }
 
     .social-networks {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       margin: 0;
       list-style: none;
 
+      @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+        justify-content: center;
+      }
+
       li {
-        margin-left: 0;
-        margin-right: 15px;
+        margin: 0 0 10px 10px;
+
+        @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+          margin: 0 15px 0 0;
+        }
 
         a {
           color: white;

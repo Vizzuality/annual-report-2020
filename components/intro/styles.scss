@@ -49,16 +49,19 @@
   }
 
   .intro-text {
-    font-size: 20px;
     font-weight: 300;
-    line-height: 35px;
+    font-size: 14px;
+    line-height: 1.6;
 
     @media screen and (min-width: map-get($flexboxgrid-breakpoints, sm)) {
+      font-size: 20px;
+      line-height: 35px;
       margin: 60px;
     }
 
     @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
-      margin: 110px
+      margin: 110px;
+      max-width: 60vw;
     }
   }
 

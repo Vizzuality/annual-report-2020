@@ -10,7 +10,8 @@ function DraggableMesh({
   index: pieceIndex,
   category,
   positionedPieces,
-  geometry
+  geometry,
+  rotationCorrection
 }) {
   const isPositioned = positionedPieces && positionedPieces[category.index] && positionedPieces[category.index][pieceIndex];
 
@@ -45,10 +46,11 @@ function DraggableMesh({
     { pointerEvents: true }
   );
   // TODO: Not final. Just aprox.
+  const [cx, cy, cz] = rotationCorrection || [0, 0, 0];
   const finalRotation = [
-    groupRotation[0] + Math.PI / 4,
-    groupRotation[1],
-    Math.PI / 6
+    groupRotation[0] + Math.PI / 4 + cx,
+    groupRotation[1] + Math.PI / 10 + cy,
+    Math.PI / 6 + cz
   ];
 
   return (
@@ -57,7 +59,6 @@ function DraggableMesh({
         <Wireframe
           mesh={
             <mesh
-              scale={[0.999, 0.999, 0.999]}
               position={position}
               {...(isEnabled && bind())}
               ref={ref}
