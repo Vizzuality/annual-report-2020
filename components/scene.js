@@ -40,6 +40,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.buildingKnowledge,
       position: [3.5, 2],
       positionMobile: [2, 2.5],
+      rotationCorrection: [Math.PI / 12, Math.PI / 12, - Math.PI / 4],
       geometry: piece01.geometry
     },
     {
@@ -47,6 +48,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.buildingKnowledge,
       position: [-3.5, 0],
       positionMobile: [0, -2.75],
+      rotationCorrection: [Math.PI / 6, 0, -Math.PI / 3.5],
       geometry: piece02.geometry
     },
     {
@@ -54,6 +56,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.buildingKnowledge,
       position: [3.5, -0.5],
       positionMobile: [-2, 2.5],
+      rotationCorrection: [Math.PI / 6, 0, - Math.PI / 6],
       geometry: piece03.geometry
     },
     {
@@ -61,6 +64,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.future,
       position: [-3.5, 2],
       positionMobile: [-0.5, 2.5],
+      rotationCorrection: [-Math.PI / 12, -Math.PI / 12, 0],
       geometry: piece11.geometry
     },
     {
@@ -68,6 +72,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.future,
       position: [-3.5, -2],
       positionMobile: [2, -2.5],
+      rotationCorrection: [Math.PI / 12, 0, -Math.PI / 12],
       geometry: piece12.geometry
     },
     {
@@ -75,6 +80,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.future,
       position: [-4.5, -1],
       positionMobile: [-2,-2.5],
+      rotationCorrection: [Math.PI / 12, - Math.PI / 12, -Math.PI / 12],
       geometry: piece13.geometry
     },
     {
@@ -82,6 +88,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.whatever,
       position: [4.5, 1],
       positionMobile: [-1, -3.5],
+      rotationCorrection: [Math.PI / 12, -Math.PI / 12, Math.PI / 12],
       geometry: piece21.geometry
     },
     {
@@ -89,6 +96,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.whatever,
       position: [-4.5, 1],
       positionMobile: [1, -3.5],
+      rotationCorrection: [- Math.PI / 12, - Math.PI / 3.5, - Math.PI / 2.5],
       geometry: piece22.geometry
     },
     {
@@ -96,6 +104,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       category: CATEGORIES.whatever,
       position: [4, -2],
       positionMobile: [1, 2.5],
+      rotationCorrection: [0, -Math.PI / 10, -Math.PI / 3],
       geometry: piece23.geometry
     },
   ];
@@ -175,6 +184,9 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
           category={d.category}
           positionedPieces={positionedPieces}
           geometry={d.geometry}
+          rotationCorrection = {
+            d.rotationCorrection
+          }
         />
       ))}
       <ambientLight intensity={0.2} />
