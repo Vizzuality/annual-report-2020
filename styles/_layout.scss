@@ -6,7 +6,7 @@
     margin: 0 auto;
     padding: $flexboxgrid-outer-margin/2;
     position: relative;
-  
+
     @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
       padding: $flexboxgrid-outer-margin;
     }
