@@ -4,6 +4,7 @@ import styles from '../styles/home.module.css';
 import Header from 'components/home/header';
 import Layout from 'components/layout';
 import ProgressBar from 'components/progress-bar';
+import SoundButton from 'components/sound-button';
 import ModalComponent from 'components/modal';
 import Modal from 'react-modal';
 import Intro from 'components/intro';
@@ -23,8 +24,8 @@ export default function Report() {
   const [selectedPiece, setSelectedPiece] = useState(null);
   const [isModalOpen, setModal] = useState(false);
   const [isReportOpen, setReport] = useState(false);
-  const [play] = useSound(openAudio);
-
+  const [allowedSound, setAllowedSound] = useState(true);
+  const [play] = useSound(openAudio, { soundEnabled: allowedSound });
   const [isMobile, setLayout] = useState(false);
 
   useEffect(() => {
@@ -36,7 +37,6 @@ export default function Report() {
     };
   }, []);
 
-  console.log('is', isMobile)
   useEffect(() => {
     setHasMounted(true);
     if (!!selectedPiece) {
@@ -90,9 +90,10 @@ export default function Report() {
         {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
         {isReportOpen && (
           <div className={styles.header}>
-              <Header />
+            <Header />
           </div>
         )}
+        <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={null}>
