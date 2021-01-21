@@ -10,7 +10,7 @@ export default function Download() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Download report.
+        Download report
       </a>
       <Icon name="download" className="-medium"/>
     </div>
