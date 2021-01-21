@@ -1,7 +1,6 @@
 import { Suspense, useState, useEffect } from 'react';
 import { Canvas } from 'react-three-fiber';
 import Scene from '../components/scene';
-import Effects from '../components/post-effects';
 
 const ThreeCanvas = ({ positionedPieces, setPositionedPieces, setSelectedPiece, report, isMobile }) => {
   const [innerWidth, setInnerWidth] = useState(null);
@@ -20,7 +19,6 @@ const ThreeCanvas = ({ positionedPieces, setPositionedPieces, setSelectedPiece, 
           isMobile={isMobile}
         />
       </Suspense>
-      <Effects />
     </Canvas>
   );
 };
