@@ -1,13 +1,12 @@
 @import 'styles/settings';
 
 .c-download {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  margin-left: 0;
-
-  @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
-    margin-left: 70px;
-  }
 
   a {
     padding-right: 10px;

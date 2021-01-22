@@ -29,10 +29,10 @@
       }
 
       li {
-        margin: 0 0 10px 10px;
+        margin-left: 0;
 
-        @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
-          margin: 0 15px 0 0;
+        &:not(:last-of-type) {
+          margin-right: 15px;
         }
 
         a {
