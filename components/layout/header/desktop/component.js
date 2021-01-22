@@ -49,7 +49,7 @@ const HeaderDesktop = ({ title, onClick }) => {
         x1 = last.x + width + (width * i);
         className = 'no-transition';
       }
-  
+
       return {
         className,
         width,
@@ -58,7 +58,7 @@ const HeaderDesktop = ({ title, onClick }) => {
     });
 
     setRepetitions(newRepetitions);
-    
+
     clearTimeout(timeout);
     timeout = setTimeout(() => tick(newRepetitions), 125);
   };
@@ -92,18 +92,25 @@ const HeaderDesktop = ({ title, onClick }) => {
       </div>
       <div className="l-header-container">
         <div className="wrapper">
-          <h1 ref={ref} className="l-header-title" style={{ opacity: 0, position: 'relative' }}>{title}{' '}·</h1>
+          <span ref={ref} className="l-header-title title-scrolling" style={{ position: 'relative', opacity: 0 }}>{title}{' '}·</span>
         </div>
-        {repetitions.map(({ x, className }) => (
-          <h1
-            className={`l-header-title ${className}`}
-            style={{
-              transform: `translateX(${x}px)`
-            }}
-          >
-            {title}{' '}·
-          </h1>
-        ))}
+        {repetitions.map(({ x, className }, index) => {
+          // There can only be an h1
+          const Tag = index === 0 ? 'h1' : 'span';
+          return (
+            <Tag
+              className = {
+                `l-header-title title-scrolling ${className}`
+              }
+              style={{
+                transform: `translateX(${x}px)`
+              }}
+            >
+              {title}{' '}·
+            </Tag>
+          );
+        }
+        )}
       </div>
     </header>
   )
