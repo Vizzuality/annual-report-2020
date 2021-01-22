@@ -11,7 +11,7 @@ export default function Header() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        2020 impact review by <span>vizzuality</span>
+        2020 impact review by <br /><span>vizzuality</span>
       </a>
       <Download />
       <SocialMedia/>

@@ -6,7 +6,7 @@
     align-items: flex-start;
 
     p {
-      max-width: 180px;
+      max-width: 170px;
       margin: 0;
       font-weight: bold;
       font-size: 16px;
@@ -46,17 +46,29 @@
   .l-header-title {
     font-size: 80px;
     line-height: 1.2;
-    position: relative;
   }
 
   &.-desktop {
-    animation: scrollingTitle 10s 2;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    .l-header-container {
+      display: flex;
+      position: relative;
+      
+      .l-header-title {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        flex: none;
+        padding-right: 20px;
 
-    @keyframes scrollingTitle {
-      0% { left: 100vw; right: -100vw; }
-      100% { left: -100vw;  right: 100vw; }
+        &.transition {
+          transition: transform linear 0.250s;
+        }
+
+        &.no-transition {
+          transition: transform linear 0s;
+        }
+      }
     }
   }
 

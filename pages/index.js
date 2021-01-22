@@ -39,12 +39,9 @@ export default function Report() {
 
   useEffect(() => {
     setHasMounted(true);
-    if (!!selectedPiece) {
-      debounce(() => play(), 100)();
-      setTimeout(() => {
-        setModal(true);
-      }, 500);
-    }
+    !!selectedPiece && setTimeout(() => {
+      setModal(true);
+    }, 500);
   }, [selectedPiece]);
 
   useEffect(() => {
@@ -68,17 +65,20 @@ export default function Report() {
         <title>Annual report 2020</title>
       </Head>
       {selectedPiece && (
+        <>
         <div
           className={styles.circle}
           style={{ backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color }}>
-            <div
-              className={styles.innerCircle}
-              style={
-                { backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color,
-                  opacity: 1
-                }}
-            />
+            
         </div>
+        <div
+        className={styles.innerCircle}
+        style={
+          { backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color,
+            opacity: 1
+          }}
+      />
+      </>
       )}
       <ModalComponent
         title={"selectedPiece.category.index.title"}
