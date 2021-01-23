@@ -56,11 +56,11 @@ export default function Report() {
     setModal(false);
   };
   return (
-    < div className = {
+    <div className = {
       cx(styles.container, {
         'overflow-auto': !isReportOpen
       })
-    } >
+    }>
       <Head>
         <title>Annual report 2020</title>
       </Head>
@@ -69,7 +69,7 @@ export default function Report() {
         <div
           className={styles.circle}
           style={{ backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color }}>
-            
+
         </div>
         <div
         className={styles.innerCircle}
@@ -87,6 +87,7 @@ export default function Report() {
         <Layout story={selectedPiece} onClose={handleClose} isMobile={isMobile}/>
       </ModalComponent>
       <main className={styles.main}>
+        <div className={styles.noise} />
         {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
         {isReportOpen && (
           <div className={styles.header}>
