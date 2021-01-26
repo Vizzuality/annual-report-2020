@@ -58,7 +58,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
   animation-name: stretch;
   animation-duration: 1.5s;
   animation-delay: 0;
@@ -72,7 +72,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
   animation-name: stretch2;
   animation-duration: 1.25s;
   animation-delay: 0;
@@ -111,12 +111,13 @@
 }
 
 .noise {
-  animation: grain 2s steps(5) infinite;
+  animation: grain 1s steps(2) infinite;
   background-image: url(/noise-small.png);
+  mix-blend-mode: multiply;
   content: "";
   height: 300%;
   left: -50%;
-  opacity: 0.15;
+  opacity: 0.5;
   position: fixed;
   top: -110%;
   width: 300%;

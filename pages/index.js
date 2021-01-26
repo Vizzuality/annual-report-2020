@@ -64,21 +64,21 @@ export default function Report() {
       <Head>
         <title>Annual report 2020</title>
       </Head>
-      {selectedPiece && (
+      {selectedPiece && !isModalOpen && (
         <>
-        <div
-          className={styles.circle}
-          style={{ backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color }}>
+          <div
+            className={styles.circle}
+            style={{ backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color }}>
 
-        </div>
-        <div
-        className={styles.innerCircle}
-        style={
-          { backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color,
-            opacity: 1
-          }}
-      />
-      </>
+          </div>
+          <div
+          className={styles.innerCircle}
+          style={
+            { backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color,
+              opacity: 1
+            }}
+          />
+        </>
       )}
       <ModalComponent
         title={"selectedPiece.category.index.title"}
