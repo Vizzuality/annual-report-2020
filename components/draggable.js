@@ -13,6 +13,7 @@ function DraggableMesh({
   geometry,
   rotationCorrection
 }) {
+
   const isPositioned = positionedPieces && positionedPieces[category.index] && positionedPieces[category.index][pieceIndex];
 
   const isEnabled =
