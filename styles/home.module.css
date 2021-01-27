@@ -111,13 +111,12 @@
 }
 
 .noise {
-  animation: grain 1s steps(2) infinite;
-  background-image: url(/noise-small.png);
-  mix-blend-mode: multiply;
+  animation: grain 1s steps(10) infinite;
+  background-image: url(/noise.webp);
   content: "";
   height: 300%;
   left: -50%;
-  opacity: 0.5;
+  opacity: 0.15;
   position: fixed;
   top: -110%;
   width: 300%;
