@@ -1,13 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import DraggableMesh from './draggable'
 import Sphere from './sphere'
 import { CATEGORIES } from '../constants';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useLoader } from 'react-three-fiber';
+import { useLoader, useFrame } from 'react-three-fiber';
 
 const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report, isMobile }) => {
   const [draggingPiece, setDraggingPiece] = useState(false);
   const [sphereRotation, setSphereRotation] = useState([0, 0, 0]);
+  const [autoRotate, setAutoRotate] = useState(true);
+  const sphereGroupRef = useRef();
+  const draggablesRef = useRef(new Set());
+
+  const AUTO_ROTATE_SPEED = 0.01;
+  useFrame(() => {
+    if (autoRotate && draggablesRef.current) {
+      if (sphereGroupRef.current) {
+        sphereGroupRef.current.rotation.y -= AUTO_ROTATE_SPEED;
+      }
+
+      draggablesRef.current.forEach(draggableRef => {
+        if (draggableRef) {
+          draggableRef.rotation.y -= AUTO_ROTATE_SPEED;
+        }
+      })
+    }
+  });
+
+  useEffect(() => {
+    if (!autoRotate && sphereGroupRef.current) {
+      setSphereRotation([sphereRotation[0], sphereGroupRef.current.rotation.y, sphereRotation[2]])
+    }
+  }, [autoRotate]);
 
   const gltf = useLoader(GLTFLoader, '/geometries.glb');
   const {
@@ -33,7 +57,6 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       dpiece23
     }
   } = gltf;
-
   const draggables = [
     {
       index: 0,
@@ -155,28 +178,30 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       geometry: dpiece23.geometry
     }
   ];
-
-
   return (
     <>
       <group rotation = {
         [Math.PI / 4, 0, Math.PI / 6]
       }>
-        {report && (
         <Sphere
           draggingPiece={draggingPiece}
           setPositionedPieces={setPositionedPieces}
           positionedPieces={positionedPieces}
           setSphereRotation={setSphereRotation}
+          sphereRotation={sphereRotation}
           setSelectedPiece={setSelectedPiece}
+          sphereGroupRef={sphereGroupRef}
           geometry={sphere.geometry}
           droppables={droppables}
-        />)}
+          setAutoRotate={setAutoRotate}
+          isVisible={!!report}
+        />
       </group>
-      {draggables.map(d => (
+      {draggables.map((d, i) => (
         <DraggableMesh
           setDraggingPiece={setDraggingPiece}
           rotation={sphereRotation}
+          draggablesRef={draggablesRef}
           position = {
             [...d[isMobile ? 'positionMobile' : 'position'], 10]
           }
@@ -184,6 +209,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
           category={d.category}
           positionedPieces={positionedPieces}
           geometry={d.geometry}
+          setAutoRotate={setAutoRotate}
           rotationCorrection = {
             d.rotationCorrection
           }

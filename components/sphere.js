@@ -9,24 +9,27 @@ function Sphere({
   setSelectedPiece,
   positionedPieces,
   setSphereRotation,
+  setAutoRotate,
+  sphereRotation,
+  sphereGroupRef,
   droppables,
-  geometry
+  geometry,
+  isVisible
 }) {
-  const [rotation, setRotation] = useState([0, 0, 0]);
-  const rotationSpeed = 1 / 200;
+  const rotationSpeed = 1 / 5000;
   const bind = useDrag(
-    ({ offset: [y] }) => {
-      const [x, , z] = rotation;
-      setRotation([x, y * rotationSpeed, z]);
-      setSphereRotation([x, y * rotationSpeed, z]);
+    (state) => {
+      const { movement: [dy]} = state;
+      const [x, y, z] = sphereRotation;
+      setSphereRotation([x, y + (dy * rotationSpeed), z]);
     },
     { pointerEvents: true }
   );
   return (
-    <group {...(!draggingPiece && bind())} rotation={rotation}>
+    <group {...(!draggingPiece && bind())} ref={sphereGroupRef} rotation={sphereRotation} visible={isVisible}>
       <MeshWithWireframe
         mesh={
-          <mesh attach="mesh" geometry={geometry}>
+          <mesh attach="mesh" geometry={geometry} onClick={() => setAutoRotate(false)}>
             <meshMatcapMaterial attach="material" color="#222" />
           </mesh>
         }
