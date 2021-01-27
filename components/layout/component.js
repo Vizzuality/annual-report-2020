@@ -6,7 +6,7 @@ import Footer from './footer';
 
 import { CATEGORIES } from './constants';
 
-const Layout = ({ story, onClose, isMobile }) => {
+const Layout = ({ story, onClose, isMobile, allowedSound, setAllowedSound }) => {
   if (!story) return null;
 
   return (
@@ -15,7 +15,12 @@ const Layout = ({ story, onClose, isMobile }) => {
       {!isMobile && <HeaderDesktop title={CATEGORIES[story.category].title} onClick={onClose} />}
 
       <Content>{CATEGORIES[story.category].index[story.index]()}</Content>
-      <Footer onClick={onClose} isMobile={isMobile} />
+      <Footer
+        onClick={onClose}
+        isMobile={isMobile}
+        allowedSound={allowedSound}
+        setAllowedSound={setAllowedSound}
+      />
     </div>
   )
 };

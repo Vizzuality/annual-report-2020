@@ -6,14 +6,16 @@ export default function Download({ isMobile }) {
 
   return (
     <div className="c-download">
+      <div className="download-content">
       <a
         href={'href'}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {isMobile ? 'PDF' : 'Download report'}
+        {isMobile ? 'PDF' : 'Download full report.'}
       </a>
       <Icon name="download" className="-medium"/>
+      </div>
     </div>
   );
 };

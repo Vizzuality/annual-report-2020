@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import SoundButton  from 'components/sound-button';
 
-const Footer = ({ onClick, isMobile }) => {
+const Footer = ({ onClick, isMobile, allowedSound, setAllowedSound }) => {
   return (
     <div className="l-footer">
       <p>Keep playing</p>
@@ -15,7 +15,7 @@ const Footer = ({ onClick, isMobile }) => {
       </button>
       {isMobile && (
         <div className="footer-sound-button">
-          <SoundButton />
+          <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
         </div>
       )}
     </div>

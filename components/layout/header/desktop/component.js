@@ -80,7 +80,7 @@ const HeaderDesktop = ({ title, onClick }) => {
     <header className="l-header -desktop">
       <div className="wrapper">
         <div className="l-header-content">
-          <p>2020 impact review by <span>vizzuality</span></p>
+          <p>Spotlight on 2020 by <span>vizzuality.</span></p>
           <button
             type="button"
             className="l-header-close--btn"

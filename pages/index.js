@@ -84,7 +84,13 @@ export default function Report() {
         title={"selectedPiece.category.index.title"}
         isOpen={isModalOpen}
         onRequestClose={handleClose}>
-        <Layout story={selectedPiece} onClose={handleClose} isMobile={isMobile} />
+        <Layout 
+          story={selectedPiece} 
+          onClose={handleClose} 
+          isMobile={isMobile}
+          allowedSound={allowedSound}
+          setAllowedSound={setAllowedSound}
+        />
       </ModalComponent>
       <main className={styles.main}>
         <div className={styles.noise} />
@@ -94,7 +100,7 @@ export default function Report() {
             <Header isMobile={isMobile} />
           </div>
         )}
-        <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
+        {/* <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound} /> */}
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={null}>

@@ -12,7 +12,7 @@ export default function Header({ isMobile }) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        2020 impact review by <br /><span>vizzuality</span>
+        <p>Spotlight on 2020 by <span>vizzuality.</span></p>
       </a>
       <Download isMobile={isMobile} />
       <SocialMedia isMobile={isMobile}/>
