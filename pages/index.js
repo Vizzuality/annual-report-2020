@@ -84,14 +84,14 @@ export default function Report() {
         title={"selectedPiece.category.index.title"}
         isOpen={isModalOpen}
         onRequestClose={handleClose}>
-        <Layout story={selectedPiece} onClose={handleClose} isMobile={isMobile}/>
+        <Layout story={selectedPiece} onClose={handleClose} isMobile={isMobile} />
       </ModalComponent>
       <main className={styles.main}>
         <div className={styles.noise} />
         {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
         {isReportOpen && (
           <div className={styles.header}>
-            <Header />
+            <Header isMobile={isMobile} />
           </div>
         )}
         <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>

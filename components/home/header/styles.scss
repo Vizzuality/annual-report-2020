@@ -9,9 +9,14 @@
   a {
     margin: 0;
     font-weight: bold;
-    font-size: 16px;
-    font-weight: normal;
+    font-weight: 600;
+    letter-spacing: 0;
     line-height: 30px;
+
+    @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
+      max-width: 140px;
+      line-height: 20px;
+    }
 
     span {
       font-size: 25px;

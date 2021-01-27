@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'components/icon';
 
-export default function Download() {
+export default function Download({ isMobile }) {
 
   return (
     <div className="c-download">
@@ -10,11 +11,19 @@ export default function Download() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Download report
+        {isMobile ? 'PDF' : 'Download report'}
       </a>
       <Icon name="download" className="-medium"/>
     </div>
   );
-}
+};
+
+Download.propTypes = {
+  isMobile: PropTypes.boolean
+};
+
+Download.defaultProps = {
+  isMobile: false
+};
 
 
