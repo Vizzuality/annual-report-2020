@@ -182,7 +182,8 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     <>
       <group rotation = {
         [Math.PI / 4, 0, Math.PI / 6]
-      }>
+      }
+      >
         <Sphere
           draggingPiece={draggingPiece}
           setPositionedPieces={setPositionedPieces}
@@ -197,7 +198,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
           isVisible={!!report}
         />
       </group>
-      {draggables.map((d, i) => (
+      {draggables.map((d) => (
         <DraggableMesh
           setDraggingPiece={setDraggingPiece}
           rotation={sphereRotation}
@@ -213,6 +214,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
           rotationCorrection = {
             d.rotationCorrection
           }
+          disabled={!report}
         />
       ))}
       <ambientLight intensity={0.2} />

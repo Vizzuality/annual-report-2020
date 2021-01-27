@@ -12,7 +12,9 @@ function DraggableMesh({
   positionedPieces,
   geometry,
   rotationCorrection,
-  draggablesRef
+  draggablesRef,
+  disabled,
+  setAutoRotate
 }) {
   const isPositioned = positionedPieces && positionedPieces[category.index] && positionedPieces[category.index][pieceIndex];
 
@@ -60,10 +62,11 @@ function DraggableMesh({
           mesh={
             <mesh
               position={position}
-              {...(isEnabled && bind())}
+              {...(!disabled && isEnabled && bind())}
               rotation={finalRotation}
               ref={reference => draggablesRef.current.add(reference)}
               geometry={geometry}
+              onClick={() => setAutoRotate(false)}
             >
               <meshLambertMaterial attach="material" color={isEnabled ? category.color : category.disabledColor} />
             </mesh>
