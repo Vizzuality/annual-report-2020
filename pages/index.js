@@ -9,7 +9,6 @@ import ModalComponent from 'components/modal';
 import Modal from 'react-modal';
 import Intro from 'components/intro';
 import Icons from 'components/icons';
-import debounce from 'lodash/debounce';
 import cx from 'classnames';
 import { CATEGORIES } from 'components/layout/constants.js';
 import useSound from 'use-sound';
