@@ -1,4 +1,7 @@
-module.exports = {
+const withPlugins = require('next-compose-plugins');
+const optimizedImages = require('next-optimized-images');
+
+const nextConfig = {
   webpack(config, options) {
     const { isServer } = options;
     config.module.rules.push({
@@ -22,3 +25,6 @@ module.exports = {
     return config;
   },
 };
+
+module.exports = withPlugins([optimizedImages], nextConfig);
+

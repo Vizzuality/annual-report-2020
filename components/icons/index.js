@@ -29,6 +29,11 @@ const Icons = () => (
       <symbol id="icon-linkedin" viewBox="0 0 32 32">
         <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M22.667 9.6c6.4 0 7.467 4.267 7.467 9.6v11.2h-6.133l-0.001-10.428c-0.017-2.272-0.245-4.772-3.199-4.772-3.2 0-3.733 2.667-3.733 5.333v10.133h-6.4v-20.533h6.133v2.667c0.8-1.6 2.933-3.2 5.867-3.2zM6.933 10.133v20.267h-6.4v-20.267h6.4zM3.733 0c2.133 0 3.733 1.6 3.733 3.733-0.267 1.867-1.867 3.733-3.733 3.733-2.133 0-3.733-1.867-3.733-3.733 0-2.133 1.6-3.733 3.733-3.733z"></path>
       </symbol>
+      <symbol id="icon-close" viewBox="0 0 32 32">
+        <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+        <path fill="none" stroke="#000" style={{ stroke: "var(--color2, #000)" }} stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3714" d="M11.429 11.429l9.143 9.143"></path>
+        <path fill="none" stroke="#000" style={{ stroke: "var(--color2, #000)" }} stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3714" d="M11.429 20.571l9.143-9.143"></path>
+      </symbol>
     </defs>
   </svg>
 );

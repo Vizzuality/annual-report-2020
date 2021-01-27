@@ -86,7 +86,7 @@ const HeaderDesktop = ({ title, onClick }) => {
             className="l-header-close--btn"
             onClick={(e) => e.stopPropagation() || onClick()}
           >
-            <Icon name="cancel" />
+            <Icon name="close" className=" -big" />
           </button>
         </div>
       </div>

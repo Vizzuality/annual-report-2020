@@ -1,5 +1,5 @@
-$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * 4 * -1;
-$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 4;
+$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * 0.5 * -1;
+$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 0.5;
 
 .wrapper {
   width: 100%;
@@ -10,7 +10,7 @@ $flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 4;
   position: relative;
 
   @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
-    padding: 0 $flexboxgrid-outer-margin;
+    padding: 0 $flexboxgrid-outer-margin/3;
   }
 }
 
