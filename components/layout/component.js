@@ -15,7 +15,7 @@ const Layout = ({ story, onClose, isMobile }) => {
       {!isMobile && <HeaderDesktop title={CATEGORIES[story.category].title} onClick={onClose} />}
 
       <Content>{CATEGORIES[story.category].index[story.index]()}</Content>
-      <Footer onClick={onClose} />
+      <Footer onClick={onClose} isMobile={isMobile} />
     </div>
   )
 };

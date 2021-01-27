@@ -396,7 +396,10 @@
 
 // Custom mixins 
 @mixin button {
-	padding: 20px 100px;
+	padding: 20px 110px;
 	font-size: 18px;
-	max-width: 350px;
+	font-family: $font-family-1;
+	letter-spacing: 0;
+	line-height: 30px;
+	text-align: center;
 }
