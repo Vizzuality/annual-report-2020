@@ -6,11 +6,13 @@ export default function Intro({ handleReport }) {
       <div className="intro-container">
         <div className="intro-title">
           <h1>Spotlight 2020</h1>
-          <br />
+          <button onClick={handleReport}>PLAY</button>
           <h2>by vizzuality.</h2>
+
         </div>
-        <p className="intro-text">Covid is a stark reminder of how vulnerable our societies can be. In 2020 we learnt that making change is possible if we work together. Fit the pieces into the world to see the impact of our work.</p>
-        <button onClick={handleReport}>Let's start</button>
+        {/* <p className="intro-text">Covid is a stark reminder of how vulnerable our societies can be. In 2020 we learnt that making change is possible if we work together. Fit the pieces into the world to see the impact of our work.</p> */}
+
+        
       </div>
     </div>
   );
