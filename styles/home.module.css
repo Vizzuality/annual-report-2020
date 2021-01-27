@@ -121,7 +121,7 @@
   top: -110%;
   width: 300%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 @keyframes grain {

@@ -31,7 +31,7 @@ function Droppable({
       if (isPieceMatching) {
         setColor(color);
       } else {
-        setColor('black');
+        setColor('#222');
       }
     }
   }, [draggingPiece, category]);
@@ -71,7 +71,7 @@ function Droppable({
             }
           }}
         >
-          <meshLambertMaterial attach="material" color={updatedColor} />
+          <meshMatcapMaterial attach="material" color={updatedColor} />
         </mesh>
       }
     />

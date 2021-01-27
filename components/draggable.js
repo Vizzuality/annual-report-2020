@@ -77,7 +77,7 @@ function DraggableMesh({
       )}
       <Wireframe
         rotation={finalRotation}
-        color={category.color}
+        color="#CCC"
         geometry={geometry}
         renderOrder={0}
       />
