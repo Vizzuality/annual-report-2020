@@ -115,7 +115,13 @@ export default function Report() {
           )}
         </div>
         <Icons />
-        {!isReportOpen && <Intro handleReport={handleReport} />}
+        {!isReportOpen && (
+          <Intro
+            handleReport={handleReport}
+            allowedSound={allowedSound}
+            setAllowedSound={setAllowedSound} 
+          />
+        )}
       </main>
     </div>
   );
