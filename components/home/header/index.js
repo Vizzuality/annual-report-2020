@@ -1,29 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Download from 'components/download';
-import SocialMedia from 'components/social-media';
+const HeaderIntro = () => (
+  <div className="c-header-intro">
+    <a
+      className="header-description"
+      href="https://www.vizzuality.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <p>Spotlight on 2020 by <span>vizzuality.</span></p>
+    </a>
+  </div>
+);
 
-export default function Header({ isMobile }) {
-
-  return (
-    <header className="c-home-header">
-      <a
-        href="https://www.vizzuality.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <p>Spotlight on 2020 by <span>vizzuality.</span></p>
-      </a>
-      <Download isMobile={isMobile} />
-      <SocialMedia isMobile={isMobile}/>
-    </header>
-  );
-};
-
-Header.propTypes = {
-  isMobile: PropTypes.boolean
-};
-
-Header.defaultProps = {
-  isMobile: false
-};
+export default HeaderIntro;

@@ -1,15 +1,8 @@
 @import 'styles/settings';
 
 .c-download {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  @include headerElements('center');
   display: flex;
-
-  @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
-    top: 20px;
-  }
 
   .download-content {
     align-items: center;

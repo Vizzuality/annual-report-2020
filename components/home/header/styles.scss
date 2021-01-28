@@ -1,16 +1,10 @@
 @import 'styles/settings';
 
-.c-home-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 20px 0;
-  align-items: baseline;
+.c-header-intro {
+  @include headerElements('left');
 
-  @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
-    padding: 20px 20px 0;
-  }
-
-  a {
+  .header-description {
+    display: flex;
     margin: 0;
     letter-spacing: 0;
     font-weight: 300;

@@ -45,12 +45,6 @@
   margin-top: 3rem;
 }
 
-.header {
-  position: absolute;
-  width: 100%;
-  z-index: 20;
-}
-
 .circle {
   height: 250px;
   width: 250px;

@@ -10,31 +10,40 @@
   align-items: center;
   padding: 60px 0;
 
-  p {
-    color: white;
-    display: inline-flex;
-    font-size: 60px;
-    letter-spacing: 0;
-    line-height: 72px;
-    text-align: center;
-    margin: 0;
-    padding-bottom: 40px;
-  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  .footer-piece-button {
-    @include button;
-    background-color: white;
-    color: black;
-  }
-  .footer-sound-button {
-    padding-top: 60px;
+    p {
+      color: white;
+      display: inline-flex;
+      font-size: 60px;
+      letter-spacing: 0;
+      line-height: 72px;
+      text-align: center;
+      margin: 0;
+      padding-bottom: 40px; 
+  
+      @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+        font-size: 50px;
+      }
+    }
+  
+    .footer-piece-button {
+      @include button;
+      background-color: white;
+      color: black;
+    }
 
-    button {
-      position: relative;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      bottom: 0;
+    .footer-sound-button {
+      padding-top: 60px;
+  
+      button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
     }
   }
 }

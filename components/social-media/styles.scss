@@ -1,6 +1,7 @@
 @import 'styles/settings';
 
   .c-social-media {
+    @include headerElements('right');
     display: flex;
     align-items: center;
 
