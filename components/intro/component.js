@@ -17,7 +17,7 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
               <h1>Spotlight <br />on 2020</h1>
             </div>
           </div>
-          <div className="row center-xsm">
+          <div className="row">
             <div className="col-xs-12">
               <h2>by vizzuality.</h2>
             </div>
@@ -25,23 +25,25 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
         </>
       )}
       {intro && (
-        <section className="intro-container">
-          <div className="row center-xsm">
-            <div className="col-xs-12 col-lg-9">
-              <p>Fit the puzzle pieces into our globe to see our impact and our hope for the future.</p>
+        <div className="wrapper">
+          <section className="intro-container">
+            <div className="row center-xsm">
+              <div className="col-xs-12 col-sm-9">
+                <p>Fit the puzzle pieces into our globe to see our impact and our hope for the future.</p>
+              </div>
             </div>
-          </div>
-          <div className="row center-xsm">
-            <div className="col-xs-12 col-lg-9">
-              <SoundButton className="-relative" allowedSound={allowedSound} setAllowedSound={setAllowedSound} />
+            <div className="row center-xsm">
+              <div className="col-xs-12 col-sm-9">
+                <SoundButton className="-relative" allowedSound={allowedSound} setAllowedSound={setAllowedSound} />
+              </div>
             </div>
-          </div>
-          <div className="row center-xsm">
-            <div className="col-xs-12 col-lg-9">
-              <p>For a better experience, please put your headphones and click anywhere</p>
+            <div className="row center-xsm">
+              <div className="col-xs-12 col-sm-9">
+                <p>For a better experience, please put your headphones and click anywhere</p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       )}
     </div>
   );
