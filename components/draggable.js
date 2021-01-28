@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useThree } from 'react-three-fiber';
 import { useDrag } from 'react-use-gesture';
 import Wireframe from './mesh-with-wireframe';
@@ -6,12 +6,15 @@ import Wireframe from './mesh-with-wireframe';
 function DraggableMesh({
   setDraggingPiece,
   position: groupPosition,
-  rotation:groupRotation,
+  rotation: groupRotation,
   index: pieceIndex,
   category,
   positionedPieces,
   geometry,
-  rotationCorrection
+  rotationCorrection,
+  draggablesRef,
+  disabled,
+  setAutoRotate
 }) {
 
   const isPositioned = positionedPieces && positionedPieces[category.index] && positionedPieces[category.index][pieceIndex];
@@ -23,7 +26,6 @@ function DraggableMesh({
       positionedPieces[category.index] &&
       positionedPieces[category.index][pieceIndex -1]);
 
-  const ref = useRef();
   const [position, setPosition] = useState([0, 0, 0]);
   const { size, viewport } = useThree();
   const aspect = size.width / viewport.width;
@@ -61,10 +63,11 @@ function DraggableMesh({
           mesh={
             <mesh
               position={position}
-              {...(isEnabled && bind())}
-              ref={ref}
+              {...(!disabled && isEnabled && bind())}
               rotation={finalRotation}
+              ref={reference => draggablesRef.current.add(reference)}
               geometry={geometry}
+              onClick={() => setAutoRotate(false)}
             >
               <meshLambertMaterial attach="material" color={isEnabled ? category.color : category.disabledColor} />
             </mesh>
@@ -74,12 +77,14 @@ function DraggableMesh({
           position={position}
           color="black"
           renderOrder={1}
+          wireframeRef={reference => draggablesRef.current.add(reference)}
         />
       )}
       <Wireframe
         rotation={finalRotation}
-        color={category.color}
+        color="#CCC"
         geometry={geometry}
+        wireframeRef={reference => draggablesRef.current.add(reference)}
         renderOrder={0}
       />
     </group>
