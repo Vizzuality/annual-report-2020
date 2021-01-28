@@ -18,7 +18,6 @@ import breakpoints from 'utils/breakpoints';
 
 import Download from 'components/download';
 import SocialMedia from 'components/social-media';
-import * as gtag from 'utils/gtag';
 
 const Canvas = lazy(() => import('../components/canvas'));
 
@@ -117,6 +116,10 @@ export default function Report() {
           </div>
         )}
         {isReportOpen && <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound} />}
+        <a href="https://www.vizzuality.com/privacy-policy" title="Privacy policy" target="_blank" className={styles.privacyLink}>
+          Privacy policy.
+        </a>
+        <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={null}>
