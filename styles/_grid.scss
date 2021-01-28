@@ -1,5 +1,5 @@
-$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * 0.5 * -1;
-$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 0.5;
+$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * -1;
+$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 0.25;
 
 .wrapper {
   width: 100%;
@@ -20,8 +20,8 @@ $flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 0.5;
   @include flex(0, 1, auto);
   @include flex-direction(row);
   @include flex-wrap(wrap);
-  margin-right: $flexboxgrid-gutter-compensation;
-  margin-left: $flexboxgrid-gutter-compensation;
+  margin-right: $flexbox-grid-half-gutter-width;
+  margin-left: $flexbox-grid-half-gutter-width;
 }
 
 .row.reverse {
