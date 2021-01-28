@@ -1,6 +1,5 @@
 @import 'styles/settings';
 
-
 .l-footer {
   position: relative;
   display: flex;
@@ -30,20 +29,10 @@
       }
     }
   
-    .footer-piece-button {
+    button {
       @include button;
       background-color: white;
       color: black;
-    }
-
-    .footer-sound-button {
-      padding-top: 60px;
-  
-      button {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
     }
   }
 }

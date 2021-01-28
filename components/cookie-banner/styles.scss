@@ -1,0 +1,45 @@
+@import 'styles/settings';
+
+.c-cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  background-color: white;
+
+  padding: 10px;
+
+  z-index: $z-index-100;
+  animation: appear 300ms 2s forwards;
+
+  @keyframes appear {
+    0% { transform: translateY(100%) }
+    100% { transform: translateY(0) }
+  }
+
+  .cookie-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+
+  .cookie-text {
+    margin-right: 20px;
+  }
+
+  .cookie-link {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .cookie-button {
+    @include button;
+    width: 120px;
+    height: 45px;
+    padding: 0;
+    background-color: black;
+    color: white;
+  }
+}

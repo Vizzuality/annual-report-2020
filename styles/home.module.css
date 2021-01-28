@@ -104,6 +104,16 @@
   }
 }
 
+.privacyLink {
+  position: absolute;
+  left: 30px;
+  bottom: 5%;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  z-index: 2;
+}
+
 .noise {
   animation: grain 1s steps(2) infinite;
   background-image: url(/noise-small.png);

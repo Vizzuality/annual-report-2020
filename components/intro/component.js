@@ -29,12 +29,11 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
           <div className="row center-xsm">
             <div className="col-xs-12 col-lg-9">
               <p>Fit the puzzle pieces into our globe to see our impact and our hope for the future.</p>
-
             </div>
           </div>
           <div className="row center-xsm">
             <div className="col-xs-12 col-lg-9">
-              <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound} />
+              <SoundButton className="-relative" allowedSound={allowedSound} setAllowedSound={setAllowedSound} />
             </div>
           </div>
           <div className="row center-xsm">
