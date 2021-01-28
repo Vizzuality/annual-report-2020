@@ -396,7 +396,45 @@
 
 // Custom mixins 
 @mixin button {
-	padding: 20px 100px;
+	padding: 20px 110px;
 	font-size: 18px;
-	max-width: 350px;
+	font-family: $font-family-1;
+	letter-spacing: 0;
+	line-height: 30px;
+  text-align: center;
+  
+  @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+		padding: 20px 75px;
+	}
+}
+
+@mixin headerElements($position) {
+  position: absolute;
+	top: 40px;
+	z-index: 20;
+
+	@media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+		top: 20px;
+	}
+
+	@if($position == 'left') {
+		left: 40px;
+
+		@media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+			left: 20px;
+		}
+	}
+	
+  @if($position == 'right') {
+    right: 40px;
+
+    @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+      right: 20px;
+    }
+  }
+
+  @if($position == 'center') {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

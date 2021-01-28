@@ -1,7 +1,7 @@
 import React, { useState, lazy, useEffect, Suspense } from 'react';
 import Head from 'next/head';
 import styles from '../styles/home.module.css';
-import Header from 'components/home/header';
+import HeaderIntro from 'components/home/header';
 import Layout from 'components/layout';
 import ProgressBar from 'components/progress-bar';
 import SoundButton from 'components/sound-button';
@@ -15,6 +15,9 @@ import { CATEGORIES } from 'components/layout/constants.js';
 import useSound from 'use-sound';
 import openAudio from '../sounds/open.mp3'
 import breakpoints from 'utils/breakpoints';
+
+import Download from 'components/download';
+import SocialMedia from 'components/social-media';
 
 const Canvas = lazy(() => import('../components/canvas'));
 
@@ -84,17 +87,25 @@ export default function Report() {
         title={"selectedPiece.category.index.title"}
         isOpen={isModalOpen}
         onRequestClose={handleClose}>
-        <Layout story={selectedPiece} onClose={handleClose} isMobile={isMobile}/>
+        <Layout 
+          story={selectedPiece} 
+          onClose={handleClose} 
+          isMobile={isMobile}
+          allowedSound={allowedSound}
+          setAllowedSound={setAllowedSound}
+        />
       </ModalComponent>
       <main className={styles.main}>
         <div className={styles.noise} />
         {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
         {isReportOpen && (
           <div className={styles.header}>
-            <Header />
+            <HeaderIntro isMobile={isMobile} />
+            <Download isMobile={isMobile} />
+            <SocialMedia isMobile={isMobile}/>
           </div>
         )}
-        <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
+        {/* <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound} /> */}
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={null}>
@@ -109,7 +120,13 @@ export default function Report() {
           )}
         </div>
         <Icons />
-        {!isReportOpen && <Intro handleReport={handleReport} />}
+        {!isReportOpen && (
+          <Intro
+            handleReport={handleReport}
+            allowedSound={allowedSound}
+            setAllowedSound={setAllowedSound} 
+          />
+        )}
       </main>
     </div>
   );

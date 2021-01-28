@@ -1,21 +1,14 @@
-import React from 'react';
-import Download from 'components/download';
-import SocialMedia from 'components/social-media';
+const HeaderIntro = () => (
+  <div className="c-header-intro">
+    <a
+      className="header-description"
+      href="https://www.vizzuality.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <p>Spotlight on 2020 by <span>vizzuality.</span></p>
+    </a>
+  </div>
+);
 
-export default function Header() {
-
-  return (
-    <header className="c-home-header">
-      <a
-        href="https://www.vizzuality.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        2020 impact review by <br /><span>vizzuality</span>
-      </a>
-      <Download />
-      <SocialMedia/>
-    </header>
-  );
-};
-
+export default HeaderIntro;

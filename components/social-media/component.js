@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'components/icon';
 
-const SocialMedia = () => (
+const SocialMedia = ({ isMobile }) => (
   <div className="c-social-media">
-    <span className="title">Follow us:</span>
+    {!isMobile && <span className="title">Follow us:</span>}
     <ul className="social-networks">
       <li>
         <a href="https://twitter.com/vizzuality" target="_blank">
@@ -17,7 +18,7 @@ const SocialMedia = () => (
       </li>
       <li>
         <a href="https://linkedin.com/company/vizzuality" target="_blank">
-          <Icon name="linkedin1" className="social-media -medium" />
+          <Icon name="linkedin" className="social-media -medium" />
       </a>
       </li>
       <li>
@@ -28,5 +29,13 @@ const SocialMedia = () => (
     </ul>
   </div>
 );
+
+SocialMedia.propTypes = {
+  isMobile: PropTypes.boolean
+};
+
+SocialMedia.defaultProps = {
+  isMobile: false
+};
 
 export default SocialMedia;

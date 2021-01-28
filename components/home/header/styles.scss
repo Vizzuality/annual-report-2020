@@ -1,20 +1,25 @@
 @import 'styles/settings';
 
-.c-home-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 20px 0;
-  align-items: baseline;
+.c-header-intro {
+  @include headerElements('left');
 
-  a {
+  .header-description {
+    display: flex;
     margin: 0;
-    font-weight: bold;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 30px;
+    letter-spacing: 0;
+    font-weight: 300;
+    line-height: 20px;
+
+    @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
+      max-width: 140px;
+    }
+
+    p {
+      margin: 0;
+    }
 
     span {
-      font-size: 25px;
+      font-weight: bold;
     }
   }
 }
