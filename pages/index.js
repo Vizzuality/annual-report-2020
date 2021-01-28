@@ -5,6 +5,7 @@ import HeaderIntro from 'components/home/header';
 import Layout from 'components/layout';
 import ProgressBar from 'components/progress-bar';
 import SoundButton from 'components/sound-button';
+import CookieBanner from 'components/cookie-banner';
 import ModalComponent from 'components/modal';
 import Modal from 'react-modal';
 import Intro from 'components/intro';
@@ -120,6 +121,7 @@ export default function Report() {
           Privacy policy.
         </a>
         <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
+        <CookieBanner />
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={null}>
