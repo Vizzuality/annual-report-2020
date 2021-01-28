@@ -87,9 +87,9 @@ export default function Report() {
         title={"selectedPiece.category.index.title"}
         isOpen={isModalOpen}
         onRequestClose={handleClose}>
-        <Layout 
-          story={selectedPiece} 
-          onClose={handleClose} 
+        <Layout
+          story={selectedPiece}
+          onClose={handleClose}
           isMobile={isMobile}
           allowedSound={allowedSound}
           setAllowedSound={setAllowedSound}
@@ -105,7 +105,7 @@ export default function Report() {
             <SocialMedia isMobile={isMobile}/>
           </div>
         )}
-        {/* <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound} /> */}
+        {isReportOpen && <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound} />}
         <div className={styles.canvasContainer}>
           {hasMounted && (
             <Suspense fallback={null}>
@@ -124,7 +124,7 @@ export default function Report() {
           <Intro
             handleReport={handleReport}
             allowedSound={allowedSound}
-            setAllowedSound={setAllowedSound} 
+            setAllowedSound={setAllowedSound}
           />
         )}
       </main>
