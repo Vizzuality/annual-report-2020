@@ -18,6 +18,7 @@ import breakpoints from 'utils/breakpoints';
 
 import Download from 'components/download';
 import SocialMedia from 'components/social-media';
+import * as gtag from 'utils/gtag';
 
 const Canvas = lazy(() => import('../components/canvas'));
 
@@ -32,13 +33,21 @@ export default function Report() {
   const [isMobile, setLayout] = useState(false);
 
   useEffect(() => {
+    !!selectedPiece && (
+      gtag.event({
+      action: 'Reveal story',
+      category: 'Story',
+      label: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
+      value: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
+    }));
+
     const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
     window.addEventListener("resize", handleResize);
     setLayout(window.innerWidth < breakpoints.sm);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [selectedPiece]);
 
   useEffect(() => {
     setHasMounted(true);
@@ -48,6 +57,7 @@ export default function Report() {
   }, [selectedPiece]);
 
   useEffect(() => {
+
     Modal.setAppElement(`.${styles.container}`);
   }, []);
     const handleReport = () => {
@@ -58,6 +68,7 @@ export default function Report() {
     setSelectedPiece(null);
     setModal(false);
   };
+
   return (
     <div className = {
       cx(styles.container, {

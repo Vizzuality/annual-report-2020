@@ -1,8 +1,18 @@
 import React from 'react';
+import * as gtag from 'utils/gtag';
 
 const SoundButton = ({ allowedSound, setAllowedSound }) => {
+  
   return (
-    <button className="c-sound-button" onClick={() => setAllowedSound(!allowedSound)}>
+    <button className="c-sound-button" type="button" onClick={() => {
+      gtag.event({
+        action: 'Sound',
+        category: 'sound',
+        label: `${!allowedSound ? 'OFF' : 'ON'}`,
+        value: allowedSound
+      })
+      return (setAllowedSound(!allowedSound))
+    }}>
       <span>
         SOUND{' '}
       </span>

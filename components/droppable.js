@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Wireframe from './mesh-with-wireframe';
 
+import * as gtag from 'utils/gtag';
+
 function Droppable({
   draggingPiece,
   setPositionedPieces,
@@ -53,10 +55,20 @@ function Droppable({
             position
           }
           onClick = {
-            () => isPositioned && setSelectedPiece({
-              category: category.index,
-              index: dropIndex
-            })
+            () => {
+              gtag.event({
+                action: 'Reveal story',
+                category: 'Stories',
+                label: `Category - ${category.title}, Story - ${dropIndex + 1}`,  
+                value: `Category - ${category.title}, Story - ${dropIndex + 1}`
+              })
+              return (
+                isPositioned && setSelectedPiece({
+                  category: category.index,
+                  index: dropIndex
+                })
+              )
+            }
           }
           onPointerOver={() => {
             if (isPieceMatching) {
