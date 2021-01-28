@@ -1,10 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 import * as gtag from 'utils/gtag';
 
-const SoundButton = ({ allowedSound, setAllowedSound }) => {
+const SoundButton = ({ allowedSound, setAllowedSound, className }) => {
   
   return (
-    <button className="c-sound-button" type="button" onClick={() => {
+    <button 
+      className={cx('c-sound-button',
+        className={ [className]: className })} type="button" onClick={() => {
       gtag.event({
         action: 'Sound',
         category: 'sound',
@@ -21,6 +25,10 @@ const SoundButton = ({ allowedSound, setAllowedSound }) => {
       </span>
     </button>
   );
+};
+
+SoundButton.proptypes = {
+  className: PropTypes.string.isRequired
 };
 
 export default SoundButton;

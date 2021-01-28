@@ -1,14 +1,21 @@
 @import 'styles/settings';
 
   .c-sound-button {
-    position: absolute;
-    bottom: 5%;
-    right: 30px;
     background-color: transparent;
     color: $gray-300;
     z-index: $z-index-200;
     font-size: 12px;
     letter-spacing: 2px;
+
+    &.-absolute {
+      position: absolute;
+      bottom: 5%;
+      right: 30px;
+    }
+
+    &.-relative {
+      position: relative;
+    }
   }
 
 

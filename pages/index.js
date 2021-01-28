@@ -20,6 +20,8 @@ import breakpoints from 'utils/breakpoints';
 import Download from 'components/download';
 import SocialMedia from 'components/social-media';
 
+import * as gtag from 'utils/gtag';
+
 const Canvas = lazy(() => import('../components/canvas'));
 
 export default function Report() {
@@ -33,14 +35,14 @@ export default function Report() {
   const [isMobile, setLayout] = useState(false);
 
   useEffect(() => {
-    !!selectedPiece && (
-      gtag.event({
-      action: 'Reveal story',
-      category: 'Story',
-      label: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
-      value: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
+    !!selectedPiece && (	
+      gtag.event({	
+      action: 'Reveal story',	
+      category: 'Story',	
+      label: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,	
+      value: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,	
     }));
-
+    
     const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
     window.addEventListener("resize", handleResize);
     setLayout(window.innerWidth < breakpoints.sm);
@@ -116,11 +118,16 @@ export default function Report() {
             <SocialMedia isMobile={isMobile}/>
           </div>
         )}
-        {isReportOpen && <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound} />}
+        {!!isReportOpen && !isModalOpen && (
+          <SoundButton
+            className="-absolute"
+            allowedSound={allowedSound}
+            setAllowedSound={setAllowedSound}
+          />
+        )}
         <a href="https://www.vizzuality.com/privacy-policy" title="Privacy policy" target="_blank" className={styles.privacyLink}>
           Privacy policy.
         </a>
-        <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
         <CookieBanner />
         <div className={styles.canvasContainer}>
           {hasMounted && (
