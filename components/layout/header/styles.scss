@@ -1,19 +1,5 @@
 .l-header {
 
-  .l-header-content {
-    width: 100%;
-
-    .l-header-close--btn {
-      position: absolute;
-      top: 40px;
-      right: 40px;
-      cursor: pointer;
-      z-index: $z-index-100;
-      background-color: transparent;
-
-    }
-  }
-
   .l-header-title {
     font-size: 80px;
     font-family: $font-family-1;
@@ -31,6 +17,7 @@
   }
 
   &.-desktop {
+
     .l-header-container {
       display: flex;
       position: relative;
@@ -38,7 +25,7 @@
       .l-header-title {
         display: inline-block;
         position: absolute;
-        top: 0;
+        top: 85px;
         left: 0;
         flex: none;
         padding-right: 20px;
@@ -52,18 +39,37 @@
         }
       }
     }
+
+    .l-header-close--btn {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      cursor: pointer;
+      z-index: $z-index-100;
+      background-color: transparent;
+    }
   }
 
   &.-mobile {
+    position: relative;
     animation: none;
     border-bottom: 1px solid black;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
 
-    .l-header-content {
-      align-items: center;
+    .l-header-title {
+      font-family: $font-family-1;
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: bold;
+    }
 
-      .l-header-title {
-        font-size: 40px;
-      }
+    .l-header-close--btn {
+      cursor: pointer;
+      z-index: $z-index-100;
+      background-color: transparent;
     }
   }
 }

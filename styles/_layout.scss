@@ -4,15 +4,15 @@
     box-sizing: border-box;
     max-width: $flexboxgrid-max-width * 3;
     margin: 0 auto;
-    padding: $flexboxgrid-outer-margin * 3;
+    padding: $flexboxgrid-outer-margin * 0.7 $flexboxgrid-outer-margin * 3;
     position: relative;
 
     @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
-      padding: $flexboxgrid-outer-margin;
+      padding: $flexboxgrid-outer-margin * 0.7 $flexboxgrid-outer-margin;
     }
 
     @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
-      padding: $flexboxgrid-outer-margin * 1.5;
+      padding: $flexboxgrid-outer-margin;
     }
   }
 
