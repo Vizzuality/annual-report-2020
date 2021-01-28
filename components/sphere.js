@@ -30,7 +30,7 @@ function Sphere({
       <MeshWithWireframe
         mesh={
           <mesh attach="mesh" geometry={geometry} onClick={() => setAutoRotate(false)}>
-            <meshMatcapMaterial attach="material" color="#222" />
+            <meshMatcapMaterial attach="material" color="#000" />
           </mesh>
         }
         geometry={geometry}

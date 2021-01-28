@@ -12,7 +12,7 @@ function MeshWithWireframe({
 }) {
   const lines = useUpdate((geo) => geo.fromEdgesGeometry(new THREE.EdgesGeometry(geometry)), []);
   const resolutionRatio = 1;
-  const lineWidthRatio = 0.6;
+  const lineWidthRatio = 1.2;
   const resolution = 256 * resolutionRatio;
   const otherProps = { position, rotation, renderOrder, ref: wireframeRef };
   return (

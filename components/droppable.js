@@ -31,7 +31,7 @@ function Droppable({
       if (isPieceMatching) {
         setColor(color);
       } else {
-        setColor('#222');
+        setColor('#000');
       }
     }
   }, [draggingPiece, category]);
