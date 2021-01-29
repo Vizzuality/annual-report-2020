@@ -34,14 +34,14 @@ export default function Report() {
   const [isMobile, setLayout] = useState(false);
 
   useEffect(() => {
-    !!selectedPiece && (	
-      gtag.event({	
-      action: 'Reveal story',	
-      category: 'Story',	
-      label: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,	
-      value: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,	
+    !!selectedPiece && (
+      gtag.event({
+      action: 'Reveal story',
+      category: 'Story',
+      label: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
+      value: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
     }));
-    
+
     const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
     window.addEventListener("resize", handleResize);
     setLayout(window.innerWidth < breakpoints.sm);
@@ -124,9 +124,15 @@ export default function Report() {
             setAllowedSound={setAllowedSound}
           />
         )}
-        <a href="https://www.vizzuality.com/privacy-policy" title="Privacy policy" target="_blank" className={styles.privacyLink}>
+        {
+          !!isReportOpen && !isModalOpen && < a href = "https://www.vizzuality.com/privacy-policy"
+          title = "Privacy policy"
+          target = "_blank"
+          className = {
+            styles.privacyLink
+          } >
           Privacy policy.
-        </a>
+        </a>}
         <CookieBanner />
         <div className={styles.canvasContainer}>
           {hasMounted && (
