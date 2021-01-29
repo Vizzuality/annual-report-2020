@@ -6,11 +6,15 @@
   text-align: center;
   z-index: $z-index-15;
   height: 100vh;
-  max-width: 50vw;
+  max-width: 80vw;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+    max-width: 50vw;
+  }
 
   .intro-button {
     position: absolute;
@@ -23,11 +27,16 @@
   h1 {
     font-family: $font-family-2;
     font-weight: 300;
-    font-size: 180px;
+    font-size: 72px;
     letter-spacing: 0;
-    line-height: 180px;
+    line-height: 1.6;
     margin: 0;
     text-align: center;
+
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+      font-size: 180px;
+      line-height: 180px;
+    }
   }
 
   h2 {
@@ -58,7 +67,7 @@
       left: 0;
     }
   }
-  
+
   p {
     font-size: 20px;
     font-weight: 300;
@@ -66,7 +75,7 @@
     line-height: 35px;
     text-align: center;
   }
-  
+
   @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
     padding: 20px 50px;
   }

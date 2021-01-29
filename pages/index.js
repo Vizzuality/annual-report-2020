@@ -124,9 +124,15 @@ export default function Report() {
             setAllowedSound={setAllowedSound}
           />
         )}
-        <a href="https://www.vizzuality.com/privacy-policy" title="Privacy policy" target="_blank" className={styles.privacyLink}>
+        {
+          !!isReportOpen && !isModalOpen && < a href = "https://www.vizzuality.com/privacy-policy"
+          title = "Privacy policy"
+          target = "_blank"
+          className = {
+            styles.privacyLink
+          } >
           Privacy policy.
-        </a>
+        </a>}
         <CookieBanner />
         <div className={styles.canvasContainer}>
           {hasMounted && (
