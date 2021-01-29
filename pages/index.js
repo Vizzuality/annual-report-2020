@@ -5,6 +5,7 @@ import HeaderIntro from 'components/home/header';
 import Layout from 'components/layout';
 import ProgressBar from 'components/progress-bar';
 import SoundButton from 'components/sound-button';
+import Music from 'components/music';
 import CookieBanner from 'components/cookie-banner';
 import ModalComponent from 'components/modal';
 import Modal from 'react-modal';
@@ -12,8 +13,7 @@ import Intro from 'components/intro';
 import Icons from 'components/icons';
 import cx from 'classnames';
 import { CATEGORIES } from 'components/layout/constants.js';
-import useSound from 'use-sound';
-import openAudio from '../sounds/open.mp3'
+
 import breakpoints from 'utils/breakpoints';
 
 import Download from 'components/download';
@@ -30,18 +30,17 @@ export default function Report() {
   const [isModalOpen, setModal] = useState(false);
   const [isReportOpen, setReport] = useState(false);
   const [allowedSound, setAllowedSound] = useState(true);
-  const [play] = useSound(openAudio, { soundEnabled: allowedSound });
-  const [isMobile, setLayout] = useState(false);
 
+  const [isMobile, setLayout] = useState(false);
   useEffect(() => {
-    !!selectedPiece && (	
-      gtag.event({	
-      action: 'Reveal story',	
-      category: 'Story',	
-      label: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,	
-      value: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,	
+    !!selectedPiece && (
+      gtag.event({
+      action: 'Reveal story',
+      category: 'Story',
+      label: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
+      value: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
     }));
-    
+
     const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
     window.addEventListener("resize", handleResize);
     setLayout(window.innerWidth < breakpoints.sm);
@@ -58,7 +57,6 @@ export default function Report() {
   }, [selectedPiece]);
 
   useEffect(() => {
-
     Modal.setAppElement(`.${styles.container}`);
   }, []);
     const handleReport = () => {
@@ -75,10 +73,12 @@ export default function Report() {
       cx(styles.container, {
         'overflow-auto': !isReportOpen
       })
-    }>
+    }
+    >
       <Head>
         <title>Annual report 2020</title>
       </Head>
+      <Music allowedSound={allowedSound} isReportOpen={isReportOpen} />
       {selectedPiece && !isModalOpen && (
         <>
           <div
@@ -117,7 +117,7 @@ export default function Report() {
             <SocialMedia isMobile={isMobile}/>
           </div>
         )}
-        {!!isReportOpen && !isModalOpen && (
+        {isReportOpen && !isModalOpen && (
           <SoundButton
             className="-absolute"
             allowedSound={allowedSound}
