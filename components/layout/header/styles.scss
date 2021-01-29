@@ -41,12 +41,12 @@
     }
 
     .l-header-close--btn {
+      @include closeButton;
       position: absolute;
       top: 40px;
       right: 40px;
       cursor: pointer;
       z-index: $z-index-100;
-      background-color: transparent;
     }
   }
 

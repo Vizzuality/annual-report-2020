@@ -8,6 +8,7 @@ import Music from 'components/music';
 import CookieBanner from 'components/cookie-banner';
 import ModalComponent from 'components/modal';
 import Modal from 'react-modal';
+import RestartModal from 'components/restart-modal';
 import Intro from 'components/intro';
 import Icons from 'components/icons';
 import cx from 'classnames';
@@ -26,11 +27,17 @@ export default function Report() {
   const [hasMounted, setHasMounted] = useState(false);
   const [positionedPieces, setPositionedPieces] = useState(null);
   const [selectedPiece, setSelectedPiece] = useState(null);
+
   const [isModalOpen, setModal] = useState(false);
+  const [isRestartModalOpen, setRestartModal] = useState(false);
+
   const [isReportOpen, setReport] = useState(false);
   const [allowedSound, setAllowedSound] = useState(true);
 
   const [isMobile, setLayout] = useState(false);
+  const piecesPositioned = !!positionedPieces && 
+    Object.values(positionedPieces).filter(p => Object.keys(p).length === 3)
+
   useEffect(() => {
     !!selectedPiece && (
       gtag.event({
@@ -56,15 +63,32 @@ export default function Report() {
   }, [selectedPiece]);
 
   useEffect(() => {
+    setHasMounted(true);
+    piecesPositioned.length === 3 && !isReportOpen && setTimeout(() => {
+      setRestartModal(true);
+    }, 500);
+  }, [piecesPositioned]);
+
+  useEffect(() => {
     Modal.setAppElement(`.${styles.container}`);
   }, []);
-    const handleReport = () => {
+    
+  const handleReport = () => {
     setReport(true);
   };
 
   const handleClose = () => {
     setSelectedPiece(null);
     setModal(false);
+  };
+
+  const restartApp = () => {
+    setPositionedPieces(null);
+    setRestartModal(false);
+  };
+
+  const handleFinalModalClose = () => {
+    setRestartModal(false);
   };
 
   return (
@@ -105,6 +129,13 @@ export default function Report() {
           allowedS ound={allowedSound}
           setAllowedSound={setAllowedSound}
         />
+      </ModalComponent>
+      <ModalComponent
+        title="Congratulatiions-modal"
+        isOpen={isRestartModalOpen && !isModalOpen && isReportOpen
+        }
+        onRequestClose={handleFinalModalClose}>
+          <RestartModal onClose={handleFinalModalClose} onRestartApp={restartApp} />
       </ModalComponent>
       <main className={styles.main}>
         <div className={styles.noise} />

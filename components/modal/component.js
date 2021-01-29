@@ -27,7 +27,9 @@ const ModalComponent = ({
       onAfterOpen={onAfterOpen}
       onRequestClose={onRequestClose}
     >
-      <div className="modal-content">{children}</div>
+      <div className="modal-content">
+        {children}
+      </div>
     </Modal>
   );
 };

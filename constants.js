@@ -14,7 +14,7 @@ export const CATEGORIES = {
   whatever: {
     index: 2,
     title: 'Whatever',
-    color: '#FFAA36',
-    disabledColor: '#4D3411'
+    color: '#FFE229',
+    disabledColor: '#4D450D'
   }
 };
