@@ -13,7 +13,7 @@ const Icons = () => (
         <path d="M7.995 6l17.868 17.868-1.995 1.995-17.868-17.868z"></path>
         <path d="M7.995 25.863l17.868-17.868-1.995-1.995-17.868 17.868z"></path>
       </symbol>
-      <symbol id="icon-menu-2" viewBox="0 0 32 32">
+      <symbol id="icon-menu" viewBox="0 0 32 32">
         <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M6 7h20.667v2.667h-20.667v-2.667z"></path>
         <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M6 14.333h20.667v2.667h-20.667v-2.667z"></path>
         <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M6 22.333h20.667v2.667h-20.667v-2.667z"></path>

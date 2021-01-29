@@ -1,0 +1,31 @@
+@import 'styles/settings';
+
+.c-mobile-menu {
+
+  button {
+    position: absolute;
+    z-index: 100;
+    right: 20px;
+    top: 20px;
+    background-color: transparent;
+  }
+  .menu-content {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 100vh;
+
+  }
+
+  .privacy-link {
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    z-index: 2;
+  }
+}

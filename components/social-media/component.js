@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import Icon from 'components/icon';
 
-const SocialMedia = ({ isMobile }) => (
-  <div className="c-social-media">
+const SocialMedia = ({ isMobile, className }) => (
+  <div className={cx('c-social-media', { [className]: className } )}>
     {!isMobile && <span className="title">Follow us:</span>}
     <ul className="social-networks">
       <li>

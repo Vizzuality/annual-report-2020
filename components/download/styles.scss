@@ -1,8 +1,15 @@
 @import 'styles/settings';
 
 .c-download {
-  @include headerElements('center');
   display: flex;
+
+  &.-desktop {
+    @include headerElements('center');
+  }
+
+  &.-mobile {
+    position: relative;
+  }
 
   .download-content {
     align-items: center;
@@ -12,5 +19,9 @@
       padding-right: 10px;
       font-weight: bold;
     }
+  }
+
+  &.-mobile {
+    position: relative;
   }
 }

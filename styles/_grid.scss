@@ -1,19 +1,6 @@
 $flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * -1;
 $flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 0.25;
 
-.wrapper {
-  width: 100%;
-  box-sizing: border-box;
-  max-width: $flexboxgrid-max-width;
-  margin: 0 auto;
-  padding: 0 $flexboxgrid-outer-margin/2;
-  position: relative;
-
-  @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
-    padding: 0 $flexboxgrid-outer-margin/3;
-  }
-}
-
 .row {
   box-sizing: border-box;
   @include flexbox();

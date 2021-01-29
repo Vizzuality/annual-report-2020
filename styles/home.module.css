@@ -45,6 +45,16 @@
   margin-top: 3rem;
 }
 
+.privacyLink {
+  position: absolute;
+  left: 30px;
+  bottom: 5%;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  z-index: 2;
+}
+
 .circle {
   height: 250px;
   width: 250px;
@@ -104,15 +114,7 @@
   }
 }
 
-.privacyLink {
-  position: absolute;
-  left: 30px;
-  bottom: 5%;
-  font-weight: bold;
-  font-size: 16px;
-  color: white;
-  z-index: 2;
-}
+
 
 .noise {
   animation: grain 1s steps(10) infinite;
