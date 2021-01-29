@@ -1,43 +1,60 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import useSound from 'use-sound';
-import openAudio from '../../sounds/vizz2.webm';
+import vizz1 from '../../sounds/vizz1.webm';
+import vizz2 from '../../sounds/vizz2.webm';
 
 const SONG_STATE = {
   playing: 1,
-  paused: 2
+  paused: 2,
+  ended: 3
 };
 
-export default ({ allowedSound, isReportOpen }) => {
+const Music = ({ allowedSound, isReportOpen }) => {
   const [songState, setSongState] = useState(null);
-  const [playSong1, {
-    pause: pauseSong1
-  }] = useSound(openAudio, {
+  const [currentSong, setCurrentSong] = useState(0);
+  const config = {
+    onend: () => {
+      setSongState(SONG_STATE.ended)
+    },
     volume: 0.3,
     soundEnabled: allowedSound,
     preload: false,
     html5: true
-  });
+  };
+  const [playSong1, { pause: pauseSong1 }] = useSound(vizz1, config);
+  const [playSong2, { pause: pauseSong2 }] = useSound(vizz2, config);
+  const songs = [
+    { play: playSong1, pause: pauseSong1 },
+    { play: playSong2, pause: pauseSong2 }
+  ];
 
   useEffect(() => {
     if (isReportOpen) {
-      const WAIT_MS = 15000 + 2000;
+      const DELAY_MS = 2000;
+      const WAIT_MS = 15000;
       setTimeout(() => {
-        playSong1();
+        songs[currentSong].play();
         setSongState(SONG_STATE.playing);
-      }, Math.random() * WAIT_MS);
+      }, (Math.random() * WAIT_MS) + DELAY_MS);
     }
   }, [isReportOpen]);
 
   useEffect(() => {
     if (!allowedSound && songState === SONG_STATE.playing) {
       setSongState(SONG_STATE.paused);
-      pauseSong1();
+      songs[currentSong].pause();
     }
-    console.log(allowedSound, songState)
     if (allowedSound && songState === SONG_STATE.paused) {
       setSongState(SONG_STATE.playing);
-      playSong1();
+      songs[currentSong].play()
+    }
+    if (allowedSound && songState === SONG_STATE.ended) {
+      setCurrentSong((currentSong + 1) % (songs.length + 1));
+      setSongState(SONG_STATE.playing);
+      songs[currentSong].play();
     }
   }, [allowedSound, songState])
   return null;
-}
+};
+
+export default Music;
