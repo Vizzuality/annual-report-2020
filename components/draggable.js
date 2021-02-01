@@ -14,7 +14,8 @@ function DraggableMesh({
   rotationCorrection,
   draggablesRef,
   disabled,
-  setAutoRotate
+  setAutoRotate,
+  autoRotate
 }) {
 
   const isPositioned = positionedPieces && positionedPieces[category.index] && positionedPieces[category.index][pieceIndex];
@@ -38,6 +39,10 @@ function DraggableMesh({
         last
       } = props;
       const [, , z] = position;
+      if (autoRotate) {
+        setAutoRotate(false);
+      }
+
       if (first) {
         setDraggingPiece({ index: pieceIndex, category: category.index });
       }
@@ -67,7 +72,7 @@ function DraggableMesh({
               rotation={finalRotation}
               ref={reference => draggablesRef.current.add(reference)}
               geometry={geometry}
-              onClick={() => setAutoRotate(false)}
+              onClick={() => autoRotate && setAutoRotate(false)}
             >
               <meshLambertMaterial attach="material" color={isEnabled ? category.color : category.disabledColor} />
             </mesh>
