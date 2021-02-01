@@ -14,7 +14,7 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
         <>
           <div className="row center-xsm">
             <div className="col-xs-12">
-              <h1>Spotlight <br />on 2020</h1>
+              <h1>Spotlight <span className="title-second-line">on 2020</span></h1>
             </div>
           </div>
           <div className="row">

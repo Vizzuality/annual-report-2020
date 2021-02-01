@@ -13,21 +13,22 @@
 
   h1 {
     font-family: $font-family-2;
-    font-weight: 300;
-    font-size: 72px;
+    font-weight: 100;
+    font-size: 80px;
     letter-spacing: 0;
-    line-height: 1.6;
+    line-height: 1.2;
+    margin-bottom: 40px;
     margin: 0;
     text-align: center;
 
-    @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
-      font-size: 100px;
-      line-height: 100px;
+    .title-second-line {
+      display: block;
     }
 
-    @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
-      font-size: 80px;
-      line-height: 80px;
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+      font-size: 180px;
+      line-height: 200px;
+      margin-bottom: 40px;
     }
   }
 
@@ -35,19 +36,14 @@
     display: flex;
     font-family: $font-family-1;
     color: $color-2;
-    font-size: 54px;
+    font-size: 40px;
     font-weight: 600;
     line-height: 65px;
     margin: 0;
 
-    @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
-      font-size: 40px;
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+      font-size: 54px;
       line-height: 40px;
-    }
-
-    @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
-      font-size: 20px;
-      line-height: 20px;
     }
   }
 
