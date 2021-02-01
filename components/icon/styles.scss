@@ -10,6 +10,16 @@
     height: 20px;
   }
 
+  &.-big {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.-huge {
+    width: 70px;
+    height: 70px;
+  }
+
   &.social-media {
     fill: white;
 
@@ -17,5 +27,9 @@
       color: #ffe229;
       transition: color 0.3s ease-in-out;
     }
+  }
+
+  &.-light {
+    fill: white;
   }
 }

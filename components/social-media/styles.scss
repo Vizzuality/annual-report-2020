@@ -1,13 +1,8 @@
 @import 'styles/settings';
 
   .c-social-media {
-    @include headerElements('right');
     display: flex;
     align-items: center;
-
-    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
-      flex-direction: row;
-    }
 
     .social-networks {
       display: flex;
@@ -34,6 +29,18 @@
           display: flex;
         }
       }
+    }
+
+    &.-desktop {
+      @include headerElements('right');
+
+      @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+        flex-direction: row;
+      }
+    }
+
+    &.-mobile {
+      position: relative;
     }
   }
 

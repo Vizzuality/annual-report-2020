@@ -24,20 +24,37 @@
     .l-content {  
     
       h2 {
-        font-size: 100px;
-        line-height: 100px;
         font-family: $font-family-2;
+        font-size: 64px;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 74px;
       }
     
       img {
         max-width: 100%;
       }
-    }
 
-    &.open {
-      background-color: green;
+      p {
+        font-family: $font-family-1;
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 35px;
+
+        &.-italic {
+          font-style: italic;
+        }
+
+        &.-small {
+          font-size: 16px;
+        }
+
+        a,
+        span {
+          font-weight: bold;
+          text-decoration: underline;;
+        }
+      }
     }
   }
-
-
-

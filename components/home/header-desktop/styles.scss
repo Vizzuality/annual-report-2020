@@ -1,9 +1,13 @@
 @import 'styles/settings';
 
-.c-header-intro {
-  @include headerElements('left');
+.c-header-desktop {
+  width: 100vw;
+  z-index: $z-index-10;
 
   .header-description {
+    position: absolute;
+    left: 40px;
+    top: 40px;
     display: flex;
     margin: 0;
     letter-spacing: 0;
@@ -16,10 +20,10 @@
 
     p {
       margin: 0;
-    }
 
-    span {
-      font-weight: bold;
+      span {
+        font-weight: bold;
+      }
     }
   }
 }

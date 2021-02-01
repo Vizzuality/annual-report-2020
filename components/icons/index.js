@@ -9,6 +9,15 @@ const Icons = () => (
     xlink="http://www.w3.org/1999/xlink"
   >
     <defs>
+      <symbol id="icon-menu-close" viewBox="0 0 32 32">
+        <path d="M7.995 6l17.868 17.868-1.995 1.995-17.868-17.868z"></path>
+        <path d="M7.995 25.863l17.868-17.868-1.995-1.995-17.868 17.868z"></path>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 32 32">
+        <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M6 7h20.667v2.667h-20.667v-2.667z"></path>
+        <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M6 14.333h20.667v2.667h-20.667v-2.667z"></path>
+        <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M6 22.333h20.667v2.667h-20.667v-2.667z"></path>
+      </symbol>
       <symbol id="icon-play" viewBox="0 0 22 28">
         <path d="M21.625 14.484l-20.75 11.531c-0.484 0.266-0.875 0.031-0.875-0.516v-23c0-0.547 0.391-0.781 0.875-0.516l20.75 11.531c0.484 0.266 0.484 0.703 0 0.969z"></path>
       </symbol>
@@ -28,6 +37,11 @@ const Icons = () => (
       </symbol>
       <symbol id="icon-linkedin" viewBox="0 0 32 32">
         <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M22.667 9.6c6.4 0 7.467 4.267 7.467 9.6v11.2h-6.133l-0.001-10.428c-0.017-2.272-0.245-4.772-3.199-4.772-3.2 0-3.733 2.667-3.733 5.333v10.133h-6.4v-20.533h6.133v2.667c0.8-1.6 2.933-3.2 5.867-3.2zM6.933 10.133v20.267h-6.4v-20.267h6.4zM3.733 0c2.133 0 3.733 1.6 3.733 3.733-0.267 1.867-1.867 3.733-3.733 3.733-2.133 0-3.733-1.867-3.733-3.733 0-2.133 1.6-3.733 3.733-3.733z"></path>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 32 32">
+        <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+        <path fill="none" stroke="#000" style={{ stroke: "var(--color2, #000)" }} stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3714" d="M11.429 11.429l9.143 9.143"></path>
+        <path fill="none" stroke="#000" style={{ stroke: "var(--color2, #000)" }} stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3714" d="M11.429 20.571l9.143-9.143"></path>
       </symbol>
     </defs>
   </svg>

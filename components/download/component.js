@@ -1,10 +1,11 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from 'components/icon';
 
 import * as gtag from 'utils/gtag';
 
-export default function Download({ isMobile }) {
+export default function Download({ isMobile, className }) {
 
   const trackDownloads = () => (
     gtag.event({
@@ -16,7 +17,7 @@ export default function Download({ isMobile }) {
   );
 
   return (
-    <div className="c-download">
+    <div className={cx('c-download', { [className]: className })}>
       <div className="download-content">
       <a
         href={'href'}
@@ -33,11 +34,13 @@ export default function Download({ isMobile }) {
 };
 
 Download.propTypes = {
-  isMobile: PropTypes.boolean
+  isMobile: PropTypes.boolean,
+  className: PropTypes.string
 };
 
 Download.defaultProps = {
-  isMobile: false
+  isMobile: false,
+  className: ''
 };
 
 

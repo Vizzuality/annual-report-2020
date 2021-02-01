@@ -78,18 +78,13 @@ const HeaderDesktop = ({ title, onClick }) => {
 
   return (
     <header className="l-header -desktop">
-      <div className="wrapper">
-        <div className="l-header-content">
-          <p>Spotlight on 2020 by <span>vizzuality.</span></p>
-          <button
-            type="button"
-            className="l-header-close--btn"
-            onClick={(e) => e.stopPropagation() || onClick()}
-          >
-            <Icon name="cancel" />
-          </button>
-        </div>
-      </div>
+      <button
+        type="button"
+        className="l-header-close--btn"
+        onClick={(e) => e.stopPropagation() || onClick()}
+      >
+        <Icon name="close" className="-huge" />
+      </button>
       <div className="l-header-container">
         <div className="wrapper">
           <span ref={ref} className="l-header-title title-scrolling" style={{ position: 'relative', opacity: 0 }}>{title}{' '}·</span>
@@ -99,7 +94,7 @@ const HeaderDesktop = ({ title, onClick }) => {
           const Tag = index === 0 ? 'h1' : 'span';
           return (
             <Tag
-              className = {
+              className={
                 `l-header-title title-scrolling ${className}`
               }
               style={{

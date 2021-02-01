@@ -19,7 +19,7 @@ export const CATEGORIES = {
     color: 'rgba(160, 135, 255)',
   },
   1: {
-    title: 'Future',
+    title: 'Change is possible',
     index: {
       0: Page4,
       1: Page5,
@@ -28,7 +28,7 @@ export const CATEGORIES = {
     color: 'rgba(46, 138, 138)',
   },
   2: {
-    title: 'Whatever',
+    title: 'Working together',
     index: {
       0: Page7,
       1: Page8,

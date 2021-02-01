@@ -1,18 +1,5 @@
-$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * 4 * -1;
-$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 4;
-
-.wrapper {
-  width: 100%;
-  box-sizing: border-box;
-  max-width: $flexboxgrid-max-width;
-  margin: 0 auto;
-  padding: 0 $flexboxgrid-outer-margin/2;
-  position: relative;
-
-  @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
-    padding: 0 $flexboxgrid-outer-margin;
-  }
-}
+$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * -1;
+$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 0.25;
 
 .row {
   box-sizing: border-box;
@@ -20,8 +7,8 @@ $flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 4;
   @include flex(0, 1, auto);
   @include flex-direction(row);
   @include flex-wrap(wrap);
-  margin-right: $flexboxgrid-gutter-compensation;
-  margin-left: $flexboxgrid-gutter-compensation;
+  margin-right: $flexbox-grid-half-gutter-width;
+  margin-left: $flexbox-grid-half-gutter-width;
 }
 
 .row.reverse {

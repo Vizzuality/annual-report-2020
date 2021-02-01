@@ -1,0 +1,53 @@
+@import 'styles/settings';
+
+.c-header-mobile {
+  width: 100vw;
+  position: absolute;
+  z-index: 200;
+
+  .header-description {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    margin: 0;
+    letter-spacing: 0;
+    font-weight: 300;
+    line-height: 20px;
+
+    p {
+      margin: 0;
+
+      &.-mobile {
+        font-size: 20px;
+        letter-spacing: 0;
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .header-menu--button {
+    background-color: transparent;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .menu-content {
+    position: absolute;
+    top: 55px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: $background-color;
+
+    .menu-item {
+      padding: 20px
+    }
+  }
+}

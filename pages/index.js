@@ -1,7 +1,6 @@
 import React, { useState, lazy, useEffect, Suspense } from 'react';
 import Head from 'next/head';
 import styles from '../styles/home.module.css';
-import HeaderIntro from 'components/home/header';
 import Layout from 'components/layout';
 import ProgressBar from 'components/progress-bar';
 import SoundButton from 'components/sound-button';
@@ -16,8 +15,8 @@ import { CATEGORIES } from 'components/layout/constants.js';
 
 import breakpoints from 'utils/breakpoints';
 
-import Download from 'components/download';
-import SocialMedia from 'components/social-media';
+import HomeHeaderDesktop from 'components/home/header-desktop';
+import HomeHeaderMobile from 'components/home/header-mobile';
 
 import * as gtag from 'utils/gtag';
 
@@ -103,20 +102,15 @@ export default function Report() {
           story={selectedPiece}
           onClose={handleClose}
           isMobile={isMobile}
-          allowedSound={allowedSound}
+          allowedS ound={allowedSound}
           setAllowedSound={setAllowedSound}
         />
       </ModalComponent>
       <main className={styles.main}>
         <div className={styles.noise} />
         {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
-        {isReportOpen && (
-          <div className={styles.header}>
-            <HeaderIntro isMobile={isMobile} />
-            <Download isMobile={isMobile} />
-            <SocialMedia isMobile={isMobile}/>
-          </div>
-        )}
+        {isReportOpen && !isMobile && <HomeHeaderDesktop />}
+        {isReportOpen && !isModalOpen && isMobile && <HomeHeaderMobile />}
         {isReportOpen && !isModalOpen && (
           <SoundButton
             className="-absolute"
@@ -124,15 +118,16 @@ export default function Report() {
             setAllowedSound={setAllowedSound}
           />
         )}
-        {
-          !!isReportOpen && !isModalOpen && < a href = "https://www.vizzuality.com/privacy-policy"
-          title = "Privacy policy"
-          target = "_blank"
-          className = {
-            styles.privacyLink
-          } >
-          Privacy policy.
-        </a>}
+        {isReportOpen && !isModalOpen && (
+            <a href = "https://www.vizzuality.com/privacy-policy"
+            title = "Privacy policy"
+            target = "_blank"
+            className = {
+              styles.privacyLink
+            } >
+            Privacy policy.
+          </a>
+        )}
         <CookieBanner />
         <div className={styles.canvasContainer}>
           {hasMounted && (
