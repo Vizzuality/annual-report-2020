@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import Equalizer from 'components/equalizer';
 import * as gtag from 'utils/gtag';
 
 const SoundButton = ({ allowedSound, setAllowedSound, className }) => {
-  
   return (
-    <button 
+    <button
       className={cx('c-sound-button',
         className={ [className]: className })} type="button" onClick={() => {
       gtag.event({
@@ -23,6 +23,7 @@ const SoundButton = ({ allowedSound, setAllowedSound, className }) => {
       <span>
         {!allowedSound ? 'OFF' : 'ON'}
       </span>
+      <Equalizer allowedSound={allowedSound}/>
     </button>
   );
 };

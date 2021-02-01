@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SoundButton from 'components/sound-button';
+import Equalizer from 'components/equalizer';
 
 export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
 
@@ -32,9 +32,10 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
                 <p>Fit the puzzle pieces into our globe to see our impact and our hope for the future.</p>
               </div>
             </div>
+
             <div className="row center-xsm">
-              <div className="col-xs-12 col-sm-9">
-                <SoundButton className="-relative" allowedSound={allowedSound} setAllowedSound={setAllowedSound} />
+              <div className="col-xs-12 col-lg-9">
+                <Equalizer allowedSound={allowedSound} />
               </div>
             </div>
             <div className="row center-xsm">
