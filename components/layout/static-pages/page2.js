@@ -9,10 +9,10 @@ const Page2 = () => (
         <p>More detailed fire data analysis arrived on <a href="https://www.globalforestwatch.org/" target="_blank">Global Forest Watch </a> in time to track the record-breaking USA wildfires. Visitors to the platform could see which states were worst affected, and see if the number of fire alerts in those places was higher than normal. (Spoiler alert, the number of fire alerts in California and Oregon was unusually high in September 2020). The ability to put data into context is vital for understanding what changes are happening and how to respond to them.</p>
         <div className="video-container">
         <iframe src="https://www.youtube.com/embed/RqDLNnaNnII"
-          frameborder='0'
+          frameBorder='0'
           className="video-embed"
           allow='autoplay; encrypted-media'
-          allowfullscreen
+          allowFullScreen
           title='video'
         />
         </div>

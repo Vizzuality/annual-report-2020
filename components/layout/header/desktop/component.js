@@ -94,6 +94,7 @@ const HeaderDesktop = ({ title, onClick }) => {
           const Tag = index === 0 ? 'h1' : 'span';
           return (
             <Tag
+              key={x}
               className={
                 `l-header-title title-scrolling ${className}`
               }

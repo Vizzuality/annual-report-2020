@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import ModalComponent from 'components/modal';
 import Layout from 'components/layout';
 import { CATEGORIES } from 'components/layout/constants';
@@ -20,7 +21,7 @@ const ReportPage = ({ reportId, categoryId }) => {
 
   useEffect(() => {
     !!categoryId && !!reportId && (
-      gtag.event({
+      gtag.event && gtag.event({
         action: 'Reveal individual story',
         category: 'Story',
         label: `Category: ${categoryId} - index: ${reportId}`,
