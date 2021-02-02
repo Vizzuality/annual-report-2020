@@ -131,8 +131,8 @@ export default function Report() {
         />
       </ModalComponent>
       <ModalComponent
-        title="Congratulations-modal"
-        isOpen={true}
+        title="Congratulatiions-modal"
+        isOpen={isRestartModalOpen && !isModalOpen && isReportOpen}
         onRequestClose={handleFinalModalClose}>
           <RestartModal onClose={handleFinalModalClose} onRestartApp={restartApp} />
       </ModalComponent>
