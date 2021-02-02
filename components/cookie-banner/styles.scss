@@ -36,10 +36,16 @@
 
   .cookie-button {
     @include button;
-    width: 120px;
-    height: 45px;
-    padding: 0;
+    padding: 10px 25px;
     background-color: black;
     color: white;
+    line-height: initial;
+    max-width: fit-content;
+
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+      width: 120px;
+      height: 45px;
+      line-height: 30px;
+    }
   }
 }
