@@ -28,7 +28,6 @@ export default function RestarModal({ onRestartApp, onClose }) {
     } catch (error) {
       console.error("Copy failed", error);
     }
-
   }
 
   const trackDownloads = () => (
@@ -47,9 +46,9 @@ export default function RestarModal({ onRestartApp, onClose }) {
           <p>What do you want to do now?</p>
           
           <ul>
-            <li className={cx('share', { '-copied': isCopied })} onClick={copyToClipboard}>
+            <li className={cx("share", { '-copied': isCopied })} onClick={copyToClipboard}>
               <div className="triangle" />
-              Share this experience with a friend.
+              {isCopied ? 'Url site copied to clipboard' : 'Share this experience with a friend.'}
             </li>    
             <li>
               <div className="triangle" />
@@ -62,7 +61,7 @@ export default function RestarModal({ onRestartApp, onClose }) {
                 Download the full report.
               </a>
             </li>
-            <li onclick={onRestartApp}><div className="triangle" />Play again.</li>
+            <li onClick={onRestartApp}><div className="triangle" />Play again.</li>
           </ul>
           <p>What do you want to do now?</p>
           <a

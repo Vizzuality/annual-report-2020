@@ -5,15 +5,15 @@ export const CATEGORIES = {
     color: '#A087FF',
     disabledColor: '#31294D'
   },
-  future: {
+  change: {
     index: 1,
-    title: 'Future',
+    title: 'Change is possible',
     color: '#2BA4A0',
     disabledColor: '#013548'
   },
-  whatever: {
+  together: {
     index: 2,
-    title: 'Whatever',
+    title: 'Working together',
     color: '#FFE229',
     disabledColor: '#4D450D'
   }

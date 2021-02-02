@@ -1,5 +1,7 @@
 @import 'styles/settings';
 
+$padding-bottom: 20px; 
+
 .c-restart-modal {
   background-color: white;
   position: absolute;
@@ -28,14 +30,6 @@
     flex-direction: column;
     justify-content: flex-start;
 
-    .share {
-      
-      cursor: url('/copy.svg'), auto;
-      
-      &.-copied {
-        cursor: url('/clipboard.svg'), auto;
-      }
-    }
 
     h1 {
       display: inline-flex;
@@ -57,11 +51,12 @@
     }
   
     p {
-      font-family: Inter;
+      font-family: $font-family-1;
       font-size: 20px;
       font-weight: 300;
       letter-spacing: 0;
       line-height: 24px;
+      padding-bottom: $padding-bottom;
 
       @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
         font-size: 16px;
@@ -74,13 +69,15 @@
     }
             
     li, a {
+      cursor: pointer;
       font-family: $font-family-1;
       font-size: 30px;
-      font-weight: bold;
+      font-weight: 500;
       letter-spacing: 0;
       line-height: 36px;
       display: flex;
       align-items: center;
+
 
       @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
         font-size: 16px;
@@ -90,6 +87,14 @@
         font-size: 18px;
         line-height: 18px;
       }
+
+      &.-copied {
+        font-style: italic;
+      }
+    }
+
+    li {
+      padding-bottom: $padding-bottom;
     }
 
     .triangle {

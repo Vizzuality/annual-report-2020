@@ -64,7 +64,7 @@ export default function Report() {
 
   useEffect(() => {
     setHasMounted(true);
-    piecesPositioned.length === 3 && !isReportOpen && setTimeout(() => {
+    piecesPositioned.length === 3 && isReportOpen && setTimeout(() => {
       setRestartModal(true);
     }, 500);
   }, [piecesPositioned]);
@@ -83,7 +83,7 @@ export default function Report() {
   };
 
   const restartApp = () => {
-    setPositionedPieces(null);
+    location.reload();
     setRestartModal(false);
   };
 
@@ -119,7 +119,7 @@ export default function Report() {
         </>
       )}
       <ModalComponent
-        title={"selectedPiece.category.index.title"}
+        title={selectedPiece && CATEGORIES[selectedPiece.category].title}
         isOpen={isModalOpen}
         onRequestClose={handleClose}>
         <Layout
@@ -131,7 +131,7 @@ export default function Report() {
         />
       </ModalComponent>
       <ModalComponent
-        title="Congratulatiions-modal"
+        title="Congratulations-modal"
         isOpen={isRestartModalOpen && !isModalOpen && isReportOpen}
         onRequestClose={handleFinalModalClose}>
           <RestartModal onClose={handleFinalModalClose} onRestartApp={restartApp} />
