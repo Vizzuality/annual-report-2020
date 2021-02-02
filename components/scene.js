@@ -84,7 +84,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     },
     {
       index: 0,
-      category: CATEGORIES.future,
+      category: CATEGORIES.change,
       position: [-3.5, 2],
       positionMobile: [-0.5, 2.5],
       rotationCorrection: [-Math.PI / 12, -Math.PI / 12, 0],
@@ -92,7 +92,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     },
     {
       index: 1,
-      category: CATEGORIES.future,
+      category: CATEGORIES.change,
       position: [-3.5, -2],
       positionMobile: [2, -2.5],
       rotationCorrection: [Math.PI / 12, 0, -Math.PI / 12],
@@ -100,7 +100,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     },
     {
       index: 2,
-      category: CATEGORIES.future,
+      category: CATEGORIES.change,
       position: [-4.5, -1],
       positionMobile: [-2,-2.5],
       rotationCorrection: [Math.PI / 12, - Math.PI / 12, -Math.PI / 12],
@@ -108,7 +108,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     },
     {
       index: 0,
-      category: CATEGORIES.whatever,
+      category: CATEGORIES.together,
       position: [4.5, 1],
       positionMobile: [-1, -3.5],
       rotationCorrection: [Math.PI / 12, -Math.PI / 12, Math.PI / 12],
@@ -116,7 +116,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     },
     {
       index: 1,
-      category: CATEGORIES.whatever,
+      category: CATEGORIES.together,
       position: [-4.5, 1],
       positionMobile: [1, -3.5],
       rotationCorrection: [- Math.PI / 12, - Math.PI / 3.5, - Math.PI / 2.5],
@@ -124,7 +124,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     },
     {
       index: 2,
-      category: CATEGORIES.whatever,
+      category: CATEGORIES.together,
       position: [4, -2],
       positionMobile: [1, 2.5],
       rotationCorrection: [0, -Math.PI / 10, -Math.PI / 3],
@@ -149,32 +149,32 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     },
     {
       index: 0,
-      category: CATEGORIES.future,
+      category: CATEGORIES.change,
       geometry: dpiece11.geometry
     },
     {
       index: 1,
-      category: CATEGORIES.future,
+      category: CATEGORIES.change,
       geometry: dpiece12.geometry
     },
     {
       index: 2,
-      category: CATEGORIES.future,
+      category: CATEGORIES.change,
       geometry: dpiece13.geometry
     },
     {
       index: 0,
-      category: CATEGORIES.whatever,
+      category: CATEGORIES.together,
       geometry: dpiece21.geometry
     },
     {
       index: 1,
-      category: CATEGORIES.whatever,
+      category: CATEGORIES.together,
       geometry: dpiece22.geometry
     },
     {
       index: 2,
-      category: CATEGORIES.whatever,
+      category: CATEGORIES.together,
       geometry: dpiece23.geometry
     }
   ];

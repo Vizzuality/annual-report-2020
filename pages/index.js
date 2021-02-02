@@ -8,6 +8,7 @@ import Music from 'components/music';
 import CookieBanner from 'components/cookie-banner';
 import ModalComponent from 'components/modal';
 import Modal from 'react-modal';
+import FinalModal from 'components/final-modal';
 import Intro from 'components/intro';
 import Icons from 'components/icons';
 import cx from 'classnames';
@@ -26,11 +27,18 @@ export default function Report() {
   const [hasMounted, setHasMounted] = useState(false);
   const [positionedPieces, setPositionedPieces] = useState(null);
   const [selectedPiece, setSelectedPiece] = useState(null);
+
   const [isModalOpen, setModal] = useState(false);
+  const [isFinalModalOpen, setFinalModal] = useState(false);
+  const [hasShownFinalModal, setHasShownFinalModal] = useState(false);
+
   const [isReportOpen, setReport] = useState(false);
   const [allowedSound, setAllowedSound] = useState(true);
 
   const [isMobile, setLayout] = useState(false);
+  const piecesPositioned = !!positionedPieces &&
+    Object.values(positionedPieces).filter(p => Object.keys(p).length === 3)
+
   useEffect(() => {
     !!selectedPiece && (
       gtag.event({
@@ -50,21 +58,44 @@ export default function Report() {
 
   useEffect(() => {
     setHasMounted(true);
-    !!selectedPiece && setTimeout(() => {
-      setModal(true);
-    }, 500);
+  }, []);
+
+  useEffect(() => {
+    let timeout = null;
+    if (!!selectedPiece) {
+      timeout = setTimeout(() => {
+        setModal(true);
+      }, 500);
+    }
+    return timeout ? clearTimeout(timeout) : undefined;
   }, [selectedPiece]);
+
+  useEffect(() => {
+    let timeout = null;
+    if (!hasShownFinalModal && piecesPositioned.length === 3 && isReportOpen) {
+      timeout = setTimeout(() => {
+        setFinalModal(true);
+      }, 500);
+    }
+    return timeout ? clearTimeout(timeout) : undefined;
+  }, [piecesPositioned]);
 
   useEffect(() => {
     Modal.setAppElement(`.${styles.container}`);
   }, []);
-    const handleReport = () => {
+
+  const handleReport = () => {
     setReport(true);
   };
 
   const handleClose = () => {
     setSelectedPiece(null);
     setModal(false);
+  };
+
+  const handleFinalModalClose = () => {
+    setFinalModal(false);
+    setHasShownFinalModal(true);
   };
 
   return (
@@ -95,16 +126,22 @@ export default function Report() {
         </>
       )}
       <ModalComponent
-        title={"selectedPiece.category.index.title"}
+        title={selectedPiece && CATEGORIES[selectedPiece.category].title}
         isOpen={isModalOpen}
         onRequestClose={handleClose}>
         <Layout
           story={selectedPiece}
           onClose={handleClose}
           isMobile={isMobile}
-          allowedS ound={allowedSound}
+          allowedSound={allowedSound}
           setAllowedSound={setAllowedSound}
         />
+      </ModalComponent>
+      <ModalComponent
+        title="Congratulations-modal"
+        isOpen={isFinalModalOpen && !isModalOpen && isReportOpen}
+        onRequestClose={handleFinalModalClose}>
+          <FinalModal onClose={handleFinalModalClose} />
       </ModalComponent>
       <main className={styles.main}>
         <div className={styles.noise} />

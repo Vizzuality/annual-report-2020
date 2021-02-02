@@ -35,26 +35,59 @@
         max-width: 100%;
       }
 
-      p {
+      p,
+      li {
         font-family: $font-family-1;
         font-size: 20px;
         font-weight: 300;
         letter-spacing: 0;
         line-height: 35px;
 
-        &.-italic {
-          font-style: italic;
-        }
-
         &.-small {
           font-size: 16px;
         }
+      }
 
-        a,
-        span {
-          font-weight: bold;
-          text-decoration: underline;;
-        }
+      ul {
+        padding-left: 30px;
+      }
+
+      .-italic {
+        font-style: italic;
+      }
+
+      .-strong {
+        font-weight: bold;
+      }
+
+      .-underline {
+        text-decoration: underline;
       }
     }
+
+    .video-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+      .video-embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .button-link {
+      @include button;
+      display: inline-flex;
+      background-color: black;
+      color: white;
+      margin: 20px 0;
+    }
   }
+

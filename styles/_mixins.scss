@@ -401,11 +401,20 @@
 	font-family: $font-family-1;
 	letter-spacing: 0;
 	line-height: 30px;
-  text-align: center;
+  	text-align: center;
   
-  @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
-		padding: 20px 75px;
-	}
+	@media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+    padding: 20px 75px;
+  }
+}
+
+@mixin closeButton {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: $z-index-100;
 }
 
 @mixin headerElements($position) {

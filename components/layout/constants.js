@@ -16,7 +16,7 @@ export const CATEGORIES = {
       1: Page2,
       2: Page3
     },
-    color: 'rgba(160, 135, 255)',
+    color: '#A087FF',
   },
   1: {
     title: 'Change is possible',
@@ -25,7 +25,7 @@ export const CATEGORIES = {
       1: Page5,
       2: Page6
     },
-    color: 'rgba(46, 138, 138)',
+    color: '#2BA4A0',
   },
   2: {
     title: 'Working together',
@@ -34,6 +34,6 @@ export const CATEGORIES = {
       1: Page8,
       2: Page9
     },
-    color: 'rgba(255, 170, 54)',
+    color: '#FFE229',
   }
 };

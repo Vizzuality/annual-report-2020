@@ -80,10 +80,10 @@ const HeaderDesktop = ({ title, onClick }) => {
     <header className="l-header -desktop">
       <button
         type="button"
-        className="l-header-close--btn"
+        className="l-header-close--btn -border"
         onClick={(e) => e.stopPropagation() || onClick()}
       >
-        <Icon name="close" className="-huge" />
+        <Icon name="menu-close" className="-medium" />
       </button>
       <div className="l-header-container">
         <div className="wrapper">

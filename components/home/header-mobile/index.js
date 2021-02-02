@@ -23,7 +23,7 @@ const HomeHeaderMobile = () => {
         <p>2020 by <span>vizzuality.</span></p>
       </a>
       <button className="header-menu--button" onClick={handleMenu}>
-        <Icon name={isOpen ? "menu-close" : "menu"} className="-big -light" />
+        <Icon name={isOpen ? "menu-close" : "menu"} className="-medium -light" />
 
       </button>
       {isOpen && (
