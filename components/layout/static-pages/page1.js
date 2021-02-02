@@ -12,8 +12,9 @@ const Page1 = () => (
         <Image
           src="/images/page1.png"
           alt="Picture of the author"
-          width={500}
-          height={500}
+          width={656}
+          height={652}
+          layout="responsive"
         />
         <p className="-italic -small">In 2020, we invested our collective effort into projects at the intersection of climate change, biodiversity, and social inequality.</p>
         <p>2020 was the year in which we saw the importance of these platforms more clearly than ever before. Virtually overnight, millions of people had to stay at home. Planes were grounded, meetings moved online, and we all adopted new ways of working.</p>

@@ -413,6 +413,8 @@
   width: 70px;
   height: 70px;
   border-radius: 100%;
+  cursor: pointer;
+  z-index: $z-index-100;
 }
 
 @mixin headerElements($position) {

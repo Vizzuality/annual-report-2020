@@ -9,7 +9,7 @@ const HeaderMobile = ({ title, onClick }) => (
       className="l-header-close--btn -border"
       onClick={(e) => e.stopPropagation() || onClick()}
     >
-      <Icon name="close" className="-medium" />
+      <Icon name="menu-close" className="-medium" />
     </button>
   </header>
 );

@@ -1,6 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router'
 
 import Icon from 'components/icon';
 
@@ -8,12 +7,23 @@ import * as gtag from 'utils/gtag';
 
 export default function RestarModal({ onRestartApp, onClose }) {
 
- const copyToClipboard = () => {
-    var dummy = document.createElement("textarea");
-    dummy.value = 'http://localhost:3003/';
-    dummy.select();
-    document.execCommand("copy");
-  };
+
+  const copyToClipboard = async (event) => {
+    if (!navigator.clipboard) { return; }  
+    
+    try {
+      const link = window.location.href;
+      await navigator.clipboard.writeText(link);
+      
+      event.target.dataset.clipboard = link;
+
+      setTimeout(() =>{
+        delete event.target.dataset.clipboard;
+      }, 1500);    
+    } catch (error) {
+      console.error("Copy failed", error);
+    }
+  }
 
   const trackDownloads = () => (
     gtag.event({
@@ -31,9 +41,10 @@ export default function RestarModal({ onRestartApp, onClose }) {
           <p>What do you want to do now?</p>
           
           <ul>
-            <li onClick={copyToClipboard}><div className="triangle" />
+            <li onClick={copyToClipboard}>
+              <div className="triangle" />
               Share this experience with a friend.
-            </li>
+            </li>    
             <li>
               <div className="triangle" />
               <a

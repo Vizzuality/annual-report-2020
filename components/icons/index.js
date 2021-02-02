@@ -19,7 +19,7 @@ const Icons = () => (
         <path fill="#fff" style={{ fill: "var(--color1, #fff)" }} d="M6 22.333h20.667v2.667h-20.667v-2.667z"></path>
       </symbol>
       <symbol id="icon-play" viewBox="0 0 22 28">
-        <path d="M21.625 14.484l-20.75 11.531c-0.484 0.266-0.875 0.031-0.875-0.516v-23c0-0.547 0.391-0.781 0.875-0.516l20.75 11.531c0.484 0.266 0.484 0.703 0 0.969z"></path>
+        <path style={{ fill: "#000" }} d="M21.625 14.484l-20.75 11.531c-0.484 0.266-0.875 0.031-0.875-0.516v-23c0-0.547 0.391-0.781 0.875-0.516l20.75 11.531c0.484 0.266 0.484 0.703 0 0.969z"></path>
       </symbol>
       <symbol id="icon-download" viewBox="0 0 32 32">
         <path fill="none" stroke="#fff" style={{ stroke: "var(--color1, #fff)" }} stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.1818" d="M16.001 21.946v-11.901"></path>
