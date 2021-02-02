@@ -4,6 +4,7 @@ import ModalComponent from 'components/modal';
 import Layout from 'components/layout';
 import { CATEGORIES } from 'components/layout/constants';
 import Icons from 'components/icons';
+import breakpoints from 'utils/breakpoints';
 
 // This route is a fallback for SEO for the modal pages as the normal render won't render the modals on reload.
 // It doesn't contain the sound button and it will redirect to the start when closed
@@ -16,6 +17,28 @@ const ReportPage = ({ reportId, categoryId }) => {
   }, [])
   const handleClose = () => router.push('/', '/');
   const selectedPiece = { category: categoryId, index: reportId };
+
+  useEffect(() => {
+    !!categoryId && !!reportId && (
+      gtag.event({
+        action: 'Reveal individual story',
+        category: 'Story',
+        label: `Category: ${categoryId} - index: ${reportId}`,
+        value: `Category: ${categoryId} - index: ${reportId}`,
+      }));
+  }, [categoryId]);
+
+  const [isMobile, setLayout] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
+    window.addEventListener("resize", handleResize);
+    setLayout(window.innerWidth < breakpoints.sm);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -29,7 +52,7 @@ const ReportPage = ({ reportId, categoryId }) => {
         <Layout
           story={selectedPiece}
           onClose={handleClose}
-          // isMobile={isMobile}
+          isMobile={isMobile}
         />
       </ModalComponent>
       <Icons />

@@ -11,14 +11,22 @@ const Index = () => {
   const router = useRouter()
   const [selectedPiece, setSelectedPiece] = useState(null);
   const [allowedSound, setAllowedSound] = useState(true);
-
   const { query: { reportId, categoryId }} = router;
   const handleClose = () => {
     setSelectedPiece(null);
     router.push('/', '/', { shallow: true })
   };
   const isModalOpen = !!reportId && !!categoryId;
+
   const [isMobile, setLayout] = useState(false);
+  useEffect(() => {
+    const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
+    window.addEventListener("resize", handleResize);
+    setLayout(window.innerWidth < breakpoints.sm);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     !!selectedPiece && (
@@ -28,13 +36,6 @@ const Index = () => {
         label: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
         value: `Category: ${selectedPiece.category} - index: ${selectedPiece.index}`,
       }));
-
-    const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
-    window.addEventListener("resize", handleResize);
-    setLayout(window.innerWidth < breakpoints.sm);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, [selectedPiece]);
 
   return (
@@ -57,6 +58,7 @@ const Index = () => {
       }
       <Main
         isModalOpen={isModalOpen}
+        isMobile={isMobile}
         selectedPiece={selectedPiece}
         setSelectedPiece={setSelectedPiece}
         allowedSound={allowedSound}
