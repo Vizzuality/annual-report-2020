@@ -57,25 +57,27 @@ export default function Report() {
   }, [selectedPiece]);
 
   useEffect(() => {
-    if (!hasMounted) {
-      setHasMounted(true);
-    }
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    let timeout = null;
     if (!!selectedPiece) {
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         setModal(true);
       }, 500);
     }
+    return timeout ? clearTimeout(timeout) : undefined;
   }, [selectedPiece]);
 
   useEffect(() => {
-    if (!hasMounted) {
-      setHasMounted(true);
-    }
+    let timeout = null;
     if (!hasShownFinalModal && piecesPositioned.length === 3 && isReportOpen) {
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         setFinalModal(true);
       }, 500);
     }
+    return timeout ? clearTimeout(timeout) : undefined;
   }, [piecesPositioned]);
 
   useEffect(() => {
