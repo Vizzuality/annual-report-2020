@@ -195,6 +195,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
           geometry={sphere.geometry}
           droppables={droppables}
           setAutoRotate={setAutoRotate}
+          autoRotate={autoRotate}
           isVisible={!!report}
         />
       </group>
@@ -211,6 +212,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
           positionedPieces={positionedPieces}
           geometry={d.geometry}
           setAutoRotate={setAutoRotate}
+          autoRotate={autoRotate}
           rotationCorrection = {
             d.rotationCorrection
           }
