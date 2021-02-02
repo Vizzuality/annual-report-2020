@@ -31,6 +31,17 @@
     flex-direction: column;
     justify-content: flex-start;
 
+
+  .share {
+    
+    cursor: url('/copy.svg'), auto;
+    
+    &.-copied {
+      cursor: url('/clipboard.svg'), auto;
+    }
+
+  }
+
     h1 {
       display: inline-flex;
       font-family: $font-family-2;

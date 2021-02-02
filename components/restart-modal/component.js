@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import Icon from 'components/icon';
@@ -7,22 +8,27 @@ import * as gtag from 'utils/gtag';
 
 export default function RestarModal({ onRestartApp, onClose }) {
 
+  const [isCopied, setCopy] = useState(false);
 
   const copyToClipboard = async (event) => {
     if (!navigator.clipboard) { return; }  
+
     
     try {
       const link = window.location.href;
       await navigator.clipboard.writeText(link);
       
       event.target.dataset.clipboard = link;
+      setCopy(true);
 
       setTimeout(() =>{
         delete event.target.dataset.clipboard;
-      }, 1500);    
+        setCopy(false)
+      }, 3000);    
     } catch (error) {
       console.error("Copy failed", error);
     }
+
   }
 
   const trackDownloads = () => (
@@ -41,7 +47,7 @@ export default function RestarModal({ onRestartApp, onClose }) {
           <p>What do you want to do now?</p>
           
           <ul>
-            <li onClick={copyToClipboard}>
+            <li className={cx('share', { '-copied': isCopied })} onClick={copyToClipboard}>
               <div className="triangle" />
               Share this experience with a friend.
             </li>    
