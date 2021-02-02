@@ -131,7 +131,7 @@ export default function Report() {
           story={selectedPiece}
           onClose={handleClose}
           isMobile={isMobile}
-          allowedS ound={allowedSound}
+          allowedSound={allowedSound}
           setAllowedSound={setAllowedSound}
         />
       </ModalComponent>
