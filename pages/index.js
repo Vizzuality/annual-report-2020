@@ -8,7 +8,7 @@ import Music from 'components/music';
 import CookieBanner from 'components/cookie-banner';
 import ModalComponent from 'components/modal';
 import Modal from 'react-modal';
-import RestartModal from 'components/restart-modal';
+import FinalModal from 'components/final-modal';
 import Intro from 'components/intro';
 import Icons from 'components/icons';
 import cx from 'classnames';
@@ -29,13 +29,14 @@ export default function Report() {
   const [selectedPiece, setSelectedPiece] = useState(null);
 
   const [isModalOpen, setModal] = useState(false);
-  const [isRestartModalOpen, setRestartModal] = useState(false);
+  const [isFinalModalOpen, setFinalModal] = useState(false);
+  const [hasShownFinalModal, setHasShownFinalModal] = useState(false);
 
   const [isReportOpen, setReport] = useState(false);
   const [allowedSound, setAllowedSound] = useState(true);
 
   const [isMobile, setLayout] = useState(false);
-  const piecesPositioned = !!positionedPieces && 
+  const piecesPositioned = !!positionedPieces &&
     Object.values(positionedPieces).filter(p => Object.keys(p).length === 3)
 
   useEffect(() => {
@@ -56,23 +57,31 @@ export default function Report() {
   }, [selectedPiece]);
 
   useEffect(() => {
-    setHasMounted(true);
-    !!selectedPiece && setTimeout(() => {
-      setModal(true);
-    }, 500);
+    if (!hasMounted) {
+      setHasMounted(true);
+    }
+    if (!!selectedPiece) {
+      setTimeout(() => {
+        setModal(true);
+      }, 500);
+    }
   }, [selectedPiece]);
 
   useEffect(() => {
-    setHasMounted(true);
-    piecesPositioned.length === 3 && isReportOpen && setTimeout(() => {
-      setRestartModal(true);
-    }, 500);
+    if (!hasMounted) {
+      setHasMounted(true);
+    }
+    if (!hasShownFinalModal && piecesPositioned.length === 3 && isReportOpen) {
+      setTimeout(() => {
+        setFinalModal(true);
+      }, 500);
+    }
   }, [piecesPositioned]);
 
   useEffect(() => {
     Modal.setAppElement(`.${styles.container}`);
   }, []);
-    
+
   const handleReport = () => {
     setReport(true);
   };
@@ -82,13 +91,9 @@ export default function Report() {
     setModal(false);
   };
 
-  const restartApp = () => {
-    location.reload();
-    setRestartModal(false);
-  };
-
   const handleFinalModalClose = () => {
-    setRestartModal(false);
+    setFinalModal(false);
+    setHasShownFinalModal(true);
   };
 
   return (
@@ -132,9 +137,9 @@ export default function Report() {
       </ModalComponent>
       <ModalComponent
         title="Congratulations-modal"
-        isOpen={isRestartModalOpen && !isModalOpen && isReportOpen}
+        isOpen={isFinalModalOpen && !isModalOpen && isReportOpen}
         onRequestClose={handleFinalModalClose}>
-          <RestartModal onClose={handleFinalModalClose} onRestartApp={restartApp} />
+          <FinalModal onClose={handleFinalModalClose} />
       </ModalComponent>
       <main className={styles.main}>
         <div className={styles.noise} />

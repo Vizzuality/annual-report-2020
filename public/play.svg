@@ -2,7 +2,7 @@
   <g fill="none" fill-rule="evenodd">
     <circle cx="50" cy="50" r="50" fill="#FFF"/>
     <text fill="#000" font-family="Inter-Regular_Semi-Bold, Inter" font-size="18" font-weight="500">
-      <tspan x="32.182" y="57">Play</tspan>
+      <tspan x="32.5" y="56">Play</tspan>
     </text>
   </g>
 </svg>

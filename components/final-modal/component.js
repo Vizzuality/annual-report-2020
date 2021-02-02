@@ -5,26 +5,26 @@ import PropTypes from 'prop-types';
 import Icon from 'components/icon';
 
 import * as gtag from 'utils/gtag';
+import { useRouter } from 'next/router';
 
-export default function RestarModal({ onRestartApp, onClose }) {
+export default function FinalModal({ onClose }) {
 
   const [isCopied, setCopy] = useState(false);
 
   const copyToClipboard = async (event) => {
-    if (!navigator.clipboard) { return; }  
+    if (!navigator.clipboard) { return; }
 
-    
     try {
       const link = window.location.href;
       await navigator.clipboard.writeText(link);
-      
+
       event.target.dataset.clipboard = link;
       setCopy(true);
 
       setTimeout(() =>{
         delete event.target.dataset.clipboard;
         setCopy(false)
-      }, 3000);    
+      }, 3000);
     } catch (error) {
       console.error("Copy failed", error);
     }
@@ -38,18 +38,20 @@ export default function RestarModal({ onRestartApp, onClose }) {
       value: 'Download report'
     })
   );
+  const router = useRouter();
+
   return (
-    <div className="c-restart-modal">
+    <div className="c-final-modal">
       <div className="wrapper">
-        <div className="restat-modal-content">
+        <div className="final-modal-content">
           <h1>Congratulations! You’ve completed our puzzle.</h1>
           <p>What do you want to do now?</p>
-          
+
           <ul>
             <li className={cx("share", { '-copied': isCopied })} onClick={copyToClipboard}>
               <div className="triangle" />
-              {isCopied ? 'Url site copied to clipboard' : 'Share this experience with a friend.'}
-            </li>    
+              {isCopied ? 'Url copied to clipboard' : 'Share this experience with a friend.'}
+            </li>
             <li>
               <div className="triangle" />
               <a
@@ -61,7 +63,7 @@ export default function RestarModal({ onRestartApp, onClose }) {
                 Download the full report.
               </a>
             </li>
-            <li onClick={onRestartApp}><div className="triangle" />Play again.</li>
+            <li onClick={() => router.reload()}><div className="triangle" />Play again.</li>
           </ul>
           <p>What do you want to do now?</p>
           <a
@@ -87,9 +89,8 @@ export default function RestarModal({ onRestartApp, onClose }) {
   );
 };
 
-RestarModal.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  onRestartApp: PropTypes.func.isRequired
+FinalModal.propTypes = {
+  onClose: PropTypes.func.isRequired
 };
 
 
