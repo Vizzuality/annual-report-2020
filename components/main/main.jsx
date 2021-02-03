@@ -72,7 +72,7 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
     setFinalModal(false);
     setHasShownFinalModal(true);
   };
-
+  const categoryTitle = (!!selectedPiece && CATEGORIES[selectedPiece.category].title) || null;
   return (
     <div className = {
       cx(styles.container, {
@@ -81,7 +81,9 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
     }
     >
       <Head>
-        <title>Annual report 2020</title>
+        <title>Vizzuality Annual report 2020</title>
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content={`Vizzuality Annual report 2020 ${categoryTitle ? categoryTitle : ''}`} />
       </Head>
       <Music allowedSound={allowedSound} isReportOpen={isReportOpen} />
       {selectedPiece && !isModalOpen && (

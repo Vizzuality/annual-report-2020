@@ -16,12 +16,12 @@ const ReportPage = ({ reportId, categoryId }) => {
     router.prefetch('/')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  const handleClose = () => router.push('/', '/');
+  const handleClose = () => router.push('/');
   const selectedPiece = { category: categoryId, index: reportId };
 
   useEffect(() => {
     !!categoryId && !!reportId && (
-      gtag.event && gtag.event({
+      gtag && gtag.event && gtag.event({
         action: 'Reveal individual story',
         category: 'Story',
         label: `Category: ${categoryId} - index: ${reportId}`,
@@ -44,6 +44,8 @@ const ReportPage = ({ reportId, categoryId }) => {
     <>
       <Head>
         <title>Vizzuality Annual report 2020 - {CATEGORIES[categoryId].title}</title>
+        <meta name="robots" content="index, follow"/>
+        <meta name="description" content={`Vizzuality Annual report 2020 - ${CATEGORIES[categoryId].title}`} />
       </Head>
       <ModalComponent
         title={CATEGORIES[categoryId].title}
