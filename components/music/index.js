@@ -2,7 +2,6 @@ import { useState, useEffect, useMemo } from 'react';
 import useSound from 'use-sound';
 import vizz1 from '../../sounds/vizz1.webm';
 import vizz2 from '../../sounds/vizz2.webm';
-
 const SONG_STATE = {
   playing: 1,
   paused: 2,
@@ -11,7 +10,7 @@ const SONG_STATE = {
 
 const Music = ({ allowedSound, isReportOpen }) => {
   const [songState, setSongState] = useState(null);
-  const [currentSong, setCurrentSong] = useState(0);
+  const [currentSong, setCurrentSong] = useState(Math.floor(Math.random() + 0.5));
   const config = {
     onend: () => {
       setSongState(SONG_STATE.ended)
@@ -23,19 +22,19 @@ const Music = ({ allowedSound, isReportOpen }) => {
   };
   const [playSong1, { pause: pauseSong1 }] = useSound(vizz1, config);
   const [playSong2, { pause: pauseSong2 }] = useSound(vizz2, config);
-  const songs = [
-    { play: playSong1, pause: pauseSong1 },
-    { play: playSong2, pause: pauseSong2 }
+  const songs = [{
+      play: playSong1,
+      pause: pauseSong1
+    },
+    {
+      play: playSong2,
+      pause: pauseSong2
+    }
   ];
-
   useEffect(() => {
     if (isReportOpen) {
-      const DELAY_MS = 2000;
-      const WAIT_MS = 15000;
-      setTimeout(() => {
-        songs[currentSong].play();
-        setSongState(SONG_STATE.playing);
-      }, (Math.random() * WAIT_MS) + DELAY_MS);
+      songs[currentSong].play();
+      setSongState(SONG_STATE.playing);
     }
   }, [isReportOpen]);
 
