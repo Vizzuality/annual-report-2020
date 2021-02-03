@@ -1,0 +1,3 @@
+User-agent: *
+Host: https://www.vizzuality.annual-report-2020.com
+Sitemap: https://www.vizzuality.annual-report-2020.com/sitemap.xml

@@ -201,6 +201,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       </group>
       {draggables.map((d) => (
         <DraggableMesh
+          key={`${d.category.index}-${d.index}`}
           setDraggingPiece={setDraggingPiece}
           rotation={sphereRotation}
           draggablesRef={draggablesRef}

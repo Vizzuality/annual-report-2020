@@ -5,7 +5,7 @@ import Icon from 'components/icon';
 
 import * as gtag from 'utils/gtag';
 
-export default function Download({ isMobile, className }) {
+export default function Download({ className }) {
 
   const trackDownloads = () => (
     gtag.event({
@@ -25,7 +25,7 @@ export default function Download({ isMobile, className }) {
         rel="noopener noreferrer"
         onClick={trackDownloads}
       >
-        {isMobile ? 'PDF' : 'Download full report.'}
+        Download full report.
       </a>
       <Icon name="download" className="-medium"/>
       </div>
@@ -34,12 +34,10 @@ export default function Download({ isMobile, className }) {
 };
 
 Download.propTypes = {
-  isMobile: PropTypes.boolean,
   className: PropTypes.string
 };
 
 Download.defaultProps = {
-  isMobile: false,
   className: ''
 };
 

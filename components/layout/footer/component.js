@@ -16,11 +16,11 @@ const Footer = ({ onClick, allowedSound, setAllowedSound }) => {
           </button>
         </div>
       </div>
-      <SoundButton
+      {!!setAllowedSound && <SoundButton
         className="-absolute"
         allowedSound={allowedSound}
         setAllowedSound={setAllowedSound}
-      />
+      />}
     </div>
   );
 };
