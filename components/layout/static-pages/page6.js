@@ -18,8 +18,8 @@ const Page6 = () => (
         <Image
           src="/images/zebras.png"
           alt="Picture of the author"
-          width={600}
-          height={500}
+          width={626}
+          height={672}
         />
         <p className="-italic -small">Zebras in Africa</p>
         <p>The <a href="https://www.covid19tracker.africa/" target="_blank">Covid-19 Tracker</a> by FinMark Trust tracks themes including health and risk behaviours, food security, income, work and job security, personal safety concerns, and access to government and community support. With this information, we can understand the impact of covid on people’s health and wellbeing, and identify what support is most needed. </p>
