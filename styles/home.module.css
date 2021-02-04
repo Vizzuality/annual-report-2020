@@ -55,6 +55,11 @@
   z-index: 2;
 }
 
+.privacyLink:hover {
+  color: #FFE229;
+  transition: color 0.3s ease-in-out;
+}
+
 .circle {
   height: 250px;
   width: 250px;

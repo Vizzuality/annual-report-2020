@@ -9,27 +9,17 @@
     position: absolute;
     top: 20px;
     left: 20px;
-    display: flex;
+    display: inline-block;
     margin: 0;
+    font-size: 20px;
     letter-spacing: 0;
     font-weight: 300;
     line-height: 20px;
 
-    p {
-      margin: 0;
+    a {
+      font-weight: bold;
 
-      &.-mobile {
-        font-size: 20px;
-        letter-spacing: 0;
-      }
-
-      span {
-        font-weight: bold;
-      }
-    }
-
-    :hover {
-      span{
+      &:hover {
         color: $color-3;
         transition: color 0.3s ease-in-out;
       }
