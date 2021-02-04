@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Icon from 'components/icon';
 
-const SocialMedia = ({ isMobile, className }) => (
+const SocialMedia = ({ className }) => (
   <div className={cx('c-social-media', { [className]: className } )}>
-    {!isMobile && <span className="title">Follow us:</span>}
+    <span className="title">Follow us:</span>}
     <ul className="social-networks">
       <li>
         <a href="https://twitter.com/vizzuality" target="_blank">
@@ -30,13 +29,5 @@ const SocialMedia = ({ isMobile, className }) => (
     </ul>
   </div>
 );
-
-SocialMedia.propTypes = {
-  isMobile: PropTypes.boolean
-};
-
-SocialMedia.defaultProps = {
-  isMobile: false
-};
 
 export default SocialMedia;
