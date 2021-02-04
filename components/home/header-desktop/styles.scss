@@ -25,5 +25,12 @@
         font-weight: bold;
       }
     }
+
+    :hover {
+      span{
+        color: $color-3;
+        transition: color 0.3s ease-in-out;
+      }
+    }
   }
 }

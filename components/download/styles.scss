@@ -2,6 +2,18 @@
 
 .c-download {
   display: flex;
+  cursor: pointer;
+
+  svg {
+    stroke: white;
+  }
+
+  :hover {
+    svg {
+      stroke: $color-3;
+      transition: stroke 0.3s ease-in-out;
+    }
+  }
 
   &.-desktop {
     @include headerElements('center');

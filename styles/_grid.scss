@@ -1,5 +1,5 @@
-$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width * -1;
-$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 0.25;
+$flexboxgrid-gutter-compensation: $flexboxgrid-gutter-width;
+$flexbox-grid-half-gutter-width: $flexboxgrid-gutter-width * 0.5;
 
 .row {
   box-sizing: border-box;
