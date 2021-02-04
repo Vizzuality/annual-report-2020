@@ -8,26 +8,21 @@
     position: absolute;
     left: 40px;
     top: 40px;
-    display: flex;
+    display: inline-block;
     margin: 0;
     letter-spacing: 0;
     font-weight: 300;
     line-height: 20px;
+    margin: 0;
 
     @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
       max-width: 140px;
     }
 
-    p {
-      margin: 0;
+    a {
+      font-weight: bold;
 
-      span {
-        font-weight: bold;
-      }
-    }
-
-    :hover {
-      span{
+      &:hover {
         color: $color-3;
         transition: color 0.3s ease-in-out;
       }

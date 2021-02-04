@@ -14,14 +14,10 @@ const HomeHeaderMobile = () => {
 
   return (
     <div className="c-header-mobile">
-      <a
-        className="header-description"
-        href="https://www.vizzuality.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <p>2020 by <span>vizzuality.</span></p>
-      </a>
+      <p className="header-description">2020 by <a href="https://www.vizzuality.com/" target="_blank" rel="noopener noreferrer">
+        vizzuality.</a>
+      </p>
+
       <button className="header-menu--button" onClick={handleMenu}>
         <Icon name={isOpen ? "menu-close" : "menu"} className="-medium -light" />
 
