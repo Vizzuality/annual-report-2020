@@ -5,14 +5,14 @@ import { CATEGORIES } from '../constants';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader, useFrame } from 'react-three-fiber';
 
-const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report, isMobile }) => {
+const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report, isMobile, isModalOpen }) => {
   const [draggingPiece, setDraggingPiece] = useState(false);
   const [sphereRotation, setSphereRotation] = useState([0, 0, 0]);
   const [autoRotate, setAutoRotate] = useState(true);
   const sphereGroupRef = useRef();
   const draggablesRef = useRef(new Set());
 
-  const AUTO_ROTATE_SPEED = 0.01;
+  const AUTO_ROTATE_SPEED = 0.005;
   useFrame(() => {
     if (autoRotate && draggablesRef.current) {
       if (sphereGroupRef.current) {
@@ -32,6 +32,12 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       setSphereRotation([sphereRotation[0], sphereGroupRef.current.rotation.y, sphereRotation[2]])
     }
   }, [autoRotate]);
+
+  useEffect(() => {
+    if (report && !isModalOpen) {
+      setAutoRotate(true);
+    }
+  }, [setAutoRotate, isModalOpen]);
 
   const gltf = useLoader(GLTFLoader, '/geometries.glb');
   const {

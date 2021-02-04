@@ -140,6 +140,7 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
                 setSelectedPiece={setSelectedPiece}
                 report={isReportOpen}
                 isMobile={isMobile}
+                isModalOpen={isModalOpen}
               />
             </Suspense>
           )}

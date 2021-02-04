@@ -2,7 +2,7 @@ import { Suspense, useState, useEffect } from 'react';
 import { Canvas } from 'react-three-fiber';
 import Scene from '../components/scene';
 
-const ThreeCanvas = ({ positionedPieces, setPositionedPieces, setSelectedPiece, report, isMobile }) => {
+const ThreeCanvas = ({ positionedPieces, setPositionedPieces, setSelectedPiece, report, isMobile, isModalOpen }) => {
   const [innerWidth, setInnerWidth] = useState(null);
   useEffect(() => {
     setInnerWidth(window.innerWidth);
@@ -17,6 +17,7 @@ const ThreeCanvas = ({ positionedPieces, setPositionedPieces, setSelectedPiece, 
           setSelectedPiece={setSelectedPiece}
           report={report}
           isMobile={isMobile}
+          isModalOpen={isModalOpen}
         />
       </Suspense>
     </Canvas>
