@@ -18,7 +18,7 @@ const SoundButton = ({ allowedSound, setAllowedSound, className }) => {
       return (setAllowedSound(!allowedSound))
     }}>
       <span>
-        SOUND{' '}
+        MUSIC{' '}
       </span>
       <span>
         {!allowedSound ? 'OFF' : 'ON'}

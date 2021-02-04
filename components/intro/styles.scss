@@ -60,6 +60,10 @@
   @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
     padding: 20px 50px;
   }
+
+  .sound-button-intro {
+    padding-bottom: 1rem;
+  }
 }
 
 .intro-container {
