@@ -17,6 +17,7 @@
     "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-malarquee": "^0.0.13",
     "react-modal": "^3.12.1",
     "react-three-fiber": "^5.3.10",
     "react-use-gesture": "^8.0.1",
