@@ -31,6 +31,7 @@ const Music = ({ allowedSound, isReportOpen }) => {
       pause: pauseSong2
     }
   ];
+
   useEffect(() => {
     if (isReportOpen) {
       songs[currentSong].play();
@@ -41,16 +42,21 @@ const Music = ({ allowedSound, isReportOpen }) => {
   useEffect(() => {
     if (!allowedSound && songState === SONG_STATE.playing) {
       setSongState(SONG_STATE.paused);
-      songs[currentSong].pause();
+      songs.forEach((song)=> {
+        if (song.pause) {
+          song.pause()
+        }
+      })
     }
     if (allowedSound && songState === SONG_STATE.paused) {
       setSongState(SONG_STATE.playing);
       songs[currentSong].play()
     }
     if (allowedSound && songState === SONG_STATE.ended) {
-      setCurrentSong((currentSong + 1) % (songs.length + 1));
+      const nextSong = (currentSong + 1) % songs.length;
+      setCurrentSong(nextSong);
       setSongState(SONG_STATE.playing);
-      songs[currentSong].play();
+      songs[nextSong].play();
     }
   }, [allowedSound, songState])
   return null;
