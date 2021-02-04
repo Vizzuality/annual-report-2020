@@ -11,11 +11,11 @@
   }
 
   &.social-media {
-    fill: white;
+    fill: white;    
 
-    :hover {
-      color: #ffe229;
-      transition: color 0.3s ease-in-out;
+    &:hover {
+      fill: $color-3;
+      transition: fill 0.3s ease-in-out;
     }
   }
 
