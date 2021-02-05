@@ -129,7 +129,14 @@
   }
 
   a {
-    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .-underline {
     text-decoration: underline;
+  }
+
+  .-strong {
+    font-weight: bold;
   }
 }
