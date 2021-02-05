@@ -10,8 +10,9 @@
 
   padding: 10px;
 
-  z-index: $z-index-100;
+  z-index: $z-index-150;
   animation: appear 300ms 2s forwards;
+  will-change: transform;
 
   @keyframes appear {
     0% { transform: translateY(100%) }

@@ -23,6 +23,11 @@
   width: 100%;
 }
 
+.canvasContainer {
+  animation-name: fadeIn;
+  animation-duration: 10s;
+}
+
 .main {
   color: white;
   flex: 1;
@@ -53,6 +58,12 @@
   font-size: 16px;
   color: white;
   z-index: 2;
+  will-change: color;
+}
+
+.privacyLink:hover {
+  color: #FFE229;
+  transition: color 0.3s ease-in-out;
 }
 
 .circle {
@@ -141,4 +152,9 @@
   70% { transform:translate(0%, 15%) }
   80% { transform:translate(3%, 35%) }
   90% { transform:translate(-10%, 10%) }
+}
+
+@keyframes fadeIn {  
+  0% { opacity: 0 }
+  100% { opacity: 1 }
 }

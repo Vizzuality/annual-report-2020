@@ -6,6 +6,7 @@
 
   svg {
     stroke: white;
+    will-change: stroke;
   }
 
   :hover {

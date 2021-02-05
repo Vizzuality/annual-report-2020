@@ -5,14 +5,11 @@ import SocialMedia from 'components/social-media';
 
 const HomeHeaderDesktop = () => (
   <div className="c-header-desktop">
-    <a
-      className="header-description"
-      href="https://www.vizzuality.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <p>Spotlight on 2020 by <span>vizzuality.</span></p>
-    </a>
+    <p className="header-description">
+      Spotlight on 2020 by <a href="https://www.vizzuality.com/" target="_blank" rel="noopener noreferrer"> 
+        vizzuality.
+      </a>
+    </p>
     <Download className="-desktop" />
     <SocialMedia className="-desktop" />
   </div>

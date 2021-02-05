@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import SoundButton from 'components/sound-button';
+import cx from 'classnames';
 
 export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
 
   const [intro, setIntro] = useState(false);
+  const [unmount, setUnmount] = useState(false);
   const handleIntro = () => {
-    setIntro(!intro);
+    !intro && setIntro(!intro);
+    if (intro) {
+      setUnmount(!unmount)
+      setTimeout(() => {
+        handleReport();
+      }, 1500);
+    }
   };
 
   return (
-    <div className="c-intro" onClick={intro ? handleReport : handleIntro}>
+    <div className="c-intro" onClick={handleIntro}>
       {!intro && (
         <>
           <div className="row center-xsm">
@@ -25,8 +33,8 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
         </>
       )}
       {intro && (
-        <div className="wrapper">
-          <section className="intro-container">
+        <div key={unmount} className="wrapper">
+          <section className={cx('intro-container', { 'fade-out': unmount })}>
             <div className="row center-xsm">
               <div className="col-xs-12 col-sm-9">
                 <p>Fit the puzzle pieces into our globe to see our impact and our hope for the future.</p>

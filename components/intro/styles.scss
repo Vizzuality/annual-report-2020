@@ -73,4 +73,18 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  &.fade-out {
+    animation: fadeOut ease 2s;
+    opacity: 1;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 const Page5 = () => (
   <div className="l-static-page">
     <div className="col-1">
-      <p>By working with the organisations who are serious about doing business that’s good for people and the planet, we are helping change happen faster. </p>
+      <p>By working with the organisations who are serious about doing business that’s good for people and the planet, we are helping change happen faster.</p>
       <h2>One of our priorities for this year and beyond is to make food supply chains more sustainable.</h2>
     </div>
     <div className="col-2">
@@ -12,11 +12,11 @@ const Page5 = () => (
         <li>Make the necessary decisions to ensure a supply chain model prepared for the future.</li>
       </ul>
       <p>We know working together takes us further, faster. So we invited Satelligence and the Stockholm Environment Institute to be our partners in this endeavour.</p>
-      <p>Businesses that want to thrive in a post-covid world must show more commitment to making our planet and society a better place. <span>Are you willing to make that commitment?</span> </p>
+      <p>Businesses that want to thrive in a post-covid world must show more commitment to making our planet and society a better place.</p>
       <div className="image-container">
         <img
-          src="/images/supermarket.svg"
-          alt="Supermarket shelves"
+          src="/images/cargoShip.png"
+          alt="Cargo ships"
         />
       </div>
     </div>
