@@ -8,7 +8,7 @@ const Page9 = () => (
     <div className="col-2">
       <p>In the business world, a growing number of corporations have made commitments to reduce or eliminate their climate impacts.</p>
       <h2>A sustainable future which for so long felt like an uphill battle now looks inevitable. It’s just a matter of how fast we move.</h2>
-      <p>But, there remains an enormous amount of work to be done. Commitments must be turned into action, entire economic sectors must evolve, and policies to accelerate progress and regulations to limit polluters are still necessary. We also have a moral obligation to help those hit hardest by stronger storms, deeper droughts, rising seas, and the economic churn of progress. And yet, despite the adversity before us, I feel the hope of inevitability.</p>
+      <p>But, there remains an enormous amount of work to be done. Commitments must be turned into action, entire economic sectors must evolve, and policies to accelerate progress and regulations to limit polluters are still necessary. We also have a moral obligation to help those hit hardest by stronger storms, deeper droughts, rising seas, and the economic churn of progress. And yet, despite the adversity before us, we feel the hope of inevitability.</p>
       <p>Working together — as one global community — we believe we can make a greener future happen a little bit faster. Join us.</p>
       <div className="image-container">
         <img
@@ -24,7 +24,7 @@ const Page9 = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        Book a session
+        Book a session now.
       </a>
     </div>
   </div>

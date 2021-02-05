@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SoundButton from 'components/sound-button';
 import cx from 'classnames';
 
@@ -8,7 +8,6 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
   const [unmount, setUnmount] = useState(false);
   const handleIntro = () => {
     !intro && setIntro(!intro);
-
     if (intro) {
       setUnmount(!unmount)
       setTimeout(() => {
@@ -44,12 +43,16 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
 
             <div className="row center-xsm">
               <div className="col-xs-12 col-lg-9">
-                <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
+                <SoundButton
+                  className="sound-button-intro"
+                  allowedSound={allowedSound}
+                  setAllowedSound={setAllowedSound}
+                />
               </div>
             </div>
             <div className="row center-xsm">
               <div className="col-xs-12 col-sm-9">
-                <p>For a better experience, please put your headphones and click anywhere</p>
+                <p>For a better experience, please put your headphones on and click anywhere</p>
               </div>
             </div>
           </section>

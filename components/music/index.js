@@ -8,7 +8,7 @@ const SONG_STATE = {
   ended: 3
 };
 
-const Music = ({ allowedSound, isReportOpen }) => {
+const Music = ({ allowedSound }) => {
   const [songState, setSongState] = useState(null);
   const [currentSong, setCurrentSong] = useState(Math.floor(Math.random() + 0.5));
   const config = {
@@ -31,14 +31,6 @@ const Music = ({ allowedSound, isReportOpen }) => {
       pause: pauseSong2
     }
   ];
-
-  useEffect(() => {
-    if (isReportOpen) {
-      songs[currentSong].play();
-      setSongState(SONG_STATE.playing);
-    }
-  }, [isReportOpen]);
-
   useEffect(() => {
     if (!allowedSound && songState === SONG_STATE.playing) {
       setSongState(SONG_STATE.paused);
@@ -48,6 +40,12 @@ const Music = ({ allowedSound, isReportOpen }) => {
         }
       })
     }
+
+    if (allowedSound && !songState) {
+      songs[currentSong].play();
+      setSongState(SONG_STATE.playing);
+    }
+
     if (allowedSound && songState === SONG_STATE.paused) {
       setSongState(SONG_STATE.playing);
       songs[currentSong].play()
