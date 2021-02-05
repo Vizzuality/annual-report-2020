@@ -52,7 +52,7 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
             </div>
             <div className="row center-xsm">
               <div className="col-xs-12 col-sm-9">
-                <p>For a better experience, please put your headphones on and click anywhere</p>
+                <p>For a better experience, please put your headphones on and click anywhere.</p>
               </div>
             </div>
           </section>

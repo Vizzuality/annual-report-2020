@@ -4,7 +4,7 @@ const Page4 = () => (
       <p>Change is possible.</p>
       <h2>We have seen it for ourselves.</h2>
       <p>We saw how <a className="-strong -underline" href="https://medium.com/vizzuality-blog/a-map-with-impact-8aa991a727fe" target="_blank">Global Fishing Watch</a> data helped convince Argentina’s government to create two Marine Protected Areas (MPAs). The addition of these MPAs increased the area of protection from 3% to 9%. </p>
-      <p>We saw the link between subscriptions to GLAD alerts on <a href="https://blog.globalforestwatch.org/data-and-research/glad-alerts-reduce-deforestation-africa/" target="_blank">Global Forest Watch </a>and decreased deforestation in Africa.</p>
+      <p>We saw the link between subscriptions to GLAD alerts on <a className="-strong -underline" href="https://blog.globalforestwatch.org/data-and-research/glad-alerts-reduce-deforestation-africa/" target="_blank">Global Forest Watch </a>and decreased deforestation in Africa.</p>
       <p>We saw how the <a className="-strong -underline" href="https://www.theguardian.com/environment/2019/sep/17/leading-burger-supplier-sourced-from-amazon-farmer-guilty-of-deforestation" target="_blank">Bureau of Investigative Journalism</a> used <a href="https://www.theguardian.com/environment/2019/sep/17/leading-burger-supplier-sourced-from-amazon-farmer-guilty-of-deforestation" target="_blank">Trase</a> data to make consumers more aware of the links between deforestation in the Amazon and the burgers sold by fast-food restaurants.</p>
     </div>
     <div className="col-2">
