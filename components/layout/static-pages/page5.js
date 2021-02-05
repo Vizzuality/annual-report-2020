@@ -15,7 +15,7 @@ const Page5 = () => (
       <p>Businesses that want to thrive in a post-covid world must show more commitment to making our planet and society a better place.</p>
       <div className="image-container">
         <img
-          src="/images/cargoShips.png"
+          src="/images/cargoShip.png"
           alt="Cargo ships"
         />
       </div>
