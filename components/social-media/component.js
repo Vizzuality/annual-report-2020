@@ -4,7 +4,7 @@ import Icon from 'components/icon';
 
 const SocialMedia = ({ className }) => (
   <div className={cx('c-social-media', { [className]: className } )}>
-    <span className="title">Follow us:</span>}
+    <span className="title">Follow us:</span>
     <ul className="social-networks">
       <li>
         <a href="https://twitter.com/vizzuality" target="_blank">

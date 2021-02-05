@@ -44,7 +44,6 @@ const ReportPage = ({ reportId, categoryId }) => {
     <>
       <Head>
         <title>Vizzuality Annual report 2020 - {CATEGORIES[categoryId].title}</title>
-        <meta name="robots" content="index, follow"/>
         <meta name="description" content={`Vizzuality Annual report 2020 - ${CATEGORIES[categoryId].title}`} />
       </Head>
       <ModalComponent

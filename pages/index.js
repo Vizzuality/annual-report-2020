@@ -10,7 +10,7 @@ import breakpoints from 'utils/breakpoints';
 const Index = () => {
   const router = useRouter()
   const [selectedPiece, setSelectedPiece] = useState(null);
-  const [allowedSound, setAllowedSound] = useState(true);
+  const [allowedSound, setAllowedSound] = useState(false);
   const { query: { reportId, categoryId }} = router;
   const handleClose = () => {
     setSelectedPiece(null);

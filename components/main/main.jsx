@@ -82,7 +82,6 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
     >
       <Head>
         <title>Vizzuality Annual report 2020</title>
-        <meta name="robots" content="index, follow" />
         <meta name="description" content={`Vizzuality Annual report 2020 ${categoryTitle ? categoryTitle : ''}`} />
       </Head>
       <Music allowedSound={allowedSound} isReportOpen={isReportOpen} />
