@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import SoundButton from 'components/sound-button';
 import cx from 'classnames';
-import Equalizer from 'components/equalizer';
 
 export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
 
@@ -8,7 +8,7 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
   const [unmount, setUnmount] = useState(false);
   const handleIntro = () => {
     !intro && setIntro(!intro);
-    
+
     if (intro) {
       setUnmount(!unmount)
       setTimeout(() => {
@@ -44,7 +44,7 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
 
             <div className="row center-xsm">
               <div className="col-xs-12 col-lg-9">
-                <Equalizer allowedSound={allowedSound} />
+                <SoundButton allowedSound={allowedSound} setAllowedSound={setAllowedSound}/>
               </div>
             </div>
             <div className="row center-xsm">

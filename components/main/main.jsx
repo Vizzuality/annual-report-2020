@@ -146,13 +146,11 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
           )}
         </div>
         <Icons />
-        {!isReportOpen && (
-          <Intro
-            handleReport={handleReport}
-            allowedSound={allowedSound}
-            setAllowedSound={setAllowedSound}
-          />
-        )}
+        {!isReportOpen && <Intro
+          handleReport={handleReport}
+          allowedSound={allowedSound}
+          setAllowedSound={setAllowedSound}
+        />}
       </main>
     </div>
   );

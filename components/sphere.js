@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { useDrag } from 'react-use-gesture';
 import Droppable from './droppable';
 import MeshWithWireframe from './mesh-with-wireframe';
+import { useFrame } from 'react-three-fiber';
+
+let opacity = 0;
 
 function Sphere({
   draggingPiece,
@@ -18,6 +21,8 @@ function Sphere({
   isVisible
 }) {
   const rotationSpeed = 1 / 5000;
+  const fadeInMaterialsRefs = useRef(new Set());
+
   const bind = useDrag(
     (state) => {
       const { movement: [dy]} = state;
@@ -29,15 +34,35 @@ function Sphere({
     },
     { pointerEvents: true }
   );
+
+  useFrame(() => {
+    if (isVisible && opacity < 1 && fadeInMaterialsRefs.current) {
+      opacity += 0.01;
+      fadeInMaterialsRefs.current.forEach(materialRef => {
+        if (materialRef) {
+          if (!materialRef.transparent) {
+            materialRef.transparent = true;
+          }
+          materialRef.opacity = opacity;
+        }
+      })
+    }
+  });
+
   return (
     <group {...(!draggingPiece && bind())} ref={sphereGroupRef} rotation={sphereRotation} visible={isVisible}>
       <MeshWithWireframe
         mesh={
           <mesh attach="mesh" geometry={geometry} onClick={() => autoRotate && setAutoRotate(false)}>
-            <meshMatcapMaterial attach="material" color="#222" />
+            <meshMatcapMaterial
+              attach="material"
+              ref = {reference => fadeInMaterialsRefs.current.add(reference)}
+              color="#222"
+            />
           </mesh>
         }
         geometry={geometry}
+        materialsRef={fadeInMaterialsRefs}
       />
       {droppables &&
         droppables.map((droppable) => {
@@ -58,6 +83,7 @@ function Sphere({
               positionedPieces={positionedPieces}
               draggingPiece={draggingPiece}
               setSelectedPiece={setSelectedPiece}
+              materialsRef={fadeInMaterialsRefs}
             />
           );
         })}
