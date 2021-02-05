@@ -8,7 +8,6 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
   const [unmount, setUnmount] = useState(false);
   const handleIntro = () => {
     !intro && setIntro(!intro);
-    
     if (intro) {
       setUnmount(!unmount)
       setTimeout(() => {

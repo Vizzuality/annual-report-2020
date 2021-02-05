@@ -11,7 +11,8 @@ function Droppable({
   position,
   index: dropIndex,
   geometry,
-  category
+  category,
+  materialsRef
 }) {
   const { color } = category;
   const [updatedColor, setColor] = useState(color);
@@ -47,6 +48,7 @@ function Droppable({
       position={position}
       outline
       linewidth={3}
+      materialsRef={materialsRef}
       mesh={
         <mesh
           attach="mesh"
@@ -59,7 +61,7 @@ function Droppable({
               gtag.event({
                 action: 'Reveal story',
                 category: 'Stories',
-                label: `Category - ${category.title}, Story - ${dropIndex + 1}`,  
+                label: `Category - ${category.title}, Story - ${dropIndex + 1}`,
                 value: `Category - ${category.title}, Story - ${dropIndex + 1}`
               })
               return (
@@ -83,7 +85,10 @@ function Droppable({
             }
           }}
         >
-          <meshMatcapMaterial attach="material" color={updatedColor} />
+          <meshMatcapMaterial attach = "material"
+            color = {updatedColor}
+            ref = {(reference) => materialsRef && materialsRef.current.add(reference)}
+          />
         </mesh>
       }
     />

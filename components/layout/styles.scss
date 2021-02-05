@@ -20,15 +20,15 @@
     &.theme2 {
       background-color: $color-3;
     }
-  
-    .l-content {  
+
+    .l-content {
       width: 100%;
       display: flex;
       margin: auto;
       justify-content: center;
       margin-top: 75px;
       margin-bottom: 150px;
-    
+
       h2 {
         font-family: $font-family-2;
         font-size: 64px;
@@ -36,7 +36,7 @@
         letter-spacing: 0;
         line-height: 74px;
       }
-    
+
       img {
         max-width: 100%;
       }

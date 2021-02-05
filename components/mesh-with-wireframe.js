@@ -8,7 +8,7 @@ import * as THREE from 'three';
 extend({ LineMaterial, WireframeGeometry2, Wireframe });
 
 function MeshWithWireframe({
-  mesh, geometry, position, rotation, color, renderOrder, linewidth, wireframeRef
+  mesh, geometry, position, rotation, color, renderOrder, linewidth, wireframeRef, materialsRef
 }) {
   const lines = useUpdate((geo) => geo.fromEdgesGeometry(new THREE.EdgesGeometry(geometry)), []);
   const resolutionRatio = 1;
@@ -19,12 +19,15 @@ function MeshWithWireframe({
     <>
       {mesh}
       <wireframe {...otherProps}>
-        <wireframeGeometry2 attach="geometry" ref={lines}/>
+        <wireframeGeometry2 attach="geometry" ref={lines} />
         <lineMaterial
           attach="material"
           color={color || "white"}
           linewidth={lineWidthRatio * (resolutionRatio / 5 * (linewidth || 1))}
           resolution={[resolution, resolution]}
+          ref={
+            (reference) => materialsRef && materialsRef.current.add(reference)
+          }
         />
       </wireframe>
     </>
