@@ -14,6 +14,7 @@
     font-weight: 300;
     line-height: 20px;
     margin: 0;
+    will-change: color;
 
     @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
       max-width: 140px;
@@ -21,6 +22,7 @@
 
     a {
       font-weight: bold;
+      will-change: color;
 
       &:hover {
         color: $color-3;

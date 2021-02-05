@@ -12,6 +12,7 @@
 
   &.social-media {
     fill: white;    
+    will-change: fill;
 
     &:hover {
       fill: $color-3;
