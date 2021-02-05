@@ -33,6 +33,7 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
     }
   }, [autoRotate]);
 
+
   useEffect(() => {
     if (report && !isModalOpen) {
       setAutoRotate(true);
@@ -63,81 +64,81 @@ const Scene = ({ setPositionedPieces, positionedPieces, setSelectedPiece, report
       dpiece23
     }
   } = gltf;
-  const draggables = [
-    {
-      index: 0,
-      category: CATEGORIES.buildingKnowledge,
-      position: [3.5, 2],
-      positionMobile: [2, 2.5],
-      rotationCorrection: [Math.PI / 12, Math.PI / 12, - Math.PI / 4],
-      geometry: piece01.geometry
-    },
-    {
-      index: 1,
-      category: CATEGORIES.buildingKnowledge,
-      position: [-3.5, 0],
-      positionMobile: [0, -2.75],
-      rotationCorrection: [Math.PI / 6, 0, -Math.PI / 3.5],
-      geometry: piece02.geometry
-    },
-    {
-      index: 2,
-      category: CATEGORIES.buildingKnowledge,
-      position: [3.5, -0.5],
-      positionMobile: [-2, 2.5],
-      rotationCorrection: [Math.PI / 6, 0, - Math.PI / 6],
-      geometry: piece03.geometry
-    },
-    {
-      index: 0,
-      category: CATEGORIES.change,
-      position: [-3.5, 2],
-      positionMobile: [-0.5, 2.5],
-      rotationCorrection: [-Math.PI / 12, -Math.PI / 12, 0],
-      geometry: piece11.geometry
-    },
-    {
-      index: 1,
-      category: CATEGORIES.change,
-      position: [-3.5, -2],
-      positionMobile: [2, -2.5],
-      rotationCorrection: [Math.PI / 12, 0, -Math.PI / 12],
-      geometry: piece12.geometry
-    },
-    {
-      index: 2,
-      category: CATEGORIES.change,
-      position: [-4.5, -1],
-      positionMobile: [-2,-2.5],
-      rotationCorrection: [Math.PI / 12, - Math.PI / 12, -Math.PI / 12],
-      geometry: piece13.geometry
-    },
-    {
-      index: 0,
-      category: CATEGORIES.together,
-      position: [4.5, 1],
-      positionMobile: [-1, -3.5],
-      rotationCorrection: [Math.PI / 12, -Math.PI / 12, Math.PI / 12],
-      geometry: piece21.geometry
-    },
-    {
-      index: 1,
-      category: CATEGORIES.together,
-      position: [-4.5, 1],
-      positionMobile: [1, -3.5],
-      rotationCorrection: [- Math.PI / 12, - Math.PI / 3.5, - Math.PI / 2.5],
-      geometry: piece22.geometry
-    },
-    {
-      index: 2,
-      category: CATEGORIES.together,
-      position: [4, -2],
-      positionMobile: [1, 2.5],
-      rotationCorrection: [0, -Math.PI / 10, -Math.PI / 3],
-      geometry: piece23.geometry
-    },
-  ];
-
+  // const draggables = [
+  //   {
+  //     index: 0,
+  //     category: CATEGORIES.buildingKnowledge,
+  //     position: [3.5, 2],
+  //     positionMobile: [2, 2.5],
+  //     rotationCorrection: [Math.PI / 12, Math.PI / 12, - Math.PI / 4],
+  //     geometry: piece01.geometry
+  //   },
+  //   {
+  //     index: 1,
+  //     category: CATEGORIES.buildingKnowledge,
+  //     position: [-3.5, 0],
+  //     positionMobile: [0, -2.75],
+  //     rotationCorrection: [Math.PI / 6, 0, -Math.PI / 3.5],
+  //     geometry: piece02.geometry
+  //   },
+  //   {
+  //     index: 2,
+  //     category: CATEGORIES.buildingKnowledge,
+  //     position: [3.5, -0.5],
+  //     positionMobile: [-2, 2.5],
+  //     rotationCorrection: [Math.PI / 6, 0, - Math.PI / 6],
+  //     geometry: piece03.geometry
+  //   },
+  //   {
+  //     index: 0,
+  //     category: CATEGORIES.change,
+  //     position: [-3.5, 2],
+  //     positionMobile: [-0.5, 2.5],
+  //     rotationCorrection: [-Math.PI / 12, -Math.PI / 12, 0],
+  //     geometry: piece11.geometry
+  //   },
+  //   {
+  //     index: 1,
+  //     category: CATEGORIES.change,
+  //     position: [-3.5, -2],
+  //     positionMobile: [2, -2.5],
+  //     rotationCorrection: [Math.PI / 12, 0, -Math.PI / 12],
+  //     geometry: piece12.geometry
+  //   },
+  //   {
+  //     index: 2,
+  //     category: CATEGORIES.change,
+  //     position: [-4.5, -1],
+  //     positionMobile: [-2,-2.5],
+  //     rotationCorrection: [Math.PI / 12, - Math.PI / 12, -Math.PI / 12],
+  //     geometry: piece13.geometry
+  //   },
+  //   {
+  //     index: 0,
+  //     category: CATEGORIES.together,
+  //     position: [4.5, 1],
+  //     positionMobile: [-1, -3.5],
+  //     rotationCorrection: [Math.PI / 12, -Math.PI / 12, Math.PI / 12],
+  //     geometry: piece21.geometry
+  //   },
+  //   {
+  //     index: 1,
+  //     category: CATEGORIES.together,
+  //     position: [-4.5, 1],
+  //     positionMobile: [1, -3.5],
+  //     rotationCorrection: [- Math.PI / 12, - Math.PI / 3.5, - Math.PI / 2.5],
+  //     geometry: piece22.geometry
+  //   },
+  //   {
+  //     index: 2,
+  //     category: CATEGORIES.together,
+  //     position: [4, -2],
+  //     positionMobile: [1, 2.5],
+  //     rotationCorrection: [0, -Math.PI / 10, -Math.PI / 3],
+  //     geometry: piece23.geometry
+  //   },
+  // ];
+  const draggables = [];
   const droppables = [{
       index: 0,
       category: CATEGORIES.buildingKnowledge,

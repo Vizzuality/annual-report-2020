@@ -108,18 +108,18 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
           <FinalModal onClose={handleFinalModalClose} />
       </ModalComponent>
       <main className={styles.main}>
-        <div className={styles.noise} />
-        {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
-        {isReportOpen && !isMobile && <HomeHeaderDesktop />}
-        {isReportOpen && !isModalOpen && isMobile && <HomeHeaderMobile />}
-        {isReportOpen && !isModalOpen && (
+        <div />
+        {/* {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>} */}
+        {/* {isReportOpen && !isMobile && <HomeHeaderDesktop />}
+        {isReportOpen && !isModalOpen && isMobile && <HomeHeaderMobile />} */}
+        {/* {isReportOpen && !isModalOpen && (
           <SoundButton
             className="-absolute"
             allowedSound={allowedSound}
             setAllowedSound={setAllowedSound}
           />
-        )}
-        {isReportOpen && !isModalOpen && (
+        )} */}
+        {/* {isReportOpen && !isModalOpen && (
             <a href = "https://www.vizzuality.com/privacy-policy"
             title = "Privacy policy"
             target = "_blank"
@@ -128,7 +128,7 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
             } >
             Privacy policy.
           </a>
-        )}
+        )} */}
         <CookieBanner />
         <div className={styles.canvasContainer}>
           {hasMounted && (
