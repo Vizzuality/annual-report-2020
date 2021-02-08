@@ -12,7 +12,7 @@ const nextConfig = {
           loader: require.resolve('file-loader'),
           options: {
             limit: config.inlineImageLimit,
-            publicPath: `${config.assetPrefix}/_next/static/images/`,
+            publicPath: `/_next/static/images/`,
             outputPath: `${isServer ? '../' : ''}static/images/`,
             name: '[name]-[hash].[ext]',
             esModule: config.esModule || false,
