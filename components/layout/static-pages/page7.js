@@ -25,7 +25,7 @@ const Page7 = () => {
       <p>Working together at every stage of a project, we create spaces to talk about the issues we’re trying to solve, and challenge each other’s biases. 
 But we can’t solve the world’s problems alone. That’s why we work with, and support, the organisations and companies who are leading the change we want to see in the world. Organisations like the World Resources Institute and the Stockholm Environment Institute who have important data, expertise and knowledge that needs to be seen and used. We work with them to make sure it is.</p>
       <p>Working together as one giant international team is our best chance to save ourselves from the climate crisis. Are you ready to join us?</p>
-      <video ref={videoRef} muted playsInLine autoplay loop width="100%" height="auto" src="/videos/workingTogether.mp4" type="video/mp4" />
+      <video ref={videoRef} muted playsInline autoPlay loop width="100%" height="auto" src="/videos/workingTogether.mp4" type="video/mp4" />
       <p className="-caption">The way we combine our expertise and skills in each project responds to its goals and the needs of our partners.</p>
     </div>
   </div>

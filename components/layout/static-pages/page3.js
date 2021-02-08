@@ -13,7 +13,7 @@ const Page3 = () => (
           alt="GHG Emissions"
         />
       </div>
-      <p className="-caption">The world's lowest emitters of greenhouse gas emissions are bearing the brunt of climate change impacts. [Data sources: Cumulative country GHG emissions (1990, 2017), <a className="-strong" href="https://climatewatchdata.org" target="_blank">ClimateDataWatch.org</a>; Country Drought Risk Index, <a className="-strong" href="https://www.wri.org/applications/aqueduct/country-rankings/" target="_blank">Aqueduct</a>]</p>
+      <p className="-caption">The world's lowest emitters of greenhouse gas emissions are bearing the brunt of climate change impacts. [Data sources: Cumulative country GHG emissions (1990, 2017), <a className="-strong" href="https://climatewatchdata.org" target="_blank">ClimateWatchData.org</a>; Country Drought Risk Index, <a className="-strong" href="https://www.wri.org/applications/aqueduct/country-rankings/" target="_blank">Aqueduct</a>].</p>
       <p>By using models and projections to understand what the options are, we can choose the steps that will lead us to the future we want.</p>
     </div>
   </div>
