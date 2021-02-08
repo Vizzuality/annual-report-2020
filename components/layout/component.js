@@ -10,7 +10,7 @@ const Layout = ({ story, onClose, isMobile, allowedSound, setAllowedSound }) => 
   if (!story) return null;
 
   return (
-    <div className={`l-layout theme${story.category}`}>
+    <div className={`l-layout block${story.category}`}>
       {isMobile && <HeaderMobile title={CATEGORIES[story.category].title} onClick={onClose} />}
       {!isMobile && <HeaderDesktop title={CATEGORIES[story.category].title} onClick={onClose} />}
 
