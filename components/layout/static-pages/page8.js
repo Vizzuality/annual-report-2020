@@ -12,7 +12,15 @@ const Page8 = () => (
       <p className="-caption">The number of messages we sent via Slack increased during the European lockdown as we supported each other and stayed closer than ever.</p>
     </div>
     <div className="col-2">
-      <div>Video</div>
+      <div className="video-container">
+        <iframe src="https://youtube.com/embed/to8N_2XeUEc"
+          frameBorder='0'
+          className="video-embed"
+          allow='autoplay; encrypted-media'
+          allowFullScreen
+          title='video'
+        />
+      </div>
       <p className="-caption">Having fun during one of our huddles</p>
       <h3>Engagement & Wellbeing.</h3>
       <p>On 11 March 2020, our team transitioned overnight from remote-friendly to fully-remote. Within three days, we set up a cross-functional People First team to design experiences, spaces and tools to maintain engagement and team wellbeing. Over the next four months, they co-wrote 21 newsletters containing tips and guidance on the themes of resilience, focus and community. A survey has kept track of people’s feelings and experiences during the pandemic. The data from these surveys started to show that sustaining wellbeing and mental health was going to be a marathon. In response, we kicked off an initiative that provides our people with access to therapists on demand and mental health resources. We know communication is critical in times of uncertainty. So, we have chosen to over-communicate and provide regular, transparent updates to our team on the good, the bad, and the ugly news.</p>
