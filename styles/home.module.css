@@ -129,7 +129,7 @@
 
 .noise {
   animation: grain 1s steps(10) infinite;
-  background-image: url(/noise.webp);
+  background-image: url(/noise.jpg);
   content: "";
   height: 300%;
   left: -50%;
