@@ -25,20 +25,32 @@ const HomeHeaderDesktop = ({
   };
 
   return (
-    <div className={cx('c-header-desktop', { '-open': isOpen })}>
+    <div
+      className={cx('c-header-desktop ', { '-open': isOpen })}
+      id="main-menu"
+      role="menu"
+      aria-labelledby="main-menu-button"
+    >
       <p className="header-description">Spotlight on 2020 by <a href="https://www.vizzuality.com/" target="_blank" rel="noopener noreferrer">
         vizzuality.</a>
       </p>
 
-      <button className="header-menu--button" onClick={handleMenu}>
+      <button 
+        className="header-menu--button"
+        onClick={handleMenu}
+        id="main-menu-button"
+        aria-haspopup="true"
+        aria-controls="main-menu"
+        aria-expanded={isOpen}
+      >
         <Icon name={isOpen ? "menu-close" : "menu"} className="-medium -dark" />
       </button>
       {isOpen && (
-        <div className="menu-content" role="navigation">
+        <nav className="menu-content" role="navigation">
           <ul className="menu" role="menubar">
             <li className="menu-item">
-              <h2 className="-block0" role="menuitem" tabIndex="0">Building knowledge.</h2>
-              <ul role="menu" className="menu-item-wrapper">
+              <h2 id="Building knowledge" className="-block0" role="menuitem" tabIndex="-1">Building knowledge.</h2>
+              <ul arialabelledby="Building knowledge" role="menu" className="menu-item-wrapper">
                 <li role="none">
                   <Button
                     handleClick={handleLinkClick}
@@ -69,8 +81,8 @@ const HomeHeaderDesktop = ({
               </ul>
             </li>
             <li className="menu-item">
-              <h2 className="-block1">Working together.</h2>
-              <ul role="menu" className="menu-item-wrapper">
+              <h2 id="Working together" className="-block1" role="menuitem" tabIndex="-1">Working together.</h2>
+              <ul arialabelledby="Working together" role="menu" className="menu-item-wrapper">
                 <li role="none">
                   <Button
                     handleClick={handleLinkClick}
@@ -101,8 +113,8 @@ const HomeHeaderDesktop = ({
               </ul>
             </li>
             <li className="menu-item">
-              <h2 className="-block2">Change is possible.</h2>
-              <ul role="menu" className="menu-item-wrapper">
+              <h2 id="Change is possible" className="-block2" role="menuitem" tabIndex="-1">Change is possible.</h2>
+              <ul arialabelledby="Change is possible" role="menu" className="menu-item-wrapper">
                 <li role="none">
                   <Button
                     handleClick={handleLinkClick}
@@ -145,7 +157,7 @@ const HomeHeaderDesktop = ({
               Privacy policy.
             </a>
           </div>
-        </div>
+        </nav>
       )}
     </div>
   )
