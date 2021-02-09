@@ -89,7 +89,7 @@ const HomeHeaderMobile = () => {
               className="privacy-link sub-menu-item"
             >
               Privacy policy.
-          </a>
+            </a>
           </div>
 
         </div>
