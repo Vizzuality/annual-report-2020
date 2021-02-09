@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-
-import Link from 'next/link';
-
+import Button from 'components/link-button';
 import Icon from 'components/icon';
 import Download from 'components/download';
 import SocialMedia from 'components/social-media';
 
-const HomeHeaderDesktop = () => {
+const HomeHeaderDesktop = ({
+    setSelectedPiece,
+    setPositionedPieces,
+    positionedPieces
+  }) => {
   const [isOpen, setMenu] = useState(false);
-
   const handleMenu = () => {
     setMenu(!isOpen);
+  };
+
+  const handleLinkClick = ({ category, index }) => {
+    setSelectedPiece({ category, index });
+    setPositionedPieces({ ...positionedPieces, [category]: {
+      ...(positionedPieces || {})[category],
+      [index]: true
+    }});
+    setMenu(false);
   };
 
   return (
@@ -30,19 +40,31 @@ const HomeHeaderDesktop = () => {
               <h2 className="-block0" role="menuitem" tabIndex="0">Building knowledge.</h2>
               <ul role="menu" className="menu-item-wrapper">
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/0/[slug]', query: { slug: '0' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={0}
+                    index={0}
+                  >
                     Digital tools,
-                    </Link>
+                  </Button>
                 </li>
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/0/[slug]', query: { slug: '1' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={0}
+                    index={1}
+                  >
                     Open data,
-                    </Link>
+                  </Button>
                 </li>
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/0/[slug]', query: { slug: '2' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={0}
+                    index={2}
+                  >
                     The future.
-                    </Link>
+                  </Button>
                 </li>
               </ul>
             </li>
@@ -50,19 +72,31 @@ const HomeHeaderDesktop = () => {
               <h2 className="-block1">Working together.</h2>
               <ul role="menu" className="menu-item-wrapper">
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/1/[slug]', query: { slug: '0' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={2}
+                    index={0}
+                  >
                     Collaboration,
-                    </Link>
+                  </Button>
                 </li>
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/1/[slug]', query: { slug: '1' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={2}
+                    index={1}
+                  >
                     A place to be,
-                    </Link>
+                  </Button>
                 </li>
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/1/[slug]', query: { slug: '2' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={2}
+                    index={2}
+                  >
                     Go faster.
-                    </Link>
+                  </Button>
                 </li>
               </ul>
             </li>
@@ -70,19 +104,31 @@ const HomeHeaderDesktop = () => {
               <h2 className="-block2">Change is possible.</h2>
               <ul role="menu" className="menu-item-wrapper">
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/2/[slug]', query: { slug: '0' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={1}
+                    index={0}
+                  >
                     Detection,
-                    </Link>
+                  </Button>
                 </li>
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/2/[slug]', query: { slug: '1' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={1}
+                    index={1}
+                  >
                     Supply chains,
-                    </Link>
+                  </Button>
                 </li>
                 <li role="none">
-                  <Link role="menuitem" tabIndex="0" href={{ pathname: '/report/2/[slug]', query: { slug: '2' } }}>
+                  <Button
+                    handleClick={handleLinkClick}
+                    category={1}
+                    index={2}
+                  >
                     Covid action.
-                    </Link>
+                  </Button>
                 </li>
               </ul>
             </li>

@@ -37,7 +37,7 @@ function Droppable({
         setColor('#222');
       }
     }
-  }, [draggingPiece, category]);
+  }, [draggingPiece, category, isPositioned]);
 
   if (!geometry) return null;
   return (
