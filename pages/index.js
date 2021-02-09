@@ -4,7 +4,6 @@ import { CATEGORIES } from 'components/layout/constants';
 import ModalComponent from 'components/modal';
 import Main from 'components/main';
 import Layout from 'components/layout';
-import Menu from 'components/menu';
 import * as gtag from 'utils/gtag';
 import breakpoints from 'utils/breakpoints';
 
