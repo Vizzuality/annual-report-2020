@@ -1,0 +1,17 @@
+@import 'styles/settings';
+
+.menu-link {
+  background-color: $background-color;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 35px;
+  text-decoration: underline;
+  padding-right: 10px;
+
+  @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
+    font-size: 16px;
+    line-height: 16px;
+    padding-right: 0;
+  }
+}

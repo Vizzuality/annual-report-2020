@@ -64,7 +64,7 @@
       li {
         list-style: none;
       }
-      
+
       .menu-item-wrapper {
         display: flex;
         padding: 0;
@@ -92,15 +92,15 @@
       @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
         padding: 20px;
       }
-  
+
       .menu-item {
         font-family: $font-family-1;
         padding: 20px;
-  
+
         h2 {
           font-size: 30px;
           font-weight: 300;
-  
+
           &.-block0 {
             color: $color-1;
           }
@@ -116,20 +116,6 @@
           @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
             font-size: 20px;
             line-height: 20px;
-          }
-        }
-  
-        a {
-          font-size: 20px;
-          font-weight: 600;
-          line-height: 35px;
-          text-decoration: underline;
-          padding-right: 10px;
-
-          @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
-            font-size: 16px;
-            line-height: 16px;
-            padding-right: 0;
           }
         }
 
@@ -158,7 +144,7 @@
         padding: 20px;
 
         &.privacy-link {
-        
+
           &:hover {
             color: #FFE229;
             transition: color 0.3s ease-in-out;

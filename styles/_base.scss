@@ -46,3 +46,8 @@ video:focus {
 video::-webkit-media-controls-panel {
   background-image: linear-gradient(transparent, transparent) !important;
 }
+
+.hidden {
+  position: absolute;
+  left: -999px;
+}
