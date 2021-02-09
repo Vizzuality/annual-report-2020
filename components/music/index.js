@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import useSound from 'use-sound';
-import vizz1 from '../../sounds/vizz1.webm';
-import vizz2 from '../../sounds/vizz2.webm';
+import vizz1 from '../../sounds/vizz1.mp3';
+import vizz2 from '../../sounds/vizz2.mp3';
 const SONG_STATE = {
   playing: 1,
   paused: 2,
