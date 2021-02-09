@@ -21,9 +21,9 @@ const Index = () => {
 
   const [isMobile, setLayout] = useState(false);
   useEffect(() => {
-    const handleResize = () => setLayout(window.innerWidth < breakpoints.sm);
+    const handleResize = () => setLayout(window.innerWidth < breakpoints.md);
     window.addEventListener("resize", handleResize);
-    setLayout(window.innerWidth < breakpoints.sm);
+    setLayout(window.innerWidth < breakpoints.md);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -57,7 +57,6 @@ const Index = () => {
         />}
       </ModalComponent>
       }
-      <Menu />
       <Main
         isModalOpen={isModalOpen}
         isMobile={isMobile}
