@@ -8,12 +8,12 @@ const Menu = () => {
         <a href="../generic.html" name="Building knowledge">Building knowledge</a>
         <ul data-test="true" aria-hidden="false" role="menu" className="show-menu">
           <li role="menuitem">
-            <Link name="Digital tools" href={{ pathname: '/report/0/[slug]', query: { slug: '0' } }} tabindex="0">
+            <Link name="Digital tools" href={{ pathname: '/report/0/[slug]', query: { slug: '0' } }} tabIndex="0">
               Digital tools
             </Link>
           </li>
           <li role="menuitem">
-            <Link href={{ pathname: '/report/0/[slug]', query: { slug: '1' } }} tabindex="0">
+            <Link href={{ pathname: '/report/0/[slug]', query: { slug: '1' } }} tabIndex="0">
               Open data
             </Link>
           </li>
@@ -28,17 +28,17 @@ const Menu = () => {
         <a href="../generic.html">Change is possible</a>
         <ul data-test="true" aria-hidden="true" role="menu" className="">
           <li role="menuitem">
-            <Link href={{ pathname: '/report/1/[slug]', query: { slug: '0' } }} tabindex="0">
+            <Link href={{ pathname: '/report/1/[slug]', query: { slug: '0' } }} tabIndex="0">
               Collaboration
             </Link>
           </li>
           <li role="menuitem">
-            <Link href={{ pathname: '/report/1/[slug]', query: { slug: '1' } }} tabindex="0">
+            <Link href={{ pathname: '/report/1/[slug]', query: { slug: '1' } }} tabIndex="0">
               A place to be
             </Link>
           </li>
           <li role="menuitem">
-            <Link href={{ pathname: '/report/1/[slug]', query: { slug: '2' } }} tabindex="0">
+            <Link href={{ pathname: '/report/1/[slug]', query: { slug: '2' } }} tabIndex="0">
               Go faster
             </Link>
           </li>
@@ -48,17 +48,17 @@ const Menu = () => {
         <a href="../generic.html">Working together</a>
         <ul data-test="true" aria-hidden="true" role="menu" className="">
           <li role="menuitem">
-            <Link href={{ pathname: '/report/2/[slug]', query: { slug: '0' } }} tabindex="0">
+            <Link href={{ pathname: '/report/2/[slug]', query: { slug: '0' } }} tabIndex="0">
               Detection
             </Link>
           </li>
           <li role="menuitem">
-            <Link href={{ pathname: '/report/2/[slug]', query: { slug: '1' } }} tabindex="0">
+            <Link href={{ pathname: '/report/2/[slug]', query: { slug: '1' } }} tabIndex="0">
               Supply chains
             </Link>
           </li>
           <li role="menuitem">
-            <Link href={{ pathname: '/report/2/[slug]', query: { slug: '2' } }} tabindex="0">
+            <Link href={{ pathname: '/report/2/[slug]', query: { slug: '2' } }} tabIndex="0">
               Covid action
             </Link>
           </li>
@@ -78,17 +78,17 @@ const Menu = () => {
         <ul data-test="true" aria-hidden="true" role="menu" className="">
   
           <li role="menuitem">
-            <a href="https://twitter.com/vizzuality" tabindex="0">Twitter</a>
+            <a href="https://twitter.com/vizzuality" tabIndex="0">Twitter</a>
           </li>
 
           <li role="menuitem">
-            <a href="https://facebook.com/vizzuality/" tabindex="0">Facebook</a>
+            <a href="https://facebook.com/vizzuality/" tabIndex="0">Facebook</a>
           </li>
           <li role="menuitem">
-            <a href="https://linkedin.com/company/vizzuality" tabindex="0">Linkedin</a>
+            <a href="https://linkedin.com/company/vizzuality" tabIndex="0">Linkedin</a>
           </li>
           <li role="menuitem">
-            <a href="https://github.com/Vizzuality" tabindex="0">GitHub</a>
+            <a href="https://github.com/Vizzuality" tabIndex="0">GitHub</a>
           </li>
         </ul>
       </li>

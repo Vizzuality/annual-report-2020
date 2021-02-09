@@ -4,6 +4,11 @@
   width: 100vw;
   z-index: $z-index-10;
 
+  &.-open {
+    background-color: black;
+    height: 100%;
+  }
+
   .header-description {
     position: absolute;
     left: 40px;
@@ -28,6 +33,150 @@
         color: $color-3;
         transition: color 0.3s ease-in-out;
       }
+    }
+  }
+
+  .header-menu--button {
+    @include closeButton;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .menu-content {
+    position: absolute;
+    top: 65px;
+    width: 100vw;
+    display: flex;
+    padding: 40px;
+    background-color: $background-color;
+    align-content: flex-end;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    > ul {
+
+      li {
+        list-style: none;
+      }
+      
+      .menu-item-wrapper {
+        display: flex;
+        padding: 0;
+
+        @media screen and (max-width: map-get($flexboxgrid-breakpoints, lg)) {
+          flex-direction: column;
+        }
+      }
+    }
+
+    @media screen and (max-width: map-get($flexboxgrid-breakpoints, lg)) {
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0px;
+
+      @media screen and (min-width: map-get($flexboxgrid-breakpoints, lg)) {
+        padding: 80px;
+      }
+
+      @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+        padding: 20px;
+      }
+  
+      .menu-item {
+        font-family: $font-family-1;
+        padding: 20px;
+  
+        h2 {
+          font-size: 30px;
+          font-weight: 300;
+  
+          &.-block0 {
+            color: $color-1;
+          }
+
+          &.-block1 {
+            color: $color-3;
+          }
+
+          &.-block2 {
+            color: $color-2;
+          }
+
+          @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
+            font-size: 20px;
+            line-height: 20px;
+          }
+        }
+  
+        a {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 35px;
+          text-decoration: underline;
+          padding-right: 10px;
+
+          @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
+            font-size: 16px;
+            line-height: 16px;
+            padding-right: 0;
+          }
+        }
+
+        @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
+          padding: 0px;
+        }
+      }
+    }
+
+    .sub-menu {
+      font-family: $font-family-1;
+      box-sizing: content-box;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+
+      @media screen and (min-width: map-get($flexboxgrid-breakpoints, lg)) {
+        padding: 80px;
+      }
+
+      @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+        padding: 20px;
+      }
+
+      .sub-menu-item {
+        padding: 20px;
+
+        &.privacy-link {
+        
+          &:hover {
+            color: #FFE229;
+            transition: color 0.3s ease-in-out;
+          }
+        }
+
+        @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
+          padding: 10px 0;
+        }
+      }
+
+      @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
+        padding: 20px 0;
+      }
+    }
+
+    @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
+      padding: 20px;
     }
   }
 }

@@ -28,7 +28,7 @@ const HomeHeaderMobile = () => {
         <div className="menu-content">
           <ul className="menu">
             <li className="menu-item">
-              <h3 className="-block0">Building knowledge.</h3>
+              <h2 className="-block0">Building knowledge.</h2>
               <div>
                 <Link href={{ pathname: '/report/0/[slug]', query: { slug: '0' } }}>
                   Digital tools,
@@ -45,7 +45,7 @@ const HomeHeaderMobile = () => {
               </div>
             </li>
             <li className="menu-item">
-              <h3 className="-block1">Working together.</h3>
+              <h2 className="-block1">Working together.</h2>
               <div>
                 <Link href={{ pathname: '/report/1/[slug]', query: { slug: '0' } }}>
                   Collaboration,
@@ -62,7 +62,7 @@ const HomeHeaderMobile = () => {
               </div>
             </li>
             <li className="menu-item">
-              <h3 className="-block2">Change is possible.</h3>
+              <h2 className="-block2">Change is possible.</h2>
               <div>
                 <Link href={{ pathname: '/report/2/[slug]', query: { slug: '0' } }}>
                   Detection,
