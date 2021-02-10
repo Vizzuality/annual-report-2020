@@ -20,8 +20,7 @@ export default function Download({ className }) {
     <div className={cx('c-download', { [className]: className })}>
       <div className="download-content">
       <a
-        href={'href'}
-        target="_blank"
+        href="https://dl.dropboxusercontent.com/s/lqfsswrof1vl8ju/Spotlight%20on%202020%20by%20vizzuality.pdf"
         rel="noopener noreferrer"
         onClick={trackDownloads}
       >
