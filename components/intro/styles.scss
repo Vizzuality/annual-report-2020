@@ -13,6 +13,24 @@
   justify-content: center;
   cursor: url('/play.svg'), auto;
 
+  .play-button {
+    background-image: url('/play.svg');
+    background-color: transparent;
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
+      margin-top: 50px;
+    }
+
+    @media screen and (min-width: map-get($flexboxgrid-breakpoints, lg)) {
+      // hide
+      position: absolute;
+      left: -999px;
+    }
+  }
+
   h1 {
     font-family: $font-family-2;
     font-weight: 100;
