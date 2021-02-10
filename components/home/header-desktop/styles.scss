@@ -6,11 +6,9 @@
 
   &.-open {
     background-color: black;
-    height: 100%;
 
     &:before {
       content: '';
-      position: absolute;
       animation: grain 1s steps(10) infinite;
       background-image: url(/noise.webp);
       height: 300%;
