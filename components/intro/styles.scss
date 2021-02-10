@@ -11,7 +11,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  cursor: url('/play.svg'), auto;
+  cursor: pointer;
+
+  @media screen and (min-width: map-get($flexboxgrid-breakpoints, lg)) {
+    cursor: url('/play.svg'), auto;
+  }
 
   .play-button {
     background-image: url('/play.svg');

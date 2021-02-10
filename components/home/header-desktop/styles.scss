@@ -1,16 +1,18 @@
 @import 'styles/settings';
+@import 'styles/mixins';
 
 .c-header-desktop {
   width: 100vw;
-  z-index: $z-index-150;
+  z-index: 300;
 
   &.-open {
     background-color: black;
+    height: 100%;
 
     &:before {
-      content: '';
       animation: grain 1s steps(10) infinite;
-      background-image: url(/noise.webp);
+      background-image: url(/noise.jpg);
+      content: "";
       height: 300%;
       left: -50%;
       opacity: 0.15;
@@ -18,6 +20,7 @@
       top: -110%;
       width: 300%;
       pointer-events: none;
+      z-index: 0;
     }
   }
 
