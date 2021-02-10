@@ -20,6 +20,7 @@
     line-height: 20px;
     margin: 0;
     will-change: color;
+    z-index: $z-index-10;
 
     @media screen and (max-width: map-get($flexboxgrid-breakpoints, md)) {
       max-width: 140px;
@@ -39,8 +40,8 @@
   .header-menu--button {
     @include closeButton;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 40px;
 
     @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
       width: 50px;
@@ -50,7 +51,7 @@
 
   .menu-content {
     position: absolute;
-    top: 65px;
+    top: 45px;
     width: 100vw;
     display: flex;
     padding: 40px;
@@ -83,7 +84,6 @@
     .menu {
       list-style: none;
       margin: 0;
-      padding-top: 40px;
       padding-right: 40px;
 
       @media screen and (min-width: map-get($flexboxgrid-breakpoints, lg))
@@ -92,7 +92,7 @@
       }
 
       @media screen and (min-width: map-get($flexboxgrid-breakpoints, xlg)) {
-        padding-right: 200px;
+        padding-right: 250px;
       }
 
       .menu-item {
@@ -100,8 +100,11 @@
         padding: 20px;
 
         h2 {
-          font-size: 30px;
+          font-size: 60px;
           font-weight: 300;
+          line-height: 72px;
+          margin: 0;
+          padding-top: 50px;
 
           &.-block0 {
             color: $color-1;

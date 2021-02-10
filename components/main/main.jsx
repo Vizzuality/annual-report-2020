@@ -110,24 +110,21 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
       <main className={styles.main}>
         <div className={styles.noise} />
         {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
-        {isReportOpen && !isMobile && <HomeHeaderDesktop positionedPieces={positionedPieces} setSelectedPiece={setSelectedPiece} setPositionedPieces={setPositionedPieces} />}
-        {isReportOpen && !isModalOpen && isMobile && <HomeHeaderMobile positionedPieces={positionedPieces} setSelectedPiece={setSelectedPiece} setPositionedPieces={setPositionedPieces} />}
+        {isReportOpen && !isModalOpen && !isMobile && <HomeHeaderDesktop positionedPieces={positionedPieces} setSelectedPiece={setSelectedPiece} setPositionedPieces={setPositionedPieces} />}
+        {isReportOpen && !isModalOpen && isMobile && (
+          <HomeHeaderMobile
+            positionedPieces={positionedPieces}
+            setSelectedPiece={setSelectedPiece}
+            setPositionedPieces={setPositionedPieces}
+            allowedSound={allowedSound}
+            setAllowedSound={setAllowedSound}
+        />)}
         {isReportOpen && !isModalOpen && (
           <SoundButton
-            className="-absolute"
+            className="-absolute -right"
             allowedSound={allowedSound}
             setAllowedSound={setAllowedSound}
           />
-        )}
-        {isReportOpen && !isModalOpen && (
-            <a href = "https://www.vizzuality.com/privacy-policy"
-            title = "Privacy policy"
-            target = "_blank"
-            className = {
-              styles.privacyLink
-            } >
-            Privacy policy.
-          </a>
         )}
         <CookieBanner />
         <div className={styles.canvasContainer}>
