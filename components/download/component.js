@@ -19,14 +19,15 @@ export default function Download({ className }) {
   return (
     <div className={cx('c-download', { [className]: className })}>
       <div className="download-content">
-      <a
-        href="https://dl.dropboxusercontent.com/s/lqfsswrof1vl8ju/Spotlight%20on%202020%20by%20vizzuality.pdf"
-        rel="noopener noreferrer"
-        onClick={trackDownloads}
-      >
-        Download full report.
-      </a>
-      <Icon name="download" className="-medium"/>
+        <a
+          href="https://dl.dropboxusercontent.com/s/lqfsswrof1vl8ju/Spotlight%20on%202020%20by%20vizzuality.pdf"
+          rel="noopener noreferrer"
+          onClick={trackDownloads}
+          className="download-link"
+        >
+          Download full report.
+          <Icon name="download" className="-medium download-icon"/>
+        </a>
       </div>
     </div>
   );
