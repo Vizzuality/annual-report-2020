@@ -155,11 +155,6 @@ const HomeHeaderMobile = ({
               Privacy policy.
            </a>
           </div>
-          <SoundButton
-            className="-absolute -center hola"
-            allowedSound={allowedSound}
-            setAllowedSound={setAllowedSound}
-          />
         </nav>
       )}
     </div>

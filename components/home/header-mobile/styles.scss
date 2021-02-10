@@ -2,27 +2,26 @@
 
 .c-header-mobile {
   width: 100vw;
-  height: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 300;
+  z-index: 150;
+  overflow-y: auto;
 
   &.-open {
     background-color: black;
-    height: 100%;
 
     &:before {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
       animation: grain 1s steps(10) infinite;
       background-image: url(/noise.webp);
-      background-position: center;
-      background-size: cover;
+      height: 300%;
+      left: -50%;
+      opacity: 0.15;
+      position: fixed;
+      top: -110%;
+      width: 300%;
       opacity: 0.15;
       pointer-events: none;
     }

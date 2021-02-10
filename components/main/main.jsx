@@ -121,7 +121,10 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
         />)}
         {isReportOpen && !isModalOpen && (
           <SoundButton
-            className="-absolute -right"
+            className={cx('-absolute', {
+              '-right': !isMobile,
+              '-center': isMobile
+            })} 
             allowedSound={allowedSound}
             setAllowedSound={setAllowedSound}
           />
