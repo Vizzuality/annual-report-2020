@@ -11,6 +11,21 @@
   &.-open {
     background-color: black;
     height: 100%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      animation: grain 1s steps(10) infinite;
+      background-image: url(/noise.webp);
+      background-position: center;
+      background-size: cover;
+      opacity: 0.15;
+      pointer-events: none;
+    }
   }
 
   .header-description {
@@ -47,13 +62,12 @@
   }
 
   .menu-content {
-    position: absolute;
-    top: 65px;
+    position: relative;
+    margin-top: 65px;
     width: 100vw;
     display: flex;
     flex-direction: column;
     padding: 40px;
-    background-color: $background-color;
 
     @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
       padding: 0px;
