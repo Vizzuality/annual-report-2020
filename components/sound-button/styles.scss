@@ -10,7 +10,15 @@
     &.-absolute {
       position: absolute;
       bottom: 5%;
+    }
+
+    &.-right {
       right: 30px;
+    }
+
+    &.-center {
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     &.-relative {

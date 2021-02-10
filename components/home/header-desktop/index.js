@@ -43,7 +43,7 @@ const HomeHeaderDesktop = ({
         aria-controls="main-menu"
         aria-expanded={isOpen}
       >
-        <Icon name={isOpen ? "menu-close" : "menu"} className="-medium -dark" />
+        <Icon name={isOpen ? "menu-close" : "menu"} className="-big -dark" />
       </button>
       {isOpen && (
         <nav className="menu-content" role="navigation">

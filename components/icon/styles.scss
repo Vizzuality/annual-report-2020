@@ -10,6 +10,11 @@
     height: 20px;
   }
 
+  &.-big {
+    width: 25px;
+    height: 25px;
+  }
+
   &.social-media {
     fill: white;    
     will-change: fill;
