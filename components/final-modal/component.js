@@ -72,7 +72,7 @@ export default function FinalModal({ onClose }) {
             rel="noopener noreferrer"
             onClick={trackDownloads}
           >
-            Visit our website.
+            <div className="triangle" />Visit our website.
           </a>
         </div>
         <h2>vizzuality.</h2>
