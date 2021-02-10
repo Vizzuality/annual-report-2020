@@ -20,9 +20,9 @@ const Index = () => {
 
   const [isMobile, setLayout] = useState(false);
   useEffect(() => {
-    const handleResize = () => setLayout(window.innerWidth < breakpoints.md);
+    const handleResize = () => setLayout(window.innerWidth < breakpoints.lg);
     window.addEventListener("resize", handleResize);
-    setLayout(window.innerWidth < breakpoints.md);
+    setLayout(window.innerWidth < breakpoints.lg);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
