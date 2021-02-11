@@ -10,6 +10,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta name="keywords" content="vizzuality annual report 2020 spotlight review future visualization company" />
           <meta name="robots" content="index, follow" />
           <meta name="author" content="Vizzuality" />
           <meta

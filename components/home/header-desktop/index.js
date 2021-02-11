@@ -8,7 +8,8 @@ import SocialMedia from 'components/social-media';
 const HomeHeaderDesktop = ({
     setSelectedPiece,
     setPositionedPieces,
-    positionedPieces
+    positionedPieces,
+    isHidden
   }) => {
   const [isOpen, setMenu] = useState(false);
   const handleMenu = () => {
@@ -26,16 +27,16 @@ const HomeHeaderDesktop = ({
 
   return (
     <div
-      className={cx('c-header-desktop ', { '-open': isOpen })}
+      className={cx('c-header-desktop ', { '-open': isOpen, '-hidden': isHidden })}
       id="main-menu"
       role="menu"
       aria-labelledby="main-menu-button"
     >
-      <p className="header-description">Spotlight on 2020 by <a href="https://www.vizzuality.com/" target="_blank" rel="noopener noreferrer">
+      <p className="header-description">Spotlight on 2020 by <a title="vizzuality web" href="https://www.vizzuality.com/" target="_blank" rel="noopener noreferrer">
         vizzuality.</a>
       </p>
 
-      <button 
+      <button
         className="header-menu--button"
         onClick={handleMenu}
         id="main-menu-button"

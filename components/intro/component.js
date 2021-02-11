@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SoundButton from 'components/sound-button';
 import cx from 'classnames';
 
-export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
+export default function Intro({ handleReport }) {
 
   const [intro, setIntro] = useState(false);
   const [unmount, setUnmount] = useState(false);
@@ -46,8 +46,6 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
               <div className="col-xs-12 col-lg-9">
                 <SoundButton
                   className="sound-button-intro"
-                  allowedSound={allowedSound}
-                  setAllowedSound={setAllowedSound}
                 />
               </div>
             </div>
