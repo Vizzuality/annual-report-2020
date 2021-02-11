@@ -21,7 +21,7 @@ import HomeHeaderMobile from 'components/home/header-mobile';
 
 const Canvas = lazy(() => import('components/canvas'));
 
-export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isMobile, setAllowedSound, allowedSound }) {
+export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isMobile }) {
   const [hasMounted, setHasMounted] = useState(false);
   const [positionedPieces, setPositionedPieces] = useState(null);
   const tabPress = useKeyPress("Tab");
@@ -98,7 +98,7 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
           {`Vizzuality Spotlight 2020 ${categoryTitle ? `| ${categoryTitle}` : ''}`}
         </title>
       </Head>
-      <Music allowedSound={allowedSound} isReportOpen={isReportOpen} />
+      <Music isReportOpen={isReportOpen} />
       {selectedPiece && !isModalOpen && (
         <>
           <div
@@ -148,8 +148,6 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
               '-right': !isMobile,
               '-center': isMobile,
             })}
-            allowedSound={allowedSound}
-            setAllowedSound={setAllowedSound}
           />
         )}
         <CookieBanner />
@@ -171,8 +169,6 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
         {!isReportOpen && (
           <Intro
             handleReport={handleReport}
-            allowedSound={allowedSound}
-            setAllowedSound={setAllowedSound}
           />
         )}
       </main>

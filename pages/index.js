@@ -10,7 +10,6 @@ import breakpoints from 'utils/breakpoints';
 const Index = () => {
   const router = useRouter()
   const [selectedPiece, setSelectedPiece] = useState(null);
-  const [allowedSound, setAllowedSound] = useState(false);
   const { query: { reportId, categoryId } } = router;
   const handleClose = () => {
     setSelectedPiece(null);
@@ -52,8 +51,6 @@ const Index = () => {
             story={selectedPiece}
             onClose={handleClose}
             isMobile={isMobile}
-            allowedSound={allowedSound}
-            setAllowedSound={setAllowedSound}
           />
         )}
       </ModalComponent>
@@ -63,8 +60,6 @@ const Index = () => {
         isMobile={isMobile}
         selectedPiece={selectedPiece}
         setSelectedPiece={setSelectedPiece}
-        allowedSound={allowedSound}
-        setAllowedSound={setAllowedSound}
       />
     </>
   )

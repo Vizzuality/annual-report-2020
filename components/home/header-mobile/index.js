@@ -162,9 +162,7 @@ const HomeHeaderMobile = ({
 HomeHeaderMobile.propTypes = {
   setSelectedPiece: PropTypes.func.isRequired,
   setPositionedPieces: PropTypes.func.isRequired,
-  positionedPieces: PropTypes.shape({}),
-  allowedSound: PropTypes.bool.isRequired,
-  setAllowedSound: PropTypes.func.isRequired,
+  positionedPieces: PropTypes.shape({})
 };
 
 HomeHeaderMobile.defaultProps = {

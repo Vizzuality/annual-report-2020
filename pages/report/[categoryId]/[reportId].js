@@ -55,6 +55,7 @@ const ReportPage = ({ reportId, categoryId }) => {
           story={selectedPiece}
           onClose={handleClose}
           isMobile={isMobile}
+          isStatic
         />
       </ModalComponent>
       <Icons />

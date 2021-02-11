@@ -1,3 +1,5 @@
+import YouTube from 'components/youtube';
+
 const Page8 = () => (
   <div className="l-static-page">
     <div className="col-1">
@@ -13,13 +15,7 @@ const Page8 = () => (
     </div>
     <div className="col-2">
       <div className="video-container">
-        <iframe src="https://youtube.com/embed/to8N_2XeUEc"
-          frameBorder='0'
-          className="video-embed"
-          allow='autoplay; encrypted-media'
-          allowFullScreen
-          title='video'
-        />
+      <YouTube videoId="to8N_2XeUEc" />
       </div>
       <p className="-caption">Having fun during one of our huddles</p>
       <h3>Engagement & Wellbeing.</h3>

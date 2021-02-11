@@ -7,12 +7,12 @@ import Footer from './footer';
 
 import { CATEGORIES } from './constants';
 
-const Layout = ({ story, onClose, isMobile, allowedSound, setAllowedSound }) => {
+const Layout = ({ story, onClose, isMobile, isStatic }) => {
   if (!story) return null;
 
   const id = CATEGORIES[story.category].index[story.index]
   const DynamicComponent = dynamic(() => import(`components/layout/static-pages/${id}`));
-  
+
   return (
     <div className={`l-layout block${story.category}`}>
       {isMobile && <HeaderMobile title={CATEGORIES[story.category].title} onClick={onClose} />}
@@ -22,8 +22,7 @@ const Layout = ({ story, onClose, isMobile, allowedSound, setAllowedSound }) => 
       <Footer
         onClick={onClose}
         isMobile={isMobile}
-        allowedSound={allowedSound}
-        setAllowedSound={setAllowedSound}
+        isStatic={isStatic}
       />
     </div>
   )
