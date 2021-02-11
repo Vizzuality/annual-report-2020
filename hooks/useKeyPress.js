@@ -5,7 +5,6 @@ const useKeyPress = (targetKey) => {
 
   function downHandler({ key }) {
     if (key === targetKey) {
-      console.log('ssaa', key )
       setKeyPressed(true);
     }
   }
