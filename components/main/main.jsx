@@ -14,6 +14,7 @@ import Icons from 'components/icons';
 import cx from 'classnames';
 import { CATEGORIES } from 'components/layout/constants.js';
 import useKeyPress from 'hooks/useKeyPress';
+import * as gtag from "utils/gtag";
 
 import HomeHeaderDesktop from 'components/home/header-desktop';
 import HomeHeaderMobile from 'components/home/header-mobile';
@@ -60,6 +61,12 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
     if (!hasShownFinalModal && piecesPositioned.length === 3 && isReportOpen) {
       timeout = setTimeout(() => {
         setFinalModal(true);
+        gtag.event({
+          action: "Open congratulations modal",
+          category: "Navigation",
+          label: "Congratulations modal reached",
+          value: "Congratulations modal",
+        });
       }, 500);
     }
     return () => (timeout ? clearTimeout(timeout) : undefined);
