@@ -90,17 +90,13 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
   return (
     <div
       className={cx(styles.container, {
-        'overflow-auto': !isReportOpen,
+        "overflow-auto": !isReportOpen,
       })}
     >
       <Head>
-        <title>Vizzuality Annual report 2020</title>
-        <meta
-          name="description"
-          content={`Vizzuality Annual report 2020 ${
-            categoryTitle ? categoryTitle : ''
-          }`}
-        />
+        <title>
+          {`Vizzuality Spotlight 2020 ${categoryTitle ? `| ${categoryTitle}` : ''}`}
+        </title>
       </Head>
       <Music allowedSound={allowedSound} isReportOpen={isReportOpen} />
       {selectedPiece && !isModalOpen && (
