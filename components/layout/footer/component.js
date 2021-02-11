@@ -17,7 +17,7 @@ const Footer = ({ onClick, allowedSound, setAllowedSound }) => {
         </div>
       </div>
       {!!setAllowedSound && <SoundButton
-        className="-absolute"
+        className="-absolute -right"
         allowedSound={allowedSound}
         setAllowedSound={setAllowedSound}
       />}

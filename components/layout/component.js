@@ -14,7 +14,7 @@ const Layout = ({ story, onClose, isMobile, allowedSound, setAllowedSound }) => 
   const DynamicComponent = dynamic(() => import(`components/layout/static-pages/${id}`));
   
   return (
-    <div className={`l-layout theme${story.category}`}>
+    <div className={`l-layout block${story.category}`}>
       {isMobile && <HeaderMobile title={CATEGORIES[story.category].title} onClick={onClose} />}
       {!isMobile && <HeaderDesktop title={CATEGORIES[story.category].title} onClick={onClose} />}
 

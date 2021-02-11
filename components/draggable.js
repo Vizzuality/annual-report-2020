@@ -21,8 +21,7 @@ function DraggableMesh({
   const isPositioned = positionedPieces && positionedPieces[category.index] && positionedPieces[category.index][pieceIndex];
 
   const isEnabled =
-    ((!positionedPieces || !positionedPieces[category.index]) &&
-      pieceIndex === 0) ||
+    (pieceIndex === 0) ||
     (positionedPieces &&
       positionedPieces[category.index] &&
       positionedPieces[category.index][pieceIndex -1]);

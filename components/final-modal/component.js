@@ -55,7 +55,7 @@ export default function FinalModal({ onClose }) {
             <li>
               <div className="triangle" />
               <a
-                href={'href'}
+                href="https://dl.dropboxusercontent.com/s/lqfsswrof1vl8ju/Spotlight%20on%202020%20by%20vizzuality.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={trackDownloads}
@@ -72,10 +72,10 @@ export default function FinalModal({ onClose }) {
             rel="noopener noreferrer"
             onClick={trackDownloads}
           >
-            Visit our website.
+            <div className="triangle" />Visit our website.
           </a>
         </div>
-        <h2>vizzuality.</h2>
+        <h2 className="vizzualiy-logo">vizzuality.</h2>
       </div>
       <button
         aria-label="close button"

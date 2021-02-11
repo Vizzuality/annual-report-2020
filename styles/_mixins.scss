@@ -394,7 +394,7 @@
 	align-content: $value;
 }
 
-// Custom mixins 
+// Custom mixins
 @mixin button {
 	padding: 20px 110px;
 	font-size: 18px;
@@ -402,7 +402,7 @@
 	letter-spacing: 0;
 	line-height: 30px;
   	text-align: center;
-  
+
 	@media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
     padding: 20px 75px;
 	}
@@ -417,7 +417,7 @@
   z-index: $z-index-100;
 
   &:hover {
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: #B3B3B3;
   }
 }
 
@@ -437,7 +437,7 @@
 			left: 20px;
 		}
 	}
-	
+
   @if($position == 'right') {
     right: 40px;
 
@@ -451,3 +451,17 @@
     transform: translateX(-50%);
   }
 }
+
+// animations
+@keyframes grain {
+	0%, 100% { transform:translate(0, 0) }
+	10% { transform:translate(-5%, -10%) }
+	20% { transform:translate(-15%, 5%) }
+	30% { transform:translate(7%, -25%) }
+	40% { transform:translate(-5%, 25%) }
+	50% { transform:translate(-15%, 10%) }
+	60% { transform:translate(15%, 0%) }
+	70% { transform:translate(0%, 15%) }
+	80% { transform:translate(3%, 35%) }
+	90% { transform:translate(-10%, 10%) }
+  }

@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from 'components/icon';
-import debounce from 'lodash/debounce';
 import Malarquee from 'react-malarquee';
 
 const HeaderDesktop = ({ title, onClick }) => {
@@ -24,7 +23,6 @@ const HeaderDesktop = ({ title, onClick }) => {
     </header>
   )
 };
-
 
 HeaderDesktop.propTypes = {
   title: PropTypes.string.isRequired,
