@@ -13,6 +13,7 @@ import Intro from 'components/intro';
 import Icons from 'components/icons';
 import cx from 'classnames';
 import { CATEGORIES } from 'components/layout/constants.js';
+import useKeyPress from 'hooks/useKeyPress';
 
 import HomeHeaderDesktop from 'components/home/header-desktop';
 import HomeHeaderMobile from 'components/home/header-mobile';
@@ -22,7 +23,7 @@ const Canvas = lazy(() => import('components/canvas'));
 export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isMobile, setAllowedSound, allowedSound }) {
   const [hasMounted, setHasMounted] = useState(false);
   const [positionedPieces, setPositionedPieces] = useState(null);
-
+  const tabPress = useKeyPress("Tab");
   const [isFinalModalOpen, setFinalModal] = useState(false);
   const [hasShownFinalModal, setHasShownFinalModal] = useState(false);
 
@@ -30,6 +31,12 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
 
   const piecesPositioned = !!positionedPieces &&
     Object.values(positionedPieces).filter(p => Object.keys(p).length === 3)
+
+  useEffect(() => {
+    if (tabPress && !isReportOpen) {
+      setReport(true);
+    }
+  }, [tabPress]);
 
   useEffect(() => {
     setHasMounted(true);
@@ -74,29 +81,36 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
   };
   const categoryTitle = (!!selectedPiece && CATEGORIES[selectedPiece.category].title) || null;
   return (
-    <div className = {
-      cx(styles.container, {
-        'overflow-auto': !isReportOpen
-      })
-    }
+    <div
+      className={cx(styles.container, {
+        'overflow-auto': !isReportOpen,
+      })}
     >
       <Head>
         <title>Vizzuality Annual report 2020</title>
-        <meta name="description" content={`Vizzuality Annual report 2020 ${categoryTitle ? categoryTitle : ''}`} />
+        <meta
+          name="description"
+          content={`Vizzuality Annual report 2020 ${
+            categoryTitle ? categoryTitle : ''
+          }`}
+        />
       </Head>
       <Music allowedSound={allowedSound} isReportOpen={isReportOpen} />
       {selectedPiece && !isModalOpen && (
         <>
           <div
             className={styles.circle}
-            style={{ backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color }}>
-
-          </div>
+            style={{
+              backgroundColor:
+                !!selectedPiece && CATEGORIES[selectedPiece.category].color,
+            }}
+          ></div>
           <div
-          className={styles.innerCircle}
-          style={
-            { backgroundColor: !!selectedPiece && CATEGORIES[selectedPiece.category].color,
-              opacity: 1
+            className={styles.innerCircle}
+            style={{
+              backgroundColor:
+                !!selectedPiece && CATEGORIES[selectedPiece.category].color,
+              opacity: 1,
             }}
           />
         </>
@@ -104,24 +118,32 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
       <ModalComponent
         title="Congratulations-modal"
         isOpen={isFinalModalOpen && !isModalOpen && isReportOpen}
-        onRequestClose={handleFinalModalClose}>
-          <FinalModal onClose={handleFinalModalClose} />
+        onRequestClose={handleFinalModalClose}
+      >
+        <FinalModal onClose={handleFinalModalClose} />
       </ModalComponent>
       <main className={styles.main}>
         <div className={styles.noise} />
-        {isReportOpen && <ProgressBar positionedPieces={positionedPieces}/>}
-        {isReportOpen && !isModalOpen && !isMobile && <HomeHeaderDesktop positionedPieces={positionedPieces} setSelectedPiece={setSelectedPiece} setPositionedPieces={setPositionedPieces} />}
+        {isReportOpen && <ProgressBar positionedPieces={positionedPieces} />}
+        {isReportOpen && !isModalOpen && !isMobile && (
+          <HomeHeaderDesktop
+            positionedPieces={positionedPieces}
+            setSelectedPiece={setSelectedPiece}
+            setPositionedPieces={setPositionedPieces}
+          />
+        )}
         {isReportOpen && !isModalOpen && isMobile && (
           <HomeHeaderMobile
             positionedPieces={positionedPieces}
             setSelectedPiece={setSelectedPiece}
             setPositionedPieces={setPositionedPieces}
-        />)}
+          />
+        )}
         {isReportOpen && !isModalOpen && (
           <SoundButton
-            className={cx('-absolute', {
+            className={cx("-absolute", {
               '-right': !isMobile,
-              '-center': isMobile
+              '-center': isMobile,
             })}
             allowedSound={allowedSound}
             setAllowedSound={setAllowedSound}
@@ -143,11 +165,13 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
           )}
         </div>
         <Icons />
-        {!isReportOpen && <Intro
-          handleReport={handleReport}
-          allowedSound={allowedSound}
-          setAllowedSound={setAllowedSound}
-        />}
+        {!isReportOpen && (
+          <Intro
+            handleReport={handleReport}
+            allowedSound={allowedSound}
+            setAllowedSound={setAllowedSound}
+          />
+        )}
       </main>
     </div>
   );
