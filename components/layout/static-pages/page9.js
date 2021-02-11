@@ -17,7 +17,7 @@ const Page9 = () => (
         />
       </div>
       <p className="-caption">In December 2019 we gathered our families for a Christmas and 10 year anniversary celebration.</p>
-      <p>Imagine what could happen if we build something new together. Let’s talk and share ideas. Book a session to start the conversation with our CEO, <a className="-strong -underline" href="https://www.vizzuality.com/about/craig-mills/" target="_blank">Craig Mills.</a></p>
+      <p>Imagine what could happen if we build something new together. Let’s talk and share ideas. Book a session to start the conversation with our CEO, <a className="-strong -underline" title="vizzuality web" href="https://www.vizzuality.com/about/craig-mills/" target="_blank">Craig Mills.</a></p>
       <a
         className="button-link"
         href="mailto:?to=hello@vizzuality.com"

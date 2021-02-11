@@ -11,7 +11,8 @@ import SocialMedia from 'components/social-media';
 const HomeHeaderMobile = ({
   setSelectedPiece,
   setPositionedPieces,
-  positionedPieces
+  positionedPieces,
+  isHidden
 }) => {
   const [isOpen, setMenu] = useState(false);
 
@@ -31,8 +32,8 @@ const HomeHeaderMobile = ({
   };
 
   return (
-    <div className={cx('c-header-mobile', { '-open': isOpen })}>
-      <p className="header-description">2020 by <a href="https://www.vizzuality.com/" target="_blank" rel="noopener noreferrer">
+    <div className={cx('c-header-mobile', { '-open': isOpen, '-hidden': isHidden })}>
+      <p className="header-description">2020 by <a title="vizzuality web" href="https://www.vizzuality.com/" target="_blank" rel="noopener noreferrer">
         vizzuality.</a>
       </p>
 

@@ -67,6 +67,7 @@ export default function FinalModal({ onClose }) {
           </ul>
           <p>What do you want to do now?</p>
           <a
+            title="vizzuality web"
             href="https://www.vizzuality.com/"
             target="_blank"
             rel="noopener noreferrer"

@@ -128,18 +128,20 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
       <main className={styles.main}>
         <div className={styles.noise} />
         {isReportOpen && <ProgressBar positionedPieces={positionedPieces} />}
-        {isReportOpen && !isModalOpen && !isMobile && (
+        {!isModalOpen && !isMobile && (
           <HomeHeaderDesktop
             positionedPieces={positionedPieces}
             setSelectedPiece={setSelectedPiece}
             setPositionedPieces={setPositionedPieces}
+            isHidden={!isReportOpen}
           />
         )}
-        {isReportOpen && !isModalOpen && isMobile && (
+        {!isModalOpen && isMobile && (
           <HomeHeaderMobile
             positionedPieces={positionedPieces}
             setSelectedPiece={setSelectedPiece}
             setPositionedPieces={setPositionedPieces}
+            isHidden={!isReportOpen}
           />
         )}
         {isReportOpen && !isModalOpen && (

@@ -5,6 +5,10 @@
   width: 100vw;
   z-index: 300;
 
+  &.-hidden {
+    opacity: 0;
+  }
+
   &.-open {
     background-color: black;
     height: 100%;
