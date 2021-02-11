@@ -55,7 +55,7 @@ export default function FinalModal({ onClose }) {
             <li>
               <div className="triangle" />
               <a
-                href={'href'}
+                href="https://dl.dropboxusercontent.com/s/lqfsswrof1vl8ju/Spotlight%20on%202020%20by%20vizzuality.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={trackDownloads}
