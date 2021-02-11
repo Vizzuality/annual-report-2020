@@ -7,14 +7,11 @@ import Button from 'components/link-button';
 import Icon from 'components/icon';
 import Download from 'components/download';
 import SocialMedia from 'components/social-media';
-import SoundButton from 'components/sound-button';
 
 const HomeHeaderMobile = ({
   setSelectedPiece,
   setPositionedPieces,
-  positionedPieces,
-  allowedSound,
-  setAllowedSound
+  positionedPieces
 }) => {
   const [isOpen, setMenu] = useState(false);
 
@@ -155,11 +152,6 @@ const HomeHeaderMobile = ({
               Privacy policy.
            </a>
           </div>
-          <SoundButton
-            className="-absolute -center hola"
-            allowedSound={allowedSound}
-            setAllowedSound={setAllowedSound}
-          />
         </nav>
       )}
     </div>

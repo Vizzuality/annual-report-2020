@@ -6,25 +6,24 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 300;
+  z-index: 150;
+  overflow-y: auto;
 
   &.-open {
-    background-color: black;
-    height: 100%;
+    background-color: #000000;
 
     &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
       animation: grain 1s steps(10) infinite;
-      background-image: url(/noise.webp);
-      background-position: center;
-      background-size: cover;
+      background-image: url(/noise.jpg);
+      content: "";
+      height: 300%;
+      left: -50%;
       opacity: 0.15;
+      position: fixed;
+      top: -110%;
+      width: 300%;
       pointer-events: none;
+      z-index: 0;
     }
   }
 
@@ -94,11 +93,11 @@
       list-style: none;
       margin: 0;
       padding: 0;
-  
+
       .menu-item {
         font-family: $font-family-1;
         padding: 20px;
-  
+
         h2 {
           font-size: 30px;
           font-weight: 300;
@@ -113,7 +112,7 @@
             padding-top: 25px;
             font-size: 25px;
           }
-  
+
           &.-block0 {
             color: $color-1;
           }
@@ -131,7 +130,7 @@
             line-height: 20px;
           }
         }
-  
+
         a {
           font-size: 20px;
           font-weight: 600;
@@ -141,6 +140,12 @@
 
           @media screen and (max-width: map-get($flexboxgrid-breakpoints, xsm)) {
             font-size: 16px;
+            line-height: 16px;
+            padding-right: 0;
+          }
+
+          @media screen and (max-width: 335px) {
+            font-size: 14px;
             line-height: 16px;
             padding-right: 0;
           }
@@ -167,7 +172,7 @@
         }
 
         &.privacy-link {
-        
+
           &:hover {
             color: #FFE229;
             transition: color 0.3s ease-in-out;

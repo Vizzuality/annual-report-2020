@@ -3,7 +3,7 @@
   .c-sound-button {
     background-color: transparent;
     color: $gray-300;
-    z-index: $z-index-200;
+    z-index: $z-index-300;
     font-size: 12px;
     letter-spacing: 2px;
 
@@ -19,6 +19,7 @@
     &.-center {
       left: 50%;
       transform: translateX(-50%);
+      bottom: 20px;
     }
 
     &.-relative {

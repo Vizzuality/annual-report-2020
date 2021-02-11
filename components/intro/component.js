@@ -30,6 +30,7 @@ export default function Intro({ handleReport, allowedSound, setAllowedSound }) {
               <h2>by vizzuality.</h2>
             </div>
           </div>
+          <button className="play-button" role="button" />
         </>
       )}
       {intro && (

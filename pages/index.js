@@ -11,7 +11,7 @@ const Index = () => {
   const router = useRouter()
   const [selectedPiece, setSelectedPiece] = useState(null);
   const [allowedSound, setAllowedSound] = useState(false);
-  const { query: { reportId, categoryId }} = router;
+  const { query: { reportId, categoryId } } = router;
   const handleClose = () => {
     setSelectedPiece(null);
     router.push('/', '/', { shallow: true })
@@ -20,9 +20,9 @@ const Index = () => {
 
   const [isMobile, setLayout] = useState(false);
   useEffect(() => {
-    const handleResize = () => setLayout(window.innerWidth < breakpoints.md);
+    const handleResize = () => setLayout(window.innerWidth < breakpoints.lg);
     window.addEventListener("resize", handleResize);
-    setLayout(window.innerWidth < breakpoints.md);
+    setLayout(window.innerWidth < breakpoints.lg);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -41,19 +41,21 @@ const Index = () => {
   return (
     <>
       {!!reportId && <ModalComponent
-        title = {
+        title={
           categoryId && CATEGORIES[categoryId].title
         }
         isOpen={!!reportId && !!categoryId}
         onRequestClose={handleClose}
       >
-        {!!reportId && <Layout
-          story={selectedPiece}
-          onClose={handleClose}
-          isMobile={isMobile}
-          allowedSound={allowedSound}
-          setAllowedSound={setAllowedSound}
-        />}
+        {!!reportId && (
+          <Layout
+            story={selectedPiece}
+            onClose={handleClose}
+            isMobile={isMobile}
+            allowedSound={allowedSound}
+            setAllowedSound={setAllowedSound}
+          />
+        )}
       </ModalComponent>
       }
       <Main

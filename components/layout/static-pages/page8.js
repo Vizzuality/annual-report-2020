@@ -5,7 +5,7 @@ const Page8 = () => (
       <p>Our foundation is anchored on three principles: Engagement & Wellbeing, Creating Space for Dialogue, and Culture & Community.</p>
       <div className="image-container">
         <img
-          src="/images/lockdownMessages.png"
+          src="/images/lockdownMessages.svg"
           alt="Vizzuality slack messages"
         />
       </div>
