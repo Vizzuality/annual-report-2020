@@ -75,7 +75,7 @@ export default function FinalModal({ onClose }) {
             <div className="triangle" />Visit our website.
           </a>
         </div>
-        <h2>vizzuality.</h2>
+        <h2 className="vizzualiy-logo">vizzuality.</h2>
       </div>
       <button
         aria-label="close button"

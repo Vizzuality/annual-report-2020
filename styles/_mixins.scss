@@ -394,7 +394,7 @@
 	align-content: $value;
 }
 
-// Custom mixins 
+// Custom mixins
 @mixin button {
 	padding: 20px 110px;
 	font-size: 18px;
@@ -402,7 +402,7 @@
 	letter-spacing: 0;
 	line-height: 30px;
   	text-align: center;
-  
+
 	@media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
     padding: 20px 75px;
 	}
@@ -417,7 +417,7 @@
   z-index: $z-index-100;
 
   &:hover {
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: #B3B3B3;
   }
 }
 
@@ -437,7 +437,7 @@
 			left: 20px;
 		}
 	}
-	
+
   @if($position == 'right') {
     right: 40px;
 

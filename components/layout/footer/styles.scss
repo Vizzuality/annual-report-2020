@@ -22,20 +22,20 @@
       line-height: 72px;
       text-align: center;
       margin: 0;
-      padding-bottom: 40px; 
-  
+      padding-bottom: 40px;
+
       @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
         font-size: 50px;
       }
     }
-  
+
     button {
       @include button;
       background-color: white;
       color: black;
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: #B3B3B3;
       }
     }
   }

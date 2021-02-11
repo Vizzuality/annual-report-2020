@@ -7,7 +7,7 @@ const Page6 = () => (
     </div>
     <div className="col-2">
       <p>In 2020, we worked with two organisations who responded to the covid crisis by gathering data on its impact on people across several African countries.</p>
-      <div clasName="image-container">
+      <div className="image-container">
         <img
           src="/images/map.png"
           alt="South Africa map"
