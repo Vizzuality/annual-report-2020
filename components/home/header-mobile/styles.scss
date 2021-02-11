@@ -2,15 +2,14 @@
 
 .c-header-mobile {
   width: 100vw;
-  height: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 150;
   overflow-y: auto;
 
   &.-open {
     background-color: #000000;
+    z-index: 150;
 
     &:before {
       animation: grain 1s steps(10) infinite;
