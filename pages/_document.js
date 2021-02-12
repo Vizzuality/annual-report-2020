@@ -13,6 +13,15 @@ export default class MyDocument extends Document {
           <meta name="keywords" content="vizzuality annual report 2020 spotlight review future visualization company" />
           <meta name="robots" content="index, follow" />
           <meta name="author" content="Vizzuality" />
+          <meta property="og:title" content="Vizzuality Spotlight 2020"/>
+          <meta property="og:description" content="A review of Vizzuality’s work and impact in 2020 and a look at our hopes for the future"/>
+          <meta property="og:image" content="http://spotlight2020.vizzuality.com/media.jpg"/>
+          <meta property="og:url" content="http://spotlight2020.vizzuality.com/"/>
+          <meta name="twitter:title" content="Vizzuality Spotlight 2020"/>
+          <meta name="twitter:description" content=" A review of Vizzuality’s work and impact in 2020 and a look at our hopes for the future"/>
+          <meta name="twitter:image" content="http://spotlight2020.vizzuality.com/media.jpg"/>
+          <meta name="twitter:card" content="vizzuality_spotlight_2020"/>
+
           <meta
             name="description"
             content={'A review of Vizzuality’s work and impact in 2020 and a look at our hopes for the future'}
