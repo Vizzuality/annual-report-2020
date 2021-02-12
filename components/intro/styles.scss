@@ -17,6 +17,12 @@
     cursor: url('/play.svg'), auto;
   }
 
+  .wrapper {
+    @media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
+      padding: 0;
+    }
+  }
+
   .play-button {
     background-image: url('/play.svg');
     background-color: transparent;

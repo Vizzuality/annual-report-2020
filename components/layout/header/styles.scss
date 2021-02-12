@@ -46,6 +46,7 @@
       position: absolute;
       top: 40px;
       right: 40px;
+      flex: 1;
     }
   }
 
@@ -63,6 +64,7 @@
       font-size: 30px;
       line-height: 36px;
       font-weight: bold;
+      flex: 1;
     }
 
     .l-header-close--btn {
