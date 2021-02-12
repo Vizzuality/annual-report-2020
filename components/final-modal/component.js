@@ -42,7 +42,7 @@ export default function FinalModal({ onClose }) {
 
   return (
     <div className="c-final-modal">
-      <div className="wrapper">
+      <div className="wrapper-modal">
         <div className="final-modal-content">
           <h1>Congratulations! You’ve completed our puzzle.</h1>
           <p>What do you want to do now?</p>
