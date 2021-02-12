@@ -19,13 +19,8 @@ $padding-bottom: 20px;
     overflow: visible;
   }
 
-  @media screen and (min-width: map-get($flexboxgrid-breakpoints, xsm)) {
-    max-width: 250px;
-    max-height: 95vh;
-  }
-
   @media screen and (min-width: map-get($flexboxgrid-breakpoints, sm)) {
-    max-height: 85vh;
+   
   }
 
   @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
@@ -50,13 +45,18 @@ $padding-bottom: 20px;
       font-weight: 100;
       letter-spacing: 0;
       line-height: 74px;
-      font-size: 35px;
+      font-size: 30px;
       line-height: 35px;
+
+      @media screen and (min-width: 400px) {
+        font-size: 35px;
+      }
 
       @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
         font-size: 46px;
         line-height: 46px;
       }
+
       @media screen and (min-width: map-get($flexboxgrid-breakpoints, lg)) {
         font-size: 50px;
         line-height: 50px;
@@ -139,10 +139,18 @@ $padding-bottom: 20px;
     position: absolute;
     top: -35px;
     right: -35px;
+
+    @media screen and (max-width: 400px) {
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      right: -25px;
+    }
   }
 
   .wrapper {
-    padding: 20px 40px;
+    padding: 20px;
+    max-height: 825px;
 
     @media screen and (min-width: map-get($flexboxgrid-breakpoints, md)) {
       padding: 0 $flexboxgrid-outer-margin;
