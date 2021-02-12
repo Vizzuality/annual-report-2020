@@ -34,28 +34,13 @@ export default function Intro({ handleReport }) {
         </>
       )}
       {intro && (
-        <div key={unmount} className="wrapper">
-          <section className={cx('intro-container', { 'fade-out': unmount })}>
-            <div className="row center-xsm">
-              <div className="col-xs-12 col-sm-9">
-                <p>Fit the puzzle pieces into our globe to see our impact and our hope for the future.</p>
-              </div>
-            </div>
-
-            <div className="row center-xsm">
-              <div className="col-xs-12 col-lg-9">
-                <SoundButton
-                  className="sound-button-intro"
-                />
-              </div>
-            </div>
-            <div className="row center-xsm">
-              <div className="col-xs-12 col-sm-9">
-                <p>For a better experience, please put your headphones on and click anywhere.</p>
-              </div>
-            </div>
-          </section>
-        </div>
+        <section key={unmount} className={cx('intro-container', { 'fade-out': unmount })}>
+          <p>Fit the puzzle pieces into our globe to see our impact and our hope for the future.</p>
+          <SoundButton
+            className="sound-button-intro"
+          />
+          <p>For a better experience, please put your headphones on and click anywhere.</p>
+        </section>
       )}
     </div>
   );
