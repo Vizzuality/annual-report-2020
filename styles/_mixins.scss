@@ -396,15 +396,22 @@
 
 // Custom mixins
 @mixin button {
-	padding: 20px 110px;
+  padding: 20px 100px;
+  min-width: 220px;
+  max-width: 375px;
 	font-size: 18px;
 	font-family: $font-family-1;
 	letter-spacing: 0;
 	line-height: 30px;
-  	text-align: center;
+  text-align: center;
+  justify-content: center;  
 
-	@media screen and (max-width: map-get($flexboxgrid-breakpoints, sm)) {
-    padding: 20px 75px;
+	@media screen and (max-width: 470px) {
+    padding: 20px 80px;
+  }
+  
+  @media screen and (max-width: 425px) {
+    padding: 20px 20px;
 	}
 }
 
@@ -418,7 +425,7 @@
   flex-shrink: 0;
 
   &:hover {
-	background-color: #B3B3B3;
+	  background-color: #B3B3B3;
   }
 }
 
