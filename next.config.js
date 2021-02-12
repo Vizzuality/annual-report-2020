@@ -1,5 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
+const withTM = require('next-transpile-modules')(['react-three-fiber']);
 
 const nextConfig = {
   webpack(config, options) {
@@ -25,5 +26,5 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([optimizedImages], nextConfig);
+module.exports = withPlugins([optimizedImages], withTM(nextConfig));
 
