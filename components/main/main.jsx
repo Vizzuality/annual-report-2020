@@ -120,7 +120,7 @@ export default function Main({ isModalOpen, selectedPiece, setSelectedPiece, isM
       )}
       <ModalComponent
         title="Congratulations-modal"
-        isOpen={isFinalModalOpen && !isModalOpen && isReportOpen}
+        isOpen={true}
         onRequestClose={handleFinalModalClose}
       >
         <FinalModal onClose={handleFinalModalClose} />
