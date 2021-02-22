@@ -1,0 +1,33 @@
+@import 'styles/settings';
+
+.c-spinner {
+  position: relative;
+  margin: auto;
+  border: 8px solid rgba(85, 206, 200, 0.1);
+  opacity: 0.4;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: loading 2s linear infinite;
+
+   &.theme0 {
+    border-top: 8px solid #4B406E;
+   }
+
+   &.theme1 {
+    border-top: 8px solid #005B5D;
+   }
+
+   &.theme2 {
+    border-top: 8px solid #9E905C;
+   }
+
+  @keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  &.loading {
+    display: flex;
+  }
+}

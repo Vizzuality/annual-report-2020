@@ -2,6 +2,9 @@ import React from 'react';
 import HeaderMobile from './header/mobile';
 import HeaderDesktop from './header/desktop';
 import dynamic from 'next/dynamic';
+
+import Spinner from 'components/spinner';
+
 import Content from './content';
 import Footer from './footer';
 
@@ -11,7 +14,9 @@ const Layout = ({ story, onClose, isMobile, isStatic }) => {
   if (!story) return null;
 
   const id = CATEGORIES[story.category].index[story.index]
-  const DynamicComponent = dynamic(() => import(`components/layout/static-pages/${id}`));
+  const DynamicComponent = dynamic(
+    () => import(`components/layout/static-pages/${id}`),
+    { loading: () => <Spinner index={story.category} /> });
 
   return (
     <div className={`l-layout block${story.category}`}>
